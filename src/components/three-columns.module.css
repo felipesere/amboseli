@@ -1,0 +1,12 @@
+.splitLists {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  vertical-align: top;
+}
+
+.list {}
+
+.list ol {
+  list-style: none;
+}
