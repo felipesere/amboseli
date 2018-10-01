@@ -5,8 +5,10 @@
   vertical-align: top;
 }
 
-.list {}
+.list {
+}
 
 .list ol {
   list-style: none;
+  margin: 0;
 }

@@ -26,11 +26,17 @@ export default function Me(props) {
           Duis semper elit eu mi facilisis eleifend.
           Sit amet lacinia nibh enim sed massa.
         </p>
-        <ThreeColumns>
-          <Connect />
-          <Social />
-          <Network />
-        </ThreeColumns>
+        <p>
+          Donec at libero id lectus porta dapibus eu in nibh.
+          Cras id mauris sapien.
+        </p>
+        <div className={style.outboundLinks}>
+          <ThreeColumns >
+            <Connect />
+            <Social />
+            <Network />
+          </ThreeColumns>
+      </div>
       </div>
     </SplitLayout>
   )
