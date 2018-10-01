@@ -4,6 +4,22 @@ import {SplitLayout} from '../components/split-layout'
 import {ThreeColumns, List} from '../components/three-columns'
 import style from './index.module.css'
 
+const Tagline = ({children}) => {
+  return (
+    <h1 className={style.tagline}>{children}</h1>
+  )
+}
+
+const Name = ({children}) => {
+  return (
+    <p className={style.name}>{children}</p>
+  )
+}
+
+const Prose = ({children}) => {
+  return ( <div classname={style.prose}>{children}</div> )
+}
+
 export default function Me(props) {
   const siteTitle = "Someting"
   const siteDescription = "About something fancy"
@@ -15,28 +31,30 @@ export default function Me(props) {
         title={siteTitle}
       />
       <div className={style.content}>
-        <p className={style.name}>Felipe Sere</p>
+        <Name>Felipe Seré</Name>
 
-        <h1 className={style.tagline}>Engineer. Thoughtful. Meticulous.</h1>
+        <Tagline>Engineer. Coach. Photographer.</Tagline>
 
-        <p>
-          Donec at libero id lectus porta dapibus eu in nibh.
-          Cras id mauris sapien.
-          Fusce viverra luctus urna ac rutrum.
-          Duis semper elit eu mi facilisis eleifend.
-          Sit amet lacinia nibh enim sed massa.
-        </p>
-        <p>
-          Donec at libero id lectus porta dapibus eu in nibh.
-          Cras id mauris sapien.
-        </p>
-        <div className={style.outboundLinks}>
-          <ThreeColumns >
-            <Connect />
-            <Social />
-            <Network />
-          </ThreeColumns>
-      </div>
+        <Prose>
+          <p>
+            Quisque in feugiat velit.
+            Nulla facilisi.
+            Maecenas accumsan, tortor ac lobortis cursus, quam velit luctus nunc, et tincidunt est magna quis lacus.
+            Aenean facilisis neque leo, quis laoreet justo pellentesque ac. 
+          </p>
+          <p>
+            Donec at libero id lectus porta dapibus eu in nibh.
+            Cras id mauris sapien.
+            Fusce viverra luctus urna ac rutrum.
+            Duis semper elit eu mi facilisis eleifend.
+            Sit amet lacinia nibh enim sed massa.
+          </p>
+        </Prose>
+        <ThreeColumns >
+          <Connect />
+          <Social />
+          <Network />
+        </ThreeColumns>
       </div>
     </SplitLayout>
   )

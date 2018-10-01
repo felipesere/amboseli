@@ -1,11 +1,17 @@
 .splitLists {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 40px;
   vertical-align: top;
+  font-size: 0.75rem;
 }
 
 .list {
+  margin: 20px 100px 20px 0;
+}
+
+.list h1 {
+  font-size: 0.65rem;
+  text-transform: uppercase;
 }
 
 .list ol {

@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react'
 import style from './three-columns.module.css'
+import {scale} from './../utils/typography'
 
 export const ThreeColumns = ({children}) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -17,7 +18,7 @@ export const ThreeColumns = ({children}) => {
 export const List = ({title, elements}) => {
   return (
     <div className={style.list}>
-      <h3>{title}</h3>
+      <h1>{title}</h1>
       <ol>
         {elements.map(e => <li>{e}</li>)}
       </ol>

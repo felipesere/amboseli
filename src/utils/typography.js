@@ -1,7 +1,7 @@
 import Typography from 'typography'
 
 const typography = new Typography({
-  baseFontSize: '16px',
+  baseFontSize: '22px',
   headerFontFamily: ['Montserrat'],
   bodyFontFamily: ['Domine']
 })

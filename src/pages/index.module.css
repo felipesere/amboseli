@@ -1,4 +1,5 @@
 .content {
+  height: 100%;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -8,11 +9,10 @@
 .name {
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-size: 0.75rem;
 }
 
 .tagline {
-  font-size: 48px;
-}
-
-.outboundLinks {
+  font-size: 3rem;
+   word-spacing: 100vw;
 }
