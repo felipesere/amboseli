@@ -1,9 +1,7 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import style from './three-columns.module.css'
-import {scale} from './../utils/typography'
 
 export const ThreeColumns = ({children}) => {
-  const rootPath = `${__PATH_PREFIX__}/`
   const [first, second, third] = children
 
   return (

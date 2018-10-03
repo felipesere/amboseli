@@ -1,30 +1,32 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
-import {SplitLayout} from '../components/split-layout'
-import {ThreeColumns, List} from '../components/three-columns'
+import { SplitLayout } from '../components/split-layout'
+import { ThreeColumns, List } from '../components/three-columns'
 import style from './index.module.css'
+import { graphql } from 'gatsby'
 
-const Tagline = ({children}) => {
+const Tagline = ({ children }) => {
   return (
     <h1 className={style.tagline}>{children}</h1>
   )
 }
 
-const Name = ({children}) => {
+const Name = ({ children }) => {
   return (
     <p className={style.name}>{children}</p>
   )
 }
 
-const Prose = ({children}) => {
-  return ( <div classname={style.prose}>{children}</div> )
+const Prose = ({ children }) => {
+  return (<div className={style.prose}>{children}</div>)
 }
 
-export default function Me(props) {
-  const siteTitle = "Someting"
-  const siteDescription = "About something fancy"
+export default function Me({data, location}) {
+  const siteTitle = data.site.siteMetadata.title
+  const siteDescription = data.site.siteMetadata.description
+
   return (
-    <SplitLayout location={props.location}>
+    <SplitLayout location={location}>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: siteDescription }]}
@@ -40,7 +42,7 @@ export default function Me(props) {
             Quisque in feugiat velit.
             Nulla facilisi.
             Maecenas accumsan, tortor ac lobortis cursus, quam velit luctus nunc, et tincidunt est magna quis lacus.
-            Aenean facilisis neque leo, quis laoreet justo pellentesque ac. 
+            Aenean facilisis neque leo, quis laoreet justo pellentesque ac.
           </p>
           <p>
             Donec at libero id lectus porta dapibus eu in nibh.
@@ -50,31 +52,42 @@ export default function Me(props) {
             Sit amet lacinia nibh enim sed massa.
           </p>
         </Prose>
-        <ThreeColumns >
-          <Connect />
-          <Social />
-          <Network />
+        <ThreeColumns>
+          <Connect/>
+          <Social/>
+          <Network/>
         </ThreeColumns>
       </div>
     </SplitLayout>
   )
 }
 
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`
+
 const Network = () => {
   return (
-    <List title="Network" elements={["Link 1", "Link 2", "Link 3"]} />
+    <List title="Network" elements={['Link 1', 'Link 2', 'Link 3']}/>
   )
 }
 
 const Social = () => {
   return (
-    <List title="Social" elements={["Twitter", "Github", "Instagram"]} />
+    <List title="Social" elements={['Twitter', 'Github', 'Instagram']}/>
   )
 }
 
 const Connect = () => {
   return (
-    <List title="Connect" elements={["Blog", "Email", "Newsletter"]} />
+    <List title="Connect" elements={['Blog', 'Email', 'Newsletter']}/>
   )
 }
 
