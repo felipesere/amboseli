@@ -6,8 +6,13 @@ import style from './index.module.css'
 import { graphql } from 'gatsby'
 
 const Tagline = ({ children }) => {
+  const [first, second, third] = children.split('.').map(t => t.replace(/ /g,''))
   return (
-    <h1 className={style.tagline}>{children}</h1>
+    <h1 className={style.tagline}>
+      {first}<br/>
+      <strong>{second}</strong><br/>
+      {third}<br/>
+    </h1>
   )
 }
 
@@ -18,14 +23,13 @@ const Name = ({ children }) => {
 }
 
 const Prose = ({ text }) => {
-  return (<div className={style.prose} dangerouslySetInnerHTML={{ __html:  text }} />)
+  return (<div className={style.prose} dangerouslySetInnerHTML={{ __html: text }}/>)
 }
 
 export default function Me({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
   const siteDescription = data.site.siteMetadata.description
-  const post = data.allMarkdownRemark.edges[0].node
-  console.log(post.frontmatter.name)
+  const post = data.markdownRemark
 
   return (
     <SplitLayout location={location}>
@@ -35,11 +39,11 @@ export default function Me({ data, location }) {
         title={siteTitle}
       />
       <div className={style.content}>
-        <Name>Felipe Seré</Name>
+        <Name>{post.frontmatter.name}</Name>
 
-        <Tagline>Engineer. <strong>Coach.</strong> Photographer.</Tagline>
+        <Tagline>{post.frontmatter.tagline}</Tagline>
 
-        <Prose text={post.html} />
+        <Prose text={post.html}/>
 
         <ThreeColumns>
           <Connect/>
@@ -55,20 +59,18 @@ export default function Me({ data, location }) {
 export const query = graphql`
   query {
     site {
-        siteMetadata {
-          title
-          description
-        }
+      siteMetadata {
+        title
+        description
       }
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/pages/index.md/"}}) {
-      edges {
-        node {
-          html
-          frontmatter {
-            name
-            tagline
-          }
-        }
+    }
+    markdownRemark(fileAbsolutePath: {regex: "/pages/index.md/"}) {
+      id
+      excerpt
+      html
+      frontmatter {
+        name
+        tagline
       }
     }
   }

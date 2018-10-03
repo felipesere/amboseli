@@ -1,6 +1,6 @@
 ---
 name: Felipe Seré
-tagline: Engineer. Coach. Photographer
+tagline: Engineer. Coach. Photographer.
 ---
 
 Quisque in feugiat velit.
