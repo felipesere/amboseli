@@ -12,9 +12,14 @@
 .list h1 {
   font-size: 0.65rem;
   text-transform: uppercase;
+  margin-bottom: 0.6rem;
 }
 
 .list ol {
   list-style: none;
   margin: 0;
+}
+
+.list li {
+  margin-bottom: 0.3rem;
 }

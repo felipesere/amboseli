@@ -33,7 +33,7 @@ export default function Me(props) {
       <div className={style.content}>
         <Name>Felipe Seré</Name>
 
-        <Tagline>Engineer. Coach. Photographer.</Tagline>
+        <Tagline>Engineer. <strong>Coach.</strong> Photographer.</Tagline>
 
         <Prose>
           <p>

@@ -14,5 +14,9 @@
 
 .tagline {
   font-size: 3rem;
-   word-spacing: 100vw;
+  word-spacing: 100vw;
+}
+
+.tagline strong {
+  color: rgba(0, 159, 253, 1);   /* blue */
 }
