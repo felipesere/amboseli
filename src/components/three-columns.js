@@ -18,7 +18,7 @@ export const List = ({title, elements}) => {
     <div className={style.list}>
       <h1>{title}</h1>
       <ol>
-        {elements.map(e => <li>{e}</li>)}
+        {elements.map((e, i) => <li key={i}>{e}</li>)}
       </ol>
     </div>
   )

@@ -17,13 +17,15 @@ const Name = ({ children }) => {
   )
 }
 
-const Prose = ({ children }) => {
-  return (<div className={style.prose}>{children}</div>)
+const Prose = ({ text }) => {
+  return (<div className={style.prose} dangerouslySetInnerHTML={{ __html:  text }} />)
 }
 
-export default function Me({data, location}) {
+export default function Me({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
   const siteDescription = data.site.siteMetadata.description
+  const post = data.allMarkdownRemark.edges[0].node
+  console.log(post.frontmatter.name)
 
   return (
     <SplitLayout location={location}>
@@ -37,21 +39,8 @@ export default function Me({data, location}) {
 
         <Tagline>Engineer. <strong>Coach.</strong> Photographer.</Tagline>
 
-        <Prose>
-          <p>
-            Quisque in feugiat velit.
-            Nulla facilisi.
-            Maecenas accumsan, tortor ac lobortis cursus, quam velit luctus nunc, et tincidunt est magna quis lacus.
-            Aenean facilisis neque leo, quis laoreet justo pellentesque ac.
-          </p>
-          <p>
-            Donec at libero id lectus porta dapibus eu in nibh.
-            Cras id mauris sapien.
-            Fusce viverra luctus urna ac rutrum.
-            Duis semper elit eu mi facilisis eleifend.
-            Sit amet lacinia nibh enim sed massa.
-          </p>
-        </Prose>
+        <Prose text={post.html} />
+
         <ThreeColumns>
           <Connect/>
           <Social/>
@@ -62,12 +51,24 @@ export default function Me({data, location}) {
   )
 }
 
+
 export const query = graphql`
   query {
     site {
-      siteMetadata {
-        title
-        description
+        siteMetadata {
+          title
+          description
+        }
+      }
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/pages/index.md/"}}) {
+      edges {
+        node {
+          html
+          frontmatter {
+            name
+            tagline
+          }
+        }
       }
     }
   }
