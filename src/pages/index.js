@@ -6,24 +6,27 @@ import style from './index.module.css'
 import { graphql } from 'gatsby'
 
 const Tagline = ({ children }) => {
-  const [first, second, third] = children.split('.').map(t => t.replace(/ /g,''))
+  const [first, second, third] = children
+    .split('.')
+    .map(t => t.replace(/ /g, ''))
+    .map(name => name + '. ')
   return (
     <h1 className={style.tagline}>
-      {first}<br/>
-      <strong>{second}</strong><br/>
-      {third}<br/>
+      {first}
+      <strong>{second}</strong>
+      {third}
     </h1>
   )
 }
 
 const Name = ({ children }) => {
-  return (
-    <p className={style.name}>{children}</p>
-  )
+  return <p className={style.name}>{children}</p>
 }
 
 const Prose = ({ text }) => {
-  return (<div className={style.prose} dangerouslySetInnerHTML={{ __html: text }}/>)
+  return (
+    <div className={style.prose} dangerouslySetInnerHTML={{ __html: text }} />
+  )
 }
 
 export default function Me({ data, location }) {
@@ -43,18 +46,17 @@ export default function Me({ data, location }) {
 
         <Tagline>{post.frontmatter.tagline}</Tagline>
 
-        <Prose text={post.html}/>
+        <Prose text={post.html} />
 
         <ThreeColumns>
-          <Connect/>
-          <Social/>
-          <Network/>
+          <Connect />
+          <Social />
+          <Network />
         </ThreeColumns>
       </div>
     </SplitLayout>
   )
 }
-
 
 export const query = graphql`
   query {
@@ -64,7 +66,7 @@ export const query = graphql`
         description
       }
     }
-    markdownRemark(fileAbsolutePath: {regex: "/pages/index.md/"}) {
+    markdownRemark(fileAbsolutePath: { regex: "/pages/index.md/" }) {
       id
       excerpt
       html
@@ -77,20 +79,13 @@ export const query = graphql`
 `
 
 const Network = () => {
-  return (
-    <List title="Network" elements={['Link 1', 'Link 2', 'Link 3']}/>
-  )
+  return <List title="Network" elements={['Link 1', 'Link 2', 'Link 3']} />
 }
 
 const Social = () => {
-  return (
-    <List title="Social" elements={['Twitter', 'Github', 'Instagram']}/>
-  )
+  return <List title="Social" elements={['Twitter', 'Github', 'Instagram']} />
 }
 
 const Connect = () => {
-  return (
-    <List title="Connect" elements={['Blog', 'Email', 'Newsletter']}/>
-  )
+  return <List title="Connect" elements={['Blog', 'Email', 'Newsletter']} />
 }
-
