@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { SplitLayout } from '../components/split-layout'
 import { ThreeColumns, List } from '../components/three-columns'
 import style from './index.module.css'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 const Tagline = ({ children }) => {
   const [first, second, third] = children
@@ -87,5 +87,5 @@ const Social = () => {
 }
 
 const Connect = () => {
-  return <List title="Connect" elements={['Blog', 'Email', 'Newsletter']} />
+  return <List title="Connect" elements={[<Link to="/blog">Blog</Link>, 'Email', 'Newsletter']} />
 }
