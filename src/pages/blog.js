@@ -6,53 +6,49 @@ import { Link, graphql } from 'gatsby'
 export default function Blog(props) {
   const siteTitle = get(props, 'data.site.siteMetadata.title')
   const siteDescription = get(props, 'props.data.site.siteMetadata.description')
-  const posts = get(props, 'data.allMarkdownRemark.edges')
+  const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges')
 
   return (
     <div className={style.allBlogs}>
       <section className={style.promo}>
-        <article className={style.post}>
-          <header>
-            <span className={style.welcomeEmoji}>👉</span>
-            <h2 className="post-title">Creating a New Theme</h2>
-          </header>
-          <p className="post-summary">
-            Introduction This tutorial will show you how to create a simple
-            theme in Hugo. I assume that you are familiar with HTML, the bash
-            command line, and that you are comfortable using Markdown to format
-            content. I’ll explain how Hugo uses templates and how you can
-            organize your templates to create a theme. I won’t cover using CSS
-            to style your theme. We’ll start with creating a new site with a
-            very basic template....
-          </p>
-          <footer className="post-footer">
-            <p className="post-meta">2014.9.28</p>
-          </footer>
-          <a
-            className="post-link"
-            href="https://themes.gohugo.io//theme/hugo-paper/post/creating-a-new-theme/"
-          />
-        </article>
+        <Article post={first} isPromo />
       </section>
       <section className={style.blogPreviews}>
-        {posts.map(p => <PostPreview post={p} />)}
+        {posts.map(p => <Article post={p} />)}
       </section>
     </div>
   )
 }
 
-const PostPreview = ({ post }) => {
+const Article = ({ post, isPromo }) => {
+  const title = post.node.frontmatter.title
+  const header = isPromo ? <PromoHeader title={title} /> : <Header title={title} />
   return (
     <article className={style.post}>
-      <header class="post-header">
-        <h4 class="post-title">{post.node.frontmatter.title}</h4>
-      </header>
-      <p class="post-summary">{post.node.excerpt}</p>
-      <footer class="post-footer">
-        <p class="post-meta">{post.node.frontmatter.date}</p>
+      {header}
+      <p>{post.node.excerpt}</p>
+      <footer className={style.footer}>
+        <p>{post.node.frontmatter.date}</p>
       </footer>
-      <Link to={post.node.fields.slug}>Read</Link>
+      <Link to={post.node.fields.slug} className={style.readMore} />
     </article>
+  )
+}
+
+const PromoHeader = ({ title }) => {
+  return (
+    <header>
+      <span className={style.welcomeEmoji}>👉</span>
+      <h1>{title}</h1>
+    </header>
+  )
+}
+
+const Header = ({ title }) => {
+  return (
+    <header>
+      <h4>{title}</h4>
+    </header>
   )
 }
 
