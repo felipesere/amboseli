@@ -15,7 +15,7 @@ Once our engagement has ended, he will be the driving factor pushing the company
 
 As I was about to tweet out a sketch of an idea about 'iteration planning' it hit me: I was afraid of putting a prominent #hashtag on it. I was unsure whether my idea was right, new, or good. What would people think? Who am I to Big-Important-Hashtags on my little tweet and claim relevance? Here is the tweet: 
 
-{% twitter https://twitter.com/felipesere/status/824393103968706560 %}
+https://twitter.com/felipesere/status/824393103968706560
 
 I decided to tweet with a #hashtag which a friend of mine had mentioned in a similar tweet of his: #openlearning. That #hashtag made me feel easier about the tweet. It was a learning experience. If someone looked the tweet, took the time to reply to it, then I'd sure get even more value and learning from it. My idea did not need to be perfect to share it on the internet. The input from other people would help me refine it and allow me to strike a conversation with peers.
 
