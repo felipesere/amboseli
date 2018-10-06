@@ -33,6 +33,14 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
+          {
+            resolve: `gatsby-remark-oembed`,
+            options: {
+              providers: {
+                include: ["Twitter"]
+              }
+            }
+          }
         ],
       },
     },

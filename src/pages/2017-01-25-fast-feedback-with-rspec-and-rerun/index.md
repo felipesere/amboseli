@@ -9,7 +9,7 @@ Recently [this](https://twitter.com/CharlotteBRF/status/824251562428076034) twee
 
 <!--more-->
 
-{{< tweet  824251562428076034 >}}
+https://twitter.com/raae/status/824251562428076034
 
 Using `--fail-fast` with RSpec means the very first failure that RSpec encounters will halt the entire suite.
 Passing tests give a sense achievement, but failing tests show where more work is needed.
