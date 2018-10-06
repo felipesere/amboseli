@@ -14,8 +14,7 @@ coverSize: partial
 
 In the previous post I outlined the kind of pipline I wanted to achieve. Here is a sample from my unit tests:
 
-{{< highlight elixir >}}
-
+```elixir
 test "can apply a transforamtion throught a module" do
   container =
     Pipeline.new()
@@ -27,8 +26,7 @@ test "can apply a transforamtion throught a module" do
 
   assert container.data == "The value is 7"
 end
-
-{{< / highlight >}}
+```
 
 What I particularly like is that I can plug in entire modules as `source`, `sink`, and `transforamtion`.
 This means the pipline definitions can stay really high-level, while the details are explained in the lower-level module implementations.
@@ -38,7 +36,7 @@ Because you may not be able to see if from the sample above, each `source`, `sin
 
 Below we can the `Pipeline.Source` module and its `__using__(params)` macro:
 
-```
+```elixir
 defmodule Pipeline.Source do
   @callback init(any()) :: any()
   @callback fetch_data(any()) :: {:ok, any()} | {:error, any() }
@@ -64,10 +62,10 @@ Both functions take a `params` keyword list argument and the relationship betwee
 
 The lifecycle of this module is that the pipline will first call `init/1` with whatever parameters were giveen to the pipline. For example...
 
-{{< highlight elixir >}}
+```elixir
 Pipeline.new()
 |> Pipeline.from(TestSource, retries: 12, back_off: :linear)
-{{< / highlight >}}
+```
 
 ...would mean `init/1` gets called with `[retries: 12, back_off: :linear]`. In here is where the first bit of niftinyess comes in, inspired by Erlang and Elixir: _init/1_ can use those parameters, interpret them, expand on them or even load entirely new ones form the environment. The only mandate is to return a tuple `{:ok, params}` back to the caller.
 
@@ -76,8 +74,7 @@ It almost feels like a stateful object (after all, we are holding on to _state_ 
 
 Here you can the see the bit of code that calls `init/1` and then holds on to the parameters for later use:
 
-{{< highlight elixir >}}
-
+```elixir
 @spec from(Pipeline.t, module(), keyword()) :: Pipeline.t
 def from(pipeline, module, params \\ []) do
   %Pipeline{pipeline | source: initialize(module, params) }
@@ -89,15 +86,13 @@ defp initialize(module, params) do
     e -> raise "Error when initializing #{inspect(module)} with params #{inspect(params)} resulted in #{inspect(e)}"
   end
 end
-
-{{< / highlight >}}
+```
 
 What we store in the `%Pipeline{}` struct is precisely the tuple of _what module we called_ and _what params we got back from its init_.
 
 When we then decide to execute the source, we see that both elements are brought together and some metadata from the pipline itself is merged in too:
 
-{{< highlight elixir >}}
-
+```elixir
 defp call_source(%Pipeline{source: {module, params}, container: container} = pipeline) do
   Logger.log(:info, fn -> "Reading data from source (#{inspect(module)})" end)
 
@@ -105,8 +100,7 @@ defp call_source(%Pipeline{source: {module, params}, container: container} = pip
 
   %{ pipeline | container: Container.update(container, data, :source) }
 end
-
-{{< / highlight >}}
+```
 
 And here is the key takeaway from me:
 
@@ -117,7 +111,7 @@ By cleanly separating configuration from execution, I got testability for free,
 Let's say my `RemoteHTTPSource` uses an HTTP library underneath. For my testing, it would be annoying if I had to spin up a remote server (or use [bypass](https://github.com/PSPDFKit-labs/bypass)) just to test how it reacts to different responses.
 If I lift the depdency into a parameter it can be swapped in tests, like so:
 
-{{< highlight elixir >}}
+```elixir
 defmodule RemoteHTTPSource do
   use Pipeline.Source
 
@@ -131,7 +125,7 @@ defmodule RemoteHTTPSource do
     ...
   end
 end
-{{< / highlight >}}
+```
 
 My unit test can then pass in a `:client` that has the same behaviour as a keyword in the `params` of `fetch_data/1`.
 

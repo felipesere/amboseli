@@ -1,11 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link,graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
-import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
+import style from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,60 +14,50 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location}>
+      <main className={style.main}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
+        <article className={style.post}>
+          <h1>{post.frontmatter.title}</h1>
+          <p>
+            {post.frontmatter.date}
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
 
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          <li>
-            {
-              previous &&
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            }
-          </li>
-          <li>
-            {
-              next &&
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            }
-          </li>
-        </ul>
-      </Layout>
+          <Navigation previous={previous} next={next} />
+        </article>
+      </main>
     )
   }
+}
+
+const Navigation = ({previous, next}) => {
+  return (
+    <ul>
+      <li>
+        {previous && (
+          <Link to={previous.fields.slug} rel="prev">
+            ← {previous.frontmatter.title}
+          </Link>
+        )}
+      </li>
+      <li>
+        {next && (
+          <Link to={next.fields.slug} rel="next">
+            {next.frontmatter.title} →
+          </Link>
+        )}
+      </li>
+    </ul>
+  )
 }
 
 export default BlogPostTemplate

@@ -31,8 +31,7 @@ We are thinking of two places where we want to put data to rest, with different 
 
 The code I had in mind would roughly look something like this:
 
-{{< highlight elixir >}}
-
+```elixir
 defmodule Partner1Job do
   def execute do
     pipeline = Pipeline.new(name: "Partner1 worker")
@@ -45,8 +44,7 @@ defmodule Partner1Job do
     Scheduler.run!(pipeline)
   end
 end
-
-{{< / highlight >}}
+```
 
 In the example above, we create a new `Pipeline` with some parameters like a name (_useful for logging later on?_) and then configure
 where the data comes from, what transformations to apply on the way, what validations to perform and finally where to write the data to.
@@ -72,7 +70,7 @@ The two things I foresee having some variations, are entry points (Web, FTP, tim
 Let's look at what a running a HTTP request from Phoenix through the pipeline could look like:
 
 
-{{< highlight elixir >}}
+```elixir
 defmodule DataApiController do
 
   def init(...) do
@@ -91,7 +89,7 @@ defmodule DataApiController do
     json result
   end
 end
-{{< / highlight >}}
+```
 
 Here I'd maybe split the configuration of the pipeline into sections that are the same across all requests and sections that
 require data from the request itself.
