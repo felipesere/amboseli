@@ -21,8 +21,8 @@ class BlogPostTemplate extends React.Component {
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
         <article className={style.post}>
-          <h1>{post.frontmatter.title}</h1>
-          <p>
+          <h1 className={style.title}>{post.frontmatter.title}</h1>
+          <p className={style.date}>
             {post.frontmatter.date}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />

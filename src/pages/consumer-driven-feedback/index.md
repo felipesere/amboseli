@@ -4,8 +4,6 @@ date: 2018-03-23T16:49:42Z
 categories: []
 tags: []
 keywords: []
-#thumbnailImage: //example.com/image.jpg
-#coverImage: //example.com/image.jpg
 ---
 
 <!--more-->

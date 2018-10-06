@@ -1,16 +1,8 @@
 ---
-title: "Path to Mastery App"
+title: Path to Mastery App
 date: 2018-05-15T21:48:33+01:00
-categories: []
 tags: [personal, idea]
-keywords: []
-coverImage: /images/p2m-title-image.jpg
-coverSize: partial
-coverMeta: out
-clearReading: true
-showSocial: false
-showTags: true
-showPagination: true
+coverImage: ./p2m-title-image.jpg
 ---
 
 Ever since I joined 8th Light 4 years ago as an apprentice, our apprenticeship has been changing.
@@ -21,7 +13,7 @@ And yes, this will be yet-another-app.
 
 <!--more-->
 
-# Perceived changes and new challenges
+## Perceived changes and new challenges
 
 Before we go into what I feel we could do better, it is important to understand some of the shortcomings that I’ve observed.
 
@@ -37,7 +29,7 @@ This leaves very little leeway to find the right exercise that will push and cha
 Unless there is some strong will, there is a good chance mentors will fall back to exercises and reading material from their own apprenticeship.
 There is a current trend to try more “application centric” exercises rather than varying constraints on the same problem, and we should capitalize on these ideas.
 
-# Explicit is the new implicit!
+## Explicit is the new implicit!
 
 During the apprenticeship, there are a few things we need to keep in balance:
 
@@ -58,7 +50,7 @@ The best way I can see this working is in making more and more of the apprentice
 The trick will be to make it codified, but flexible.
 Broadly applicable, but custom for each apprentice.
 
-# The rough outline
+## The rough outline
 
 The general idea is to codify the exercises we currently do ad-hoc into modules.
 These modules will provide a fairly rigid structure in how they represented to the apprentices.
@@ -69,13 +61,13 @@ These form a kind of tutorial, gradually introducing our values, tools, and proc
 And critically, ensuring all our bases are covered.
 This would be the place where we ensure the apprentice has all the tools, is aware of the critical processes, and knows about the shared goal and values of the apprenticeship.
 
-{{< figure src="/images/crafting-a-path.jpg" caption="Crafting a path with an initial tutorial" >}}
+![Crafting a path with an initial tutorial](./crafting-a-path.jpg)
 
 Following on from the initial tutorial, the mentor and apprentice will be presented with a buffet-like set of modules they can choose from to tackle.
 This is where the individual apprenticeship emerges.
 The apprentice can look around and spot things they’d be keen on trying, while the mentor can fall back on a large pool of exercises.
 
-# For the mentors
+## For the mentors
 
 With the growth of our office, more and more crafters are stepping up to be mentors.
 That is awesome! The drawback: we don’t always have experienced co-mentors to support the first-time mentors.
@@ -90,13 +82,13 @@ These were built with specific learnings in mind, like getting exposure to datab
 I am sure there are a lot more interesting exercises in the other offices that we haven’t heard of.
 Mentors looking for creative ways to reinforce a lesson could search through the modules to find just the right exercise.
 
-# For apprentices
+## For apprentices
 
 I think the biggest gain for apprentices from creating this path is less anxiety.
 It’s hard to know where you stand when there is no real finish line, other than a magical date with “challenges” attached to it.
 A path that you can come back to, to see what you have accomplished and relate back to is just as valuable as a broad overview of what is coming ahead.
 
-{{< figure src="/images/your-path.jpg" caption="Your path, where you came from and what is ahead" >}}
+![Your path, where you came from and what is ahead](./your-path.jpg)
 
 The structure of each module should also help apprentices better understand what is expected of them, without giving away solutions.
 The expectation is set by very explicitly stating two things on each module:
@@ -106,11 +98,11 @@ The expectation is set by very explicitly stating two things on each module:
 
 These outputs and outcomes are where most of our effort as mentors should be.
 
-{{< figure src="/images/current-step.jpg" caption="Outputs and outcomes as part of learning modules" >}}
+![Outputs and outcomes as part of learning modules](./current-step.jpg)
 
 It’s perfectly fine (and expected!) for multiple exercises to have the same outcome, to allow for many different learning styles.
 
-# Outputs, Outcomes, and Learning Styles
+## Outputs, Outcomes, and Learning Styles
 
 Having multiple different modules cover the same output at different levels will allow mentors to select the right tasks (and their order) to give an apprentice the highest chance of success.
 This is particularly important when we consider that we have apprentices with varying degrees of prior experience.
@@ -122,11 +114,12 @@ Having defined _outputs_ on tasks will make it easier for apprentices with a ten
 Making the module _outcomes_ explicit will encourage apprentices with a deep-learning tendency to connect the current module other modules and existing knowledge.
 Explicit _outcomes_ will also allow apprentice with less experience to latch onto a common thread (e.g. refactorable code, or expressive tests) across multiple modules.
 
-{{< figure src="/images/solo-hierarchy.jpg" caption="SOLO hierarchy showing different levels of learning" >}}
+
+![SOLO hierarchy showing different levels of learning](./solo-hierarchy.jpg)
 
 The challenge for mentors will be in connecting our exercises with clear outcomes that are expressed as some of our high-level principles and values.
 
-# Embedding it in our culture
+## Embedding it in our culture
 
 A tool that does not find its niche in our existing culture will not last more than a few days.
 So it’s worth me theorizing how Path to Mastery would fit into our current landscape.

@@ -30,7 +30,7 @@ The first two steps are picking the right questions to ask the selecting the rig
 
 
 
-![Constructing Feedback Form](/images/constructing-feedback-form.jpg)
+![Constructing Feedback Form](./constructing-feedback-form.jpg)
 
 
 
@@ -42,7 +42,7 @@ An important part of these steps is to have a conversation about what areas need
 
 The constructed question is then sent via email (with a few reminders if needed?) to the selected group. Keeping the visuals minimal, and maybe even making it possible to reply via email will reduce the friction to giving feedback.
 
-![Giving Feedback Screen](/images/giving-feedback-screen.jpg)
+![Giving Feedback Screen](./giving-feedback-screen.jpg)
 
 
 
