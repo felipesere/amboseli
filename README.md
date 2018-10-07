@@ -7,3 +7,20 @@ Inspiration:
 
 ## Running in development
 `gatsby develop`
+
+
+## Design considerations
+
+* Use few colours, focus on shades of grey and a clean blue.
+* Figure out breakpoints, from the split page theme I can see
+  * max-width:  800px
+  * max-width: 1200px
+  * no limit
+* Figure out 'rhythm' and 'scale' and try removing non fluid sizes
+
+## Pages
+
+* Intro
+* Blog index and individual posts
+* Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
+* Maybe photography
