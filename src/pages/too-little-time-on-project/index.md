@@ -8,7 +8,7 @@ coverImage: /images/dunes-264616_1920.jpg
 coverSize: partial
 ---
 
-A while ago I wrote about what I thought it would take to have a code base be maintainable [within a 4h window]({{< ref  "post/2017-04-15-what-does-a-4hour-project-look-like.markdown" >}}).
+A while ago I wrote about what I thought it would take to have a code base be maintainable [within a 4h window](/2017-04-15-what-does-a-4hour-project-look-like).
 I only got as far as wondering about certain aspects: What languages should be used? What frameworks? What about build tools?
 In experimenting on my code base, I have come up with what I believe to be good reasons to spend _more rather than less_ time with your pet project.
 
@@ -47,7 +47,7 @@ Not investing time in leveraging the tools at my fingertips meant I had to spend
 So going into this pet project I thought I'd explore different ways in which optimising for short development stints would make my code more approachable, maintainable, and evolvable.
 As it turns out, getting approachable, maintainable, and evolvable code takes quite a bit of time and a substantial amount of experience.
 Granted, experience and comfort in the language will off-set some of the time.
-While I still believe there is a way and a technique to write a system in such a way to make it less time-consuming to contribute, I haven't found it. 
+While I still believe there is a way and a technique to write a system in such a way to make it less time-consuming to contribute, I haven't found it.
 What I have found is that I need to spend _more, not less_ time on that project to learn the tools and tricks that will speed me and fellow contributors up.
 
 > PS: The reasons above also line up with my observations on the code base of some of the client projects. They feel like they are optimising to able to write, not to write well and cleanly.
