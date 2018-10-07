@@ -19,19 +19,19 @@ With this in mind we can compare the stories along those three axes and come up 
 
 ![Contemplating user stories](./contemplating-user-stories.jpg)
 
-### Reward driven backlog
+## Reward driven backlog
 
 Sorting user stories by their real or perceived value is a good initial strategy, if recuperating our costs is a priority. This kind of optimization works for teams that are short on cash and may not even get through the entire backlog. The moment we deliver a story that adds significant benefit to our customers, we become a valued partner. In environments that are driven by reducing costs, delivering some piece of functionality that reduces the costs or increases the value, may result in compounding effects for the bottom line.
 
 For the purpose of comparing user stories, the value of a user story can be roughly approximated. Should no real data be available, a back-of-the-napkin calculation or an educated guess is enough to decide between two stories most of the time.
 
-### Risk driven backlog
+## Risk driven backlog
 
 More often than not reward is tied to risk. Adding a feature that might benefit 80% of our user base also means that we run the risk of disgruntling 80% of our users. Think of a “Todo” application, where we decide to add a smart sorting algorithm that intelligently rearranges the todos by priority and due date. If it works, every user will get a pretty smart todo list. If we introduce a flaw, we are damaging the core functionality of our app for every user.
 
 So a user story "sorting" strategy is to work on stories which minimize risk by having a low overall impact. Those stories are a safe place to experiment and get to grips with the domain that we are working in. This is a decent strategy for well-established systems that have a steady, loyal customer base. Or systems that are relied upon by other production systems. It also involves a significant time and financial investment as the less risky stories might not be the most rewarding.
 
-### Knowledge driven backlog
+## Knowledge driven backlog
 
 All projects will have aspects to them that the team has not encountered before. You may need to connect bespoke systems that were not designed to do so. Or you may need to process something completely different than before. Stories that enable you to go and find (or discard!) potential solutions are not directly tied to customer value. They are valuable to the team and create opportunities to unlock further stories.
 
@@ -39,7 +39,7 @@ If you are treading in uncharted territory prioritising stories that will unlock
 
 
 
-### A Blend
+## A Blend
 
 All three of the above approaches are valid, and as usual the key is in finding the right blend for the current backlog. As the project progresses through different phases, a different aspect of a user story will have more pull. Teams in the early development stages will probably benefit the most from a few knowledge stories to find their way through the technology and domain. As the project begins to take shape, recuperating some of the costs and building trust with stakeholders will likely mean a shift towards reward stories. Finally, as the project reaches maturity, a more careful risk-driven approach might be better suited. Granted that at any moment the focus can shift. Understanding that stories can fall into any (and maybe even many) of the categories gives us a tool to compare and better understand our backlog.
 

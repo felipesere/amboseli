@@ -8,7 +8,7 @@ published: true
 
 Today I think I may (possibly) have understood something about ELM. Before we look at some code, here is the 5sec intro into ELM: ELM is essentially a Haskell that runs in the browser. It makes an enormous effort to have a friendly and helpful compiler. And it succeeds at it! It promises zero runtime errors, has a strong type system and comes with a batteries-included architecture that is supposed to result in easy to maintain web apps.
 
-### The setup
+## The setup
 
 I am currently experimenting with porting a few Angular components over to ELM to see how it compares. One interesting aspect is that I get data from a remote system. From a previous experience, I had a hunch that 'async' code in ELM quickly got me confused with `Task`, `Cmd` and `Msg` (the last one is an app-specific custom type).
 
@@ -36,7 +36,7 @@ The above code was just happily living in the initial **App.elm** file, which wa
 
 The challenge I set myself was to separate the concern _"getting data from a remote system"_ from the general flow of my application, which is encoded in an _update_ function and the corresponding _Msg_ type.
 
-### Naive approach
+## Naive approach
 
 Naive as I was, I just moved the `getData` function over to the **Data.elm** file (_a poor name in hindsight_) and fixed some imports. Sadly, the compiler was not happy about this:
 
@@ -98,7 +98,7 @@ Hint: It looks like a function needs 1 more argument.
 
 Hmm? `send` expects a function that takes a `Result` with an `Http.Error` and something (that is the '**a**') over to `msg`?  That's odd. I had to double check that I had not deleted more than I wanted since all I had really done was introducing a new parameter.
 
-### Understanding and reasoning
+## Understanding and reasoning
 
 It took me a while to grok what was going on here. I kept staring at it and thinking _"where is that function coming from?"_. My first step was to just take what the compiler was saying for granted and changing the signature to match the error.
 
