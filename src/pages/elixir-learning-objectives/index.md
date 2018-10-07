@@ -1,7 +1,6 @@
 ---
 title: 'Elixir Learning Objectives'
 date: 2017-08-23T22:44:19+01:00
-draft: false
 tags: [fp, oop, elixir]
 ---
 

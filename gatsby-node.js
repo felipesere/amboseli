@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
                  }
                  frontmatter {
                    title
+                   draft
                  }
                }
              }
@@ -37,7 +38,19 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+        let posts = result.data.allMarkdownRemark.edges;
+
+        if (process.env.NODE_ENV === 'production') {
+          posts = _.filter(posts, (post) => {
+            const draft = post.node.frontmatter.draft
+            if (draft) {
+              console.log(` Not generating draft ${post.node.frontmatter.title}`)
+              return false
+            } else {
+              return true
+            }
+          })
+        }
 
         _.each(posts, (post, index) => {
           const previous = index === posts.length - 1 ? null : posts[index + 1].node;

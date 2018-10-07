@@ -6,6 +6,7 @@ tags: []
 keywords: []
 #thumbnailImage: //example.com/image.jpg
 coverImage: https://www.alleycatscratch.com/lotr/Things/OneRing/Paper_8571_TornLon_med.jpg
+draft: true
 ---
 
 Recently a word has been popping up again and again and again and again at work. Requirements.

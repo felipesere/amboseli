@@ -8,7 +8,6 @@ keywords: []
 coverImage: /images/lego_depth.jpg
 coverSize: partial
 coverMeta: out
-draft: false
 ---
 
 Today we talked through a rewrite of a largish chunk of legacy code.
