@@ -11,9 +11,9 @@ We were recently talking about the backlog of user stories for a project on the 
 
 The user story backlog is linear so that the team has an obvious point from where to pull in the next piece of work. Yet there are many aspects that make a story important:
 
-* It has (real or perceived) value to customer, which we will harvest when the story is completed.
-* It carries risk to the business, the customer, and the development team itself.
-* It unlocks knowledge, which enables and impacts future stories.
+- It has (real or perceived) value to customer, which we will harvest when the story is completed.
+- It carries risk to the business, the customer, and the development team itself.
+- It unlocks knowledge, which enables and impacts future stories.
 
 With this in mind we can compare the stories along those three axes and come up with different ways of sorting our backlog, which in turn reflect upon our business priorities and project phase.
 
@@ -36,8 +36,6 @@ So a user story "sorting" strategy is to work on stories which minimize risk by 
 All projects will have aspects to them that the team has not encountered before. You may need to connect bespoke systems that were not designed to do so. Or you may need to process something completely different than before. Stories that enable you to go and find (or discard!) potential solutions are not directly tied to customer value. They are valuable to the team and create opportunities to unlock further stories.
 
 If you are treading in uncharted territory prioritising stories that will unlock further stories becomes a winning strategy. Such stories are sometimes called 'spikes', though I prefer the term 'experiments'. Experiments emphasise that we are walking into unknown territory and that an answer might be "we pushed it far, but we couldn't make it work in time". Even cutting corners is OK with an experiment, as long there is a lesson to be learnt.
-
-
 
 ## A Blend
 

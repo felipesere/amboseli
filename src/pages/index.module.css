@@ -12,9 +12,16 @@
   font-size: 0.75rem;
 }
 
+
 .tagline {
   font-size: 3rem;
   word-spacing: 100vw;
+}
+
+@media (max-width: 1280px) {
+  .tagline {
+    font-size: 2rem;
+  }
 }
 
 .tagline strong {

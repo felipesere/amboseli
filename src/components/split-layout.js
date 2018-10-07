@@ -4,31 +4,23 @@ import profile from './IMG_0002.jpg'
 
 const SplitImage = () => {
   const image = {
-    backgroundImage: `url(${profile})`
+    backgroundImage: `url(${profile})`,
   }
 
-  return (
-    <div className={style.splitImage} style={image} />
-  )
+  return <div className={style.splitImage} style={image} />
 }
 
-const SplitContent = ({children}) => {
-  return (
-    <div className={style.splitContent}>
-      {children}
-    </div>
-  )
+const SplitContent = ({ children }) => {
+  return <div className={style.splitContent}>{children}</div>
 }
 
-export const SplitLayout = ({children}) => {
+export const SplitLayout = ({ children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
 
   return (
     <div className={style.splitContainer}>
       <SplitImage />
-      <SplitContent> 
-        {children}
-      </SplitContent>
+      <SplitContent>{children}</SplitContent>
     </div>
   )
 }

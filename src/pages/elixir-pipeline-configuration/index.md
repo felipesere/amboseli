@@ -1,5 +1,5 @@
 ---
-title: "Elixir Pipeline - Configuration"
+title: 'Elixir Pipeline - Configuration'
 date: 2018-01-14T21:40:25Z
 categories: []
 tags: [elixir, design]
@@ -10,7 +10,6 @@ coverSize: partial
 ---
 
 <!--more-->
-
 
 In the previous post I outlined the kind of pipline I wanted to achieve. Here is a sample from my unit tests:
 
@@ -104,7 +103,7 @@ end
 
 And here is the key takeaway from me:
 
-> I can lift all commonly used configuration into the init/1 method, yet for testing I can pass any bespoke parameters directly to fetch_data/1 without having to mess with any _dependency injection_ system.
+> I can lift all commonly used configuration into the init/1 method, yet for testing I can pass any bespoke parameters directly to fetch*data/1 without having to mess with any \_dependency injection* system.
 
 By cleanly separating configuration from execution, I got testability for free,
 

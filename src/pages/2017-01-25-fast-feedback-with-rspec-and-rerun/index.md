@@ -2,7 +2,7 @@
 title: Fast feedback with RSpec and rerun
 date: 2017-01-25 20:31:36
 categories: []
-tags: ["testing"]
+tags: ['testing']
 ---
 
 Recently [this](https://twitter.com/CharlotteBRF/status/824251562428076034) tweet scrolled across my time-line about using `--fail-fast`
@@ -27,7 +27,6 @@ Install it with
    gem install rerun
 ```
 
-
 and then run
 
 ```sh
@@ -36,8 +35,8 @@ and then run
 
 Let's decompose that:
 
-  * -c will clear the screen, so you are not distracted by previous successes/failures
-  * -x expect rspec to 'exit', meaning we know its a one-shot command and not a server (that needs to halted)
+- -c will clear the screen, so you are not distracted by previous successes/failures
+- -x expect rspec to 'exit', meaning we know its a one-shot command and not a server (that needs to halted)
 
 There are a couple of ways to improve this even further.
 For example, if you install [terminal-notifier](https://github.com/julienXX/terminal-notifier) then you can have notifications
@@ -49,10 +48,3 @@ Rerun is setup to watch for common files (Ruby, SCSS, JS, and some others),
 but it is happy to work with any pattern you want.
 
 So there you go, have `rerun` run your tests for you!
-
-
-
-
-
-
-

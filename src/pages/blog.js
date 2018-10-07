@@ -14,7 +14,9 @@ export default function Blog(props) {
         <Article post={first} isPromo />
       </section>
       <section className={style.blogPreviews}>
-        {posts.map(p => <Article post={p} />)}
+        {posts.map(p => (
+          <Article post={p} />
+        ))}
       </section>
     </div>
   )
@@ -22,7 +24,11 @@ export default function Blog(props) {
 
 const Article = ({ post, isPromo }) => {
   const title = post.node.frontmatter.title
-  const header = isPromo ? <PromoHeader title={title} /> : <Header title={title} />
+  const header = isPromo ? (
+    <PromoHeader title={title} />
+  ) : (
+    <Header title={title} />
+  )
   return (
     <article className={style.post}>
       {header}

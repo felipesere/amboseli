@@ -114,7 +114,6 @@ Having defined _outputs_ on tasks will make it easier for apprentices with a ten
 Making the module _outcomes_ explicit will encourage apprentices with a deep-learning tendency to connect the current module other modules and existing knowledge.
 Explicit _outcomes_ will also allow apprentice with less experience to latch onto a common thread (e.g. refactorable code, or expressive tests) across multiple modules.
 
-
 ![SOLO hierarchy showing different levels of learning](./solo-hierarchy.jpg)
 
 The challenge for mentors will be in connecting our exercises with clear outcomes that are expressed as some of our high-level principles and values.

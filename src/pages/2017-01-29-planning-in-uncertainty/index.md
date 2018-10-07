@@ -18,7 +18,7 @@ What needs to happen before it, or whether it needs to be re-thought. Let's put 
 
 ![Plans made for the distant future have more uncertainty](./doubt-and-plans.jpg)
 
-Plans made for the next couple of days are fairly certain, while plans for things months from now are pretty much anyone's guess.  Think about the last 5-6 months of your last project: requirements changed, deadlines moved, earlier tasks unearthed a new set of challenges or unexpected opportunities. All of this will put your perfectly drawn Gantt chart out of whack.
+Plans made for the next couple of days are fairly certain, while plans for things months from now are pretty much anyone's guess. Think about the last 5-6 months of your last project: requirements changed, deadlines moved, earlier tasks unearthed a new set of challenges or unexpected opportunities. All of this will put your perfectly drawn Gantt chart out of whack.
 
 Let's return to the RTP, where we planned our next 4-5 months of development, cramming each iteration with stories until they are full. The image below shows a fictional team board, with the necessary stories for the next 6 iterations, overlayed by a red line showing the increasing doubts as plans are further in the future:
 
@@ -37,7 +37,5 @@ To make the effect of many smaller plannings clearer, let's see how they fare wi
 As you can see, the planning horizon was kept short: next iteration and a story or two for the iterations after that. Only the current iteration was packed with stories. All other iterations were left with some space, giving the team some breathing room to react to new information. Important stories or features which the team had to address at some point (important, but not urgent) were put on the board, but their iterations definitely not filled.
 
 It is tempting to go for the _big plan_. To lay out all the cards on the table. To get everybody together, and for once get everybody to agree to a plan _and stick to it_. Sadly, the underlying closed-world assumptions (we know all the facts in advance) rarely holds true. Smaller, more frequent plans give you the necessary freedom to change direction. To adjust and react to new events. I urge you to give it a try. The beauty of trying this idea: if it doesn't work out for you, you have at most lost an iteration or two, instead of an entire release. Isn't that something worth trying?
-
-
 
 _**Experts Disclaimer:** If you your first thought after reading this is "We don't do any RTPs at all!" and planning iterations in advance is not something you would recommend, I agree. For some teams, getting from half-yearly or quarterly releases down to fortnightly iterations is already an achievement. This article is intended for readers beginning their journey to a more continuous delivery of value._

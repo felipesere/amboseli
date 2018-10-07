@@ -1,5 +1,5 @@
 ---
-title: "Long and Short of Readability"
+title: 'Long and Short of Readability'
 date: 2017-09-04T18:29:09+01:00
 categories: []
 tags: [design]
@@ -10,6 +10,7 @@ coverSize: partial
 coverMeta: out
 draft: false
 ---
+
 Today we talked through a rewrite of a largish chunk of legacy code.
 This code had been written over the past few years, with a fair amount of hard-codings, rules, and decisions baked in.
 Precisely those hard-codings, implicit rules, divergent decisions were the reason we proceeded with a rewrite.
@@ -41,6 +42,7 @@ They are likely to be good at blocking unnecessary details (like branching and u
 These developers will favor the ability to immediately answer detailed questions about the code over having to skip across multiple files or being denied an answer "because it doesn’t matter at this level".
 
 ## LEGO builders
+
 These tend to be developers coming from high-level languages with a strong background in testing, like Ruby, JavaScript or a functional language like Haskell or Clojure.
 They enjoy decomposing a problem into many small sub-problems that get composed back to solve the whole.
 “Reuse” and “abstraction” is their creed.
@@ -49,8 +51,8 @@ They will enjoy formulating abstractions upon abstractions, putting a significan
 To cope with the multitude of files, they are very quick to navigate a hierarchy of types or files, often jumping between multiple files to solve a single problem.
 The degree of decomposition is often brought in to test the smaller unit code.
 
-
 ## Meeting in the middle
+
 For both ends of the readability spectrum it's hard to read the others code and it is even harder to understand the reasoning behind it.
 The key is not to give in to either extreme, but to understand where the balance lies.
 Just enough to accept the code and not resist it irrationally.

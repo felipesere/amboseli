@@ -1,6 +1,6 @@
 ---
-title:  "Walking down the path again"
-date:   2016-01-20 13:04:23
+title: 'Walking down the path again'
+date: 2016-01-20 13:04:23
 categories: [personal]
 tags: [personal]
 ---

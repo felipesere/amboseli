@@ -63,7 +63,7 @@ Cannot find type `Msg`
 
 OK. I can understand that. I've obviously not imported `Msg` and by extension `NewData`. Hmm... That type lives in the **App** module, which imports the **Data** module, which would import the **App** module, which imports… argh. Circular dependency.
 
-While still on the naive path, I thought I could just extract `Msg` into a parameter of the function. That move made sense to me:  the **Data** module should just retrieve the data and not worry about how the main **App** will continue to process it. So this is what I thought I'd need:
+While still on the naive path, I thought I could just extract `Msg` into a parameter of the function. That move made sense to me: the **Data** module should just retrieve the data and not worry about how the main **App** will continue to process it. So this is what I thought I'd need:
 
 ```elm
 getData : msg -> Cmd msg
@@ -96,7 +96,7 @@ But it is:
 Hint: It looks like a function needs 1 more argument.
 ```
 
-Hmm? `send` expects a function that takes a `Result` with an `Http.Error` and something (that is the '**a**') over to `msg`?  That's odd. I had to double check that I had not deleted more than I wanted since all I had really done was introducing a new parameter.
+Hmm? `send` expects a function that takes a `Result` with an `Http.Error` and something (that is the '**a**') over to `msg`? That's odd. I had to double check that I had not deleted more than I wanted since all I had really done was introducing a new parameter.
 
 ## Understanding and reasoning
 

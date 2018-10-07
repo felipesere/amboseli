@@ -22,9 +22,7 @@ class BlogPostTemplate extends React.Component {
         />
         <article className={style.post}>
           <h1 className={style.title}>{post.frontmatter.title}</h1>
-          <p className={style.date}>
-            {post.frontmatter.date}
-          </p>
+          <p className={style.date}>{post.frontmatter.date}</p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
@@ -39,7 +37,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-const Navigation = ({previous, next}) => {
+const Navigation = ({ previous, next }) => {
   return (
     <ul>
       <li>

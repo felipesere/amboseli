@@ -87,5 +87,10 @@ const Social = () => {
 }
 
 const Connect = () => {
-  return <List title="Connect" elements={[<Link to="/blog">Blog</Link>, 'Email', 'Newsletter']} />
+  return (
+    <List
+      title="Connect"
+      elements={[<Link to="/blog">Blog</Link>, 'Email', 'Newsletter']}
+    />
+  )
 }
