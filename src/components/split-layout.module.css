@@ -11,6 +11,7 @@
   background-position: center center;
 }
 
+
 .splitContent {
   width: 50%;
   min-height: 100vh;
@@ -18,13 +19,20 @@
   overflow: auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .splitContent {
-    padding: 0 60px;
+    padding: 0 20px;
   }
 }
+
 @media (max-width: 800px) {
+  .splitImage {
+    display: none;
+  }
+
   .splitContent {
-    padding: 0 40px;
+    width: 100%;
+    padding: 0;
   }
 }
+

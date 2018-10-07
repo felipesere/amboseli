@@ -1,8 +1,15 @@
 .splitLists {
   display: flex;
+  flex-direction: column;
   margin-bottom: 40px;
   vertical-align: top;
   font-size: 0.75rem;
+}
+
+@media (min-width: 1200px) {
+  .splitLists {
+    flex-direction: row;
+  }
 }
 
 .list {
