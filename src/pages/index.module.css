@@ -27,3 +27,11 @@
 .tagline strong {
   color: rgba(0, 159, 253, 1);   /* blue */
 }
+
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+}

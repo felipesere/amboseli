@@ -4,6 +4,9 @@ import { SplitLayout } from '../components/split-layout'
 import { ThreeColumns, List } from '../components/three-columns'
 import style from './index.module.css'
 import { graphql, Link } from 'gatsby'
+import github from './github.png'
+import twitter from './twitter.png'
+import keybase from './keybase.png'
 
 const Tagline = ({ children }) => {
   const [first, second, third] = children
@@ -83,14 +86,31 @@ const Network = () => {
 }
 
 const Social = () => {
-  return <List title="Social" elements={['Twitter', 'Github', 'Instagram']} />
+  return <List title="Social" elements={
+    [
+      <a href='https://twitter.com/felipesere'>
+        <img src={twitter} className={style.socialIcon}/>Twitter
+      </a>,
+      <a href='https://github.com/felipesere'>
+        <img src={github} className={style.socialIcon}/>Github
+      </a>,
+      <a href='https://keybase.io/felipesere'>
+        <img src={keybase} className={style.socialIcon}/>Keybase
+      </a>
+    ]
+  } />
 }
 
 const Connect = () => {
   return (
     <List
       title="Connect"
-      elements={[<Link to="/blog">Blog</Link>, 'Email', 'Newsletter']}
+      elements={[
+        <Link to="/blog">Blog</Link>,
+        <a href='mailto:felipesere@gmail.com'>
+          Email
+        </a>,
+      ]}
     />
   )
 }
