@@ -1,10 +1,12 @@
 .main {
   margin-top: 5rem;
-}
-.post {
+  margin-bottom: 5rem;
   width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.post {
 }
 
 .date {
@@ -24,5 +26,36 @@
 .main h2 {
   margin-top: 2rem;
   margin-bottom: .5rem;
+}
+
+.navigation {
+  margin: 0;
+}
+
+.navigation li {
+  list-style: none;
+}
+
+.navigationButton {
+  color: #9eabb3;
+  border: 1px solid #9eabb3;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+}
+
+.navigationButton svg {
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.previous {
+  float: left;
+}
+
+.next {
+  float: right;
 }
 

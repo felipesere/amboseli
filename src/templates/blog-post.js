@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
+
 
 import { rhythm, scale } from '../utils/typography'
 import style from './blog-post.module.css'
@@ -24,14 +26,15 @@ class BlogPostTemplate extends React.Component {
           <h1 className={style.title}>{post.frontmatter.title}</h1>
           <p className={style.date}>{post.frontmatter.date}</p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
 
-          <Navigation previous={previous} next={next} />
         </article>
+        <Navigation previous={previous} next={next} />
       </main>
     )
   }
@@ -39,20 +42,18 @@ class BlogPostTemplate extends React.Component {
 
 const Navigation = ({ previous, next }) => {
   return (
-    <ul>
-      <li>
-        {previous && (
-          <Link to={previous.fields.slug} rel="prev">
-            ← {previous.frontmatter.title}
-          </Link>
-        )}
+    <ul className={style.navigation}>
+      <li className={style.previous}>
+        <Link className={style.navigationButton} to={previous.fields.slug} rel="prev">
+          <FaAngleLeft />
+          <span>NEWER POSTS</span>
+        </Link>
       </li>
-      <li>
-        {next && (
-          <Link to={next.fields.slug} rel="next">
-            {next.frontmatter.title} →
-          </Link>
-        )}
+      <li className={style.next}>
+        <Link className={style.navigationButton} to={next.fields.slug} rel="next">
+          <span>OLDER POSTS</span>
+          <FaAngleRight />
+        </Link>
       </li>
     </ul>
   )
