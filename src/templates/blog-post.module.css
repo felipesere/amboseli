@@ -54,6 +54,7 @@
   vertical-align: middle;
   margin-left: 5px;
   margin-right: 5px;
+  transform: translateY(-2px);
 }
 
 .previous {
