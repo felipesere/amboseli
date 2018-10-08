@@ -5,40 +5,30 @@
 }
 
 .splitImage {
-  width: 50%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
+  display: none;
 }
-
 
 .splitContent {
-  width: 50%;
-  min-height: 100vh;
-  padding: 0 80px;
-  overflow: auto;
+  padding: 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (max-width: 1280px) {
-  .splitContent {
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 800px) {
+@media (min-width: 800px) {
   .splitImage {
-    display: none;
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    display: block;
   }
 
   .splitContent {
-    padding: 0;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .splitImage {
-    display: none;
+    width: 50%;
+    min-height: 100vh;
+    padding: 0 80px;
+    overflow: auto;
   }
 }
 

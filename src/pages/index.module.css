@@ -13,13 +13,13 @@
 
 
 .tagline {
-  font-size: 3rem;
+  font-size: 2rem;
   word-spacing: 100vw;
 }
 
-@media (max-width: 1280px) {
+@media (min-width: 1280px) {
   .tagline {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
