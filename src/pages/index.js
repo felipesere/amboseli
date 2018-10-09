@@ -38,7 +38,7 @@ export default function Me({ data, location }) {
   const post = data.markdownRemark
 
   return (
-    <SplitLayout location={location}>
+    <SplitLayout location={location} image={data.profile}>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: siteDescription }]}
@@ -76,6 +76,13 @@ export const query = graphql`
       frontmatter {
         name
         tagline
+      }
+    }
+    profile: file(relativePath: {eq: "felipe.jpg"}) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+         ...GatsbyImageSharpFluid
+        }
       }
     }
   }
