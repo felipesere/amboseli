@@ -2,6 +2,7 @@ import React from 'react'
 import style from './blog.module.css'
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
+import {NavBar} from '../components/navigation'
 
 export default function Blog(props) {
   const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges')
@@ -18,15 +19,6 @@ export default function Blog(props) {
         </section>
       </div>
     </React.Fragment>
-  )
-}
-
-const NavBar = () => {
-  return (
-      <nav className={style.navbar}>
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
   )
 }
 

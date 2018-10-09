@@ -61,6 +61,39 @@ export default function Me({ data, location }) {
   )
 }
 
+const Network = () => {
+
+  return <List title="Network" elements={['Link 1', 'Link 2', 'Link 3']} />
+}
+const Social = () => {
+
+  return <List title="Social" elements={
+    [
+      <a href='https://twitter.com/felipesere'>
+        <img src={twitter} className={style.socialIcon}/>Twitter
+      </a>,
+      <a href='https://github.com/felipesere'>
+        <img src={github} className={style.socialIcon}/>Github
+      </a>,
+      <a href='https://keybase.io/felipesere'>
+        <img src={keybase} className={style.socialIcon}/>Keybase
+      </a>
+    ]
+  } />
+}
+const Connect = () => {
+  return (
+    <List
+      title="Connect"
+      elements={[
+        <Link to="/blog">Blog</Link>,
+        <a href='mailto:felipesere@gmail.com'>
+          Email
+        </a>,
+      ]}
+    />
+  )
+}
 export const query = graphql`
   query {
     site {
@@ -87,37 +120,3 @@ export const query = graphql`
     }
   }
 `
-
-const Network = () => {
-  return <List title="Network" elements={['Link 1', 'Link 2', 'Link 3']} />
-}
-
-const Social = () => {
-  return <List title="Social" elements={
-    [
-      <a href='https://twitter.com/felipesere'>
-        <img src={twitter} className={style.socialIcon}/>Twitter
-      </a>,
-      <a href='https://github.com/felipesere'>
-        <img src={github} className={style.socialIcon}/>Github
-      </a>,
-      <a href='https://keybase.io/felipesere'>
-        <img src={keybase} className={style.socialIcon}/>Keybase
-      </a>
-    ]
-  } />
-}
-
-const Connect = () => {
-  return (
-    <List
-      title="Connect"
-      elements={[
-        <Link to="/blog">Blog</Link>,
-        <a href='mailto:felipesere@gmail.com'>
-          Email
-        </a>,
-      ]}
-    />
-  )
-}

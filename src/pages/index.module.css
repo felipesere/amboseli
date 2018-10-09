@@ -1,36 +1,35 @@
 .content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .name {
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
 }
 
-
 .tagline {
-  font-size: 2rem;
-  word-spacing: 100vw;
+    font-size: 2rem;
+    word-spacing: 100vw;
 }
 
 @media (min-width: 1280px) {
-  .tagline {
-    font-size: 3rem;
-  }
+    .tagline {
+        font-size: 3rem;
+    }
 }
 
 .tagline strong {
-  color: rgba(0, 159, 253, 1);   /* blue */
+    color: rgba(0, 159, 253, 1); /* blue */
 }
-
 
 .socialIcon {
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  margin-right: 5px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
+

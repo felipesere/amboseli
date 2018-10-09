@@ -4,8 +4,8 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
-import { rhythm} from '../utils/typography'
 import style from './blog-post.module.css'
+import { NavBar } from '../components/navigation'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,26 +15,24 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <main className={style.main}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
-        />
-        <article className={style.post}>
-          <h1 className={style.title}>{post.frontmatter.title}</h1>
-          <p className={style.date}>{post.frontmatter.date}</p>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
+      <React.Fragment>
+        <NavBar/>
+        <main className={style.main}>
+          <Helmet
+            htmlAttributes={{ lang: 'en' }}
+            meta={[{ name: 'description', content: siteDescription }]}
+            title={`${post.frontmatter.title} | ${siteTitle}`}
           />
+          <article className={style.post}>
+            <h1 className={style.title}>{post.frontmatter.title}</h1>
+            <p className={style.date}>{post.frontmatter.date}</p>
+            <div dangerouslySetInnerHTML={{ __html: post.html }}/>
 
-        </article>
-        <Navigation previous={previous} next={next} />
-      </main>
+            <hr />
+          </article>
+          <Navigation previous={previous} next={next}/>
+        </main>
+      </React.Fragment>
     )
   }
 }
@@ -42,22 +40,22 @@ class BlogPostTemplate extends React.Component {
 const Navigation = ({ previous, next }) => {
   return (
     <ul className={style.navigation}>
-    { previous && (
-      <li className={style.previous}>
-        <Link className={style.navigationButton} to={previous.fields.slug} rel="prev">
-          <FaAngleLeft />
-          <span>NEWER POSTS</span>
-        </Link>
-      </li>
-    )}
-    { next && (
-      <li className={style.next}>
-        <Link className={style.navigationButton} to={next.fields.slug} rel="next">
-          <span>OLDER POSTS</span>
-          <FaAngleRight />
-        </Link>
-      </li>
-    )}
+      {previous && (
+        <li className={style.previous}>
+          <Link className={style.navigationButton} to={previous.fields.slug} rel="prev">
+            <FaAngleLeft/>
+            <span>NEWER POSTS</span>
+          </Link>
+        </li>
+      )}
+      {next && (
+        <li className={style.next}>
+          <Link className={style.navigationButton} to={next.fields.slug} rel="next">
+            <span>OLDER POSTS</span>
+            <FaAngleRight/>
+          </Link>
+        </li>
+      )}
     </ul>
   )
 }
