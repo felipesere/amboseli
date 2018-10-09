@@ -4,30 +4,38 @@ import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 
 export default function Blog(props) {
-  const siteTitle = get(props, 'data.site.siteMetadata.title')
-  const siteDescription = get(props, 'props.data.site.siteMetadata.description')
   const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges')
 
   return (
-    <div className={style.allBlogs}>
-      <section className={style.promo}>
-        <Article post={first} isPromo />
-      </section>
-      <section className={style.blogPreviews}>
-        {posts.map(p => (
-          <Article post={p} />
-        ))}
-      </section>
-    </div>
+    <React.Fragment>
+      <NavBar />
+      <div className={style.allBlogs}>
+        <section className={style.promo}>
+          <Article post={first} isPromo/>
+        </section>
+        <section className={style.blogPreviews}>
+          {posts.map(p => <Article post={p}/>)}
+        </section>
+      </div>
+    </React.Fragment>
+  )
+}
+
+const NavBar = () => {
+  return (
+      <nav className={style.navbar}>
+        <Link to="/">Home</Link>
+        <Link to="/blog">Blog</Link>
+      </nav>
   )
 }
 
 const Article = ({ post, isPromo }) => {
   const title = post.node.frontmatter.title
   const header = isPromo ? (
-    <PromoHeader title={title} />
+    <PromoHeader title={title}/>
   ) : (
-    <Header title={title} />
+    <Header title={title}/>
   )
   return (
     <article className={style.post}>
@@ -36,7 +44,7 @@ const Article = ({ post, isPromo }) => {
       <footer className={style.footer}>
         <p>{post.node.frontmatter.date}</p>
       </footer>
-      <Link to={post.node.fields.slug} className={style.readMore} />
+      <Link to={post.node.fields.slug} className={style.readMore}/>
     </article>
   )
 }

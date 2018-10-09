@@ -4,8 +4,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
-
-import { rhythm, scale } from '../utils/typography'
+import { rhythm} from '../utils/typography'
 import style from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
