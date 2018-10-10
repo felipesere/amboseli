@@ -18,13 +18,7 @@
 
 @media (min-width: 800px) {
     .tagline {
-        font-size: 1.75rem;
-    }
-}
-
-@media (min-width: 1280px) {
-    .tagline {
-        font-size: 3rem;
+        font-size: 4.5vw;
     }
 }
 
