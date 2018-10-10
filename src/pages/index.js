@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { SplitLayout } from '../components/split-layout'
-import { ThreeColumns, List } from '../components/three-columns'
 import style from './index.module.css'
 import { graphql, Link } from 'gatsby'
 import github from './github.png'
@@ -51,49 +50,55 @@ export default function Me({ data, location }) {
 
         <Prose text={post.html} />
 
-        <ThreeColumns>
+        <div className={style.splitLists}>
           <Connect />
           <Social />
-          <Network />
-        </ThreeColumns>
+        </div>
       </div>
     </SplitLayout>
   )
 }
 
-const Network = () => {
-
-  return <List title="Network" elements={['Link 1', 'Link 2', 'Link 3']} />
-}
 const Social = () => {
-
-  return <List title="Social" elements={
-    [
-      <a href='https://twitter.com/felipesere'>
-        <img src={twitter} className={style.socialIcon}/>Twitter
-      </a>,
-      <a href='https://github.com/felipesere'>
-        <img src={github} className={style.socialIcon}/>Github
-      </a>,
-      <a href='https://keybase.io/felipesere'>
-        <img src={keybase} className={style.socialIcon}/>Keybase
-      </a>
-    ]
-  } />
+  return (
+    <List
+      title="Social"
+      elements={[
+        <a href="https://twitter.com/felipesere">
+          <img src={twitter} className={style.socialIcon} />Twitter
+        </a>,
+        <a href="https://github.com/felipesere">
+          <img src={github} className={style.socialIcon} />Github
+        </a>,
+        <a href="https://keybase.io/felipesere">
+          <img src={keybase} className={style.socialIcon} />Keybase
+        </a>,
+      ]}
+    />
+  )
 }
+
 const Connect = () => {
   return (
     <List
       title="Connect"
       elements={[
         <Link to="/blog">Blog</Link>,
-        <a href='mailto:felipesere@gmail.com'>
-          Email
-        </a>,
+        <a href="mailto:felipesere@gmail.com">Email</a>,
       ]}
     />
   )
 }
+
+const List = ({ title, elements }) => {
+  return (
+    <div className={style.list}>
+      <h1>{title}</h1>
+      <ol>{elements.map((e, i) => <li key={i}>{e}</li>)}</ol>
+    </div>
+  )
+}
+
 export const query = graphql`
   query {
     site {
@@ -111,10 +116,10 @@ export const query = graphql`
         tagline
       }
     }
-    profile: file(relativePath: {eq: "felipe.jpg"}) {
+    profile: file(relativePath: { eq: "felipe.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
-         ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid
         }
       }
     }
