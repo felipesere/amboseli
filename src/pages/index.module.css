@@ -12,8 +12,14 @@
 }
 
 .tagline {
-    font-size: 2rem;
+    font-size: 12vw;
     word-spacing: 100vw;
+}
+
+@media (min-width: 800px) {
+    .tagline {
+        font-size: 1.75rem;
+    }
 }
 
 @media (min-width: 1280px) {
