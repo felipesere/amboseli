@@ -4,8 +4,19 @@ import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 import {NavBar} from '../components/navigation'
 
+const notDraft = (post) => {
+  if(!inProd()) {
+    return true
+  }
+
+  return get(post, 'node.frontmatter.draft') !== true
+}
+
+const inProd = () => process.env.NODE_ENV === 'production'
+
 export default function Blog(props) {
   const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges')
+    .filter(p => notDraft(p) )
 
   return (
     <React.Fragment>
@@ -77,6 +88,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            draft
             date(formatString: "DD MMMM, YYYY")
             title
           }
