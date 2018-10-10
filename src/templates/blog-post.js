@@ -40,17 +40,17 @@ class BlogPostTemplate extends React.Component {
 const Navigation = ({ previous, next }) => {
   return (
     <ul className={style.navigation}>
-      {previous && (
-        <li className={style.previous}>
-          <Link className={style.navigationButton} to={previous.fields.slug} rel="prev">
+      {next && (
+        <li className={style.next}>
+          <Link className={style.navigationButton} to={next.fields.slug} rel="prev">
             <FaAngleLeft/>
             <span>NEWER POSTS</span>
           </Link>
         </li>
       )}
-      {next && (
-        <li className={style.next}>
-          <Link className={style.navigationButton} to={next.fields.slug} rel="next">
+      {previous && (
+        <li className={style.previous}>
+          <Link className={style.navigationButton} to={previous.fields.slug} rel="next">
             <span>OLDER POSTS</span>
             <FaAngleRight/>
           </Link>
