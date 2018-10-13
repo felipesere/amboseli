@@ -58,7 +58,7 @@ const Article = ({ post, isPromo }) => {
 const PromoHeader = ({ title }) => {
   return (
     <header>
-      <span className={style.welcomeEmoji}>👉</span>
+      <span className={style.welcomeEmoji}>🆕</span>
       <h1>{title}</h1>
     </header>
   )
