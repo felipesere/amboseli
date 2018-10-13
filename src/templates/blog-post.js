@@ -23,9 +23,7 @@ class BlogPostTemplate extends React.Component {
             htmlAttributes={{ lang: 'en' }}
             meta={[{ name: 'description', content: siteDescription }]}
             title={`${post.frontmatter.title} | ${siteTitle}`}
-            link={[
-              { rel: 'shortcut icon', type: 'image/png', href: icon },
-            ]}
+            link={[{ rel: 'shortcut icon', type: 'image/png', href: icon }]}
           />
           <article>
             <h1 className={style.title}>{post.frontmatter.title}</h1>

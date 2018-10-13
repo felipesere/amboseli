@@ -67,13 +67,16 @@ const Social = () => {
       title="Social"
       elements={[
         <a href="https://twitter.com/felipesere">
-          <img src={twitter} className={style.socialIcon} />Twitter
+          <img src={twitter} className={style.socialIcon} />
+          Twitter
         </a>,
         <a href="https://github.com/felipesere">
-          <img src={github} className={style.socialIcon} />Github
+          <img src={github} className={style.socialIcon} />
+          Github
         </a>,
         <a href="https://keybase.io/felipesere">
-          <img src={keybase} className={style.socialIcon} />Keybase
+          <img src={keybase} className={style.socialIcon} />
+          Keybase
         </a>,
       ]}
     />
@@ -96,7 +99,11 @@ const List = ({ title, elements }) => {
   return (
     <div className={style.list}>
       <h1>{title}</h1>
-      <ol>{elements.map((e, i) => <li key={i}>{e}</li>)}</ol>
+      <ol>
+        {elements.map((e, i) => (
+          <li key={i}>{e}</li>
+        ))}
+      </ol>
     </div>
   )
 }

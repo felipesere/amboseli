@@ -2,10 +2,10 @@ import React from 'react'
 import style from './blog.module.css'
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
-import {NavBar} from '../components/navigation'
+import { NavBar } from '../components/navigation'
 
-const notDraft = (post) => {
-  if(!inProd()) {
+const notDraft = post => {
+  if (!inProd()) {
     return true
   }
 
@@ -15,18 +15,21 @@ const notDraft = (post) => {
 const inProd = () => process.env.NODE_ENV === 'production'
 
 export default function Blog(props) {
-  const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges')
-    .filter(p => notDraft(p) )
+  const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges').filter(
+    p => notDraft(p)
+  )
 
   return (
     <React.Fragment>
       <NavBar />
       <div className={style.allBlogs}>
         <section className={style.promo}>
-          <Article post={first} isPromo/>
+          <Article post={first} isPromo />
         </section>
         <section className={style.blogPreviews}>
-          {posts.map(p => <Article key={p.node.frontmatter.title} post={p}/>)}
+          {posts.map(p => (
+            <Article key={p.node.frontmatter.title} post={p} />
+          ))}
         </section>
       </div>
     </React.Fragment>
@@ -36,9 +39,9 @@ export default function Blog(props) {
 const Article = ({ post, isPromo }) => {
   const title = post.node.frontmatter.title
   const header = isPromo ? (
-    <PromoHeader title={title}/>
+    <PromoHeader title={title} />
   ) : (
-    <Header title={title}/>
+    <Header title={title} />
   )
   return (
     <article className={style.post}>
@@ -47,7 +50,7 @@ const Article = ({ post, isPromo }) => {
       <footer className={style.footer}>
         <p>{post.node.frontmatter.date}</p>
       </footer>
-      <Link to={post.node.fields.slug} className={style.readMore}/>
+      <Link to={post.node.fields.slug} className={style.readMore} />
     </article>
   )
 }
