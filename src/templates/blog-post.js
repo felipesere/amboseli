@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 import style from './blog-post.module.css'
+import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
 
 class BlogPostTemplate extends React.Component {
@@ -22,6 +23,9 @@ class BlogPostTemplate extends React.Component {
             htmlAttributes={{ lang: 'en' }}
             meta={[{ name: 'description', content: siteDescription }]}
             title={`${post.frontmatter.title} | ${siteTitle}`}
+            link={[
+              { rel: 'shortcut icon', type: 'image/png', href: icon },
+            ]}
           />
           <article className={style.post}>
             <h1 className={style.title}>{post.frontmatter.title}</h1>

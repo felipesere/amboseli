@@ -6,6 +6,7 @@ import { graphql, Link } from 'gatsby'
 import github from './github.png'
 import twitter from './twitter.png'
 import keybase from './keybase.png'
+import icon from '../assets/favicon.png'
 
 const Tagline = ({ children }) => {
   const [first, second, third] = children
@@ -42,6 +43,7 @@ export default function Me({ data, location }) {
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: siteDescription }]}
         title={siteTitle}
+        link={[{ rel: 'shortcut icon', type: 'image/png', href: icon }]}
       />
       <div className={style.content}>
         <Name>{post.frontmatter.name}</Name>
