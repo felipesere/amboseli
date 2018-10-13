@@ -3,6 +3,7 @@ import style from './blog.module.css'
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 import { NavBar } from '../components/navigation'
+import { Article } from '../components/article'
 
 const notDraft = post => {
   if (!inProd()) {
@@ -24,7 +25,7 @@ export default function Blog(props) {
       <NavBar />
       <div className={style.allBlogs}>
         <section className={style.promo}>
-          <Article post={first} isPromo />
+          <Article post={first} isPromo withShadow={false} />
         </section>
         <section className={style.blogPreviews}>
           {posts.map(p => (
@@ -33,42 +34,6 @@ export default function Blog(props) {
         </section>
       </div>
     </React.Fragment>
-  )
-}
-
-const Article = ({ post, isPromo }) => {
-  const title = post.node.frontmatter.title
-  const header = isPromo ? (
-    <PromoHeader title={title} />
-  ) : (
-    <Header title={title} />
-  )
-  return (
-    <article className={style.post}>
-      {header}
-      <p>{post.node.excerpt}</p>
-      <footer className={style.footer}>
-        <p>{post.node.frontmatter.date}</p>
-      </footer>
-      <Link to={post.node.fields.slug} className={style.readMore} />
-    </article>
-  )
-}
-
-const PromoHeader = ({ title }) => {
-  return (
-    <header>
-      <span className={style.welcomeEmoji}>🆕</span>
-      <h1>{title}</h1>
-    </header>
-  )
-}
-
-const Header = ({ title }) => {
-  return (
-    <header>
-      <h4>{title}</h4>
-    </header>
   )
 }
 
