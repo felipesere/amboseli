@@ -7,7 +7,9 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
+    const blogPost     = path.resolve('./src/templates/blog-post.js')
+    const tagsTemplate = path.resolve('./src/templates/tags.js')
+
     resolve(
       graphql(
         `
@@ -25,6 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     draft
+                    tags
                   }
                 }
               }
@@ -37,10 +40,9 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // Create blog posts pages.
         let posts = result.data.allMarkdownRemark.edges
 
-        _.filter(posts, post => {
+        let published = _.filter(posts, post => {
           if (process.env.NODE_ENV !== 'production') {
             return true
           }
@@ -51,7 +53,9 @@ exports.createPages = ({ graphql, actions }) => {
           } else {
             return true
           }
-        }).forEach((post, index) => {
+        })
+
+        published.forEach((post, index) => {
           const previous =
             index === posts.length - 1 ? null : posts[index + 1].node
           const next = index === 0 ? null : posts[index - 1].node
@@ -64,6 +68,20 @@ exports.createPages = ({ graphql, actions }) => {
               previous,
               next,
             },
+          })
+        })
+
+        let tags = []
+        published.forEach((x) => {
+          tags = tags.concat(x.node.frontmatter.tags || [])
+        })
+        tags = _.uniq(tags)
+
+        tags.forEach((tag) => {
+          createPage({
+            path: `/tags/${tag}`,
+            component: tagsTemplate,
+            context: {tag}
           })
         })
       })
