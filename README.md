@@ -16,11 +16,10 @@ Inspiration:
   * max-width:  800px
   * max-width: 1200px
   * no limit
-* Figure out 'rhythm' and 'scale' and try removing non fluid sizes
 
 ## Pages
 
-* Intro
-* Blog index and individual posts
-* Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
-* Maybe photography
+[ ] Intro
+[x] Blog index and individual posts
+[ ] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
+[ ] Maybe photography
