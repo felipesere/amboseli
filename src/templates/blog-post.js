@@ -11,6 +11,7 @@ import { NavBar } from '../components/navigation'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    const tags = post.frontmatter.tags || []
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
@@ -27,13 +28,33 @@ class BlogPostTemplate extends React.Component {
           />
           <article>
             <h1 className={style.title}>{post.frontmatter.title}</h1>
-            <p className={style.date}>{post.frontmatter.date}</p>
+            <div className={style.metadata}>
+              <span className={style.date}>{post.frontmatter.date}</span>
+              <Tags tags={tags} />
+            </div>
+
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
             <hr />
           </article>
           <Navigation previous={previous} next={next} />
         </main>
+      </React.Fragment>
+    )
+  }
+}
+
+const Tags = ({ tags }) => {
+  if (tags.length == 0) {
+    return null
+  } else {
+    return (
+      <React.Fragment>
+        <div className={style.tags}>
+          {tags.map(t => (
+            <p className={style.tag} key={t}>{t}</p>
+          ))}
+        </div>
       </React.Fragment>
     )
   }
@@ -86,6 +107,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        tags
         date(formatString: "MMMM DD, YYYY")
       }
     }
