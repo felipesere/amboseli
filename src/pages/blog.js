@@ -26,7 +26,7 @@ export default function Blog(props) {
           <Article post={first} isPromo/>
         </section>
         <section className={style.blogPreviews}>
-          {posts.map(p => <Article post={p}/>)}
+          {posts.map(p => <Article key={p.node.frontmatter.title} post={p}/>)}
         </section>
       </div>
     </React.Fragment>

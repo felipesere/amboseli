@@ -17,7 +17,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <React.Fragment>
-        <NavBar/>
+        <NavBar />
         <main className={style.main}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
@@ -27,14 +27,14 @@ class BlogPostTemplate extends React.Component {
               { rel: 'shortcut icon', type: 'image/png', href: icon },
             ]}
           />
-          <article className={style.post}>
+          <article>
             <h1 className={style.title}>{post.frontmatter.title}</h1>
             <p className={style.date}>{post.frontmatter.date}</p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }}/>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
             <hr />
           </article>
-          <Navigation previous={previous} next={next}/>
+          <Navigation previous={previous} next={next} />
         </main>
       </React.Fragment>
     )
@@ -46,17 +46,25 @@ const Navigation = ({ previous, next }) => {
     <ul className={style.navigation}>
       {next && (
         <li className={style.next}>
-          <Link className={style.navigationButton} to={next.fields.slug} rel="prev">
-            <FaAngleLeft/>
+          <Link
+            className={style.navigationButton}
+            to={next.fields.slug}
+            rel="prev"
+          >
+            <FaAngleLeft />
             <span>NEWER POSTS</span>
           </Link>
         </li>
       )}
       {previous && (
         <li className={style.previous}>
-          <Link className={style.navigationButton} to={previous.fields.slug} rel="next">
+          <Link
+            className={style.navigationButton}
+            to={previous.fields.slug}
+            rel="next"
+          >
             <span>OLDER POSTS</span>
-            <FaAngleRight/>
+            <FaAngleRight />
           </Link>
         </li>
       )}
