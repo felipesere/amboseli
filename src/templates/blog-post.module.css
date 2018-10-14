@@ -16,30 +16,12 @@
   margin-bottom: 0.15rem;
 }
 
+.metadata {
+  margin-bottom: 2rem;
+}
+
 .date {
   font-size: 0.75rem;
-}
-
-.tags {
-  margin-top: 0.75rem;
-  display: flex;
-  list-style: none;
-
-}
-
-.tag {
-  margin-right: 1rem;
-  color: #5b6267;
-  border: 1px solid #9eabb3;
-  text-decoration: none;
-  padding: 4px 7px;
-  border-radius: 3px;
-  font-size: 0.5rem;
-}
-
-.tag:hover {
-  color: black;
-  border-color: black;
 }
 
 .main h3 {

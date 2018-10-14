@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
+import { AvailableTags } from '../components/available-tags'
 
 const notDraft = post => {
   if (!inProd()) {
@@ -28,10 +29,11 @@ export default function Blog(props) {
           <Article post={first} isPromo withShadow={false} />
         </section>
         <section className={style.blogPreviews}>
-          {posts.map(p => (
-            <Article key={p.node.frontmatter.title} post={p} />
-          ))}
+          {posts.map(p => <Article key={p.node.frontmatter.title} post={p} />)}
         </section>
+        <div className={style.tagArea}>
+          <AvailableTags />
+        </div>
       </div>
     </React.Fragment>
   )

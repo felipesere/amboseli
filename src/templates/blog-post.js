@@ -7,6 +7,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import style from './blog-post.module.css'
 import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
+import { Tags } from '../components/tags'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -39,22 +40,6 @@ class BlogPostTemplate extends React.Component {
           </article>
           <Navigation previous={previous} next={next} />
         </main>
-      </React.Fragment>
-    )
-  }
-}
-
-const Tags = ({ tags }) => {
-  if (tags.length == 0) {
-    return null
-  } else {
-    return (
-      <React.Fragment>
-        <div className={style.tags}>
-          {tags.map(t => (
-            <p className={style.tag} key={t}>{t}</p>
-          ))}
-        </div>
       </React.Fragment>
     )
   }

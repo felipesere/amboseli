@@ -1,0 +1,28 @@
+.tags {
+  margin-top: 0.75rem;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.tag {
+  margin: 5px;
+  color: #5b6267;
+  border: 1px solid #9eabb3;
+  text-decoration: none;
+  padding: 4px 7px;
+  border-radius: 3px;
+  font-size: 0.5rem;
+}
+.tag:first-child {
+  margin-left: 0px;
+}
+
+.tag:last-child {
+  margin-right: 0px;
+}
+
+.tag:hover {
+  color: black;
+  border-color: black;
+}
