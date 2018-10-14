@@ -10,7 +10,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-      },
+        postCssPlugins: [require('autoprefixer')()]
+      }
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
