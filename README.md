@@ -19,18 +19,18 @@ Inspiration:
 
 ## Pages
 
-[ ] Intro
+[x] Intro
 [x] Blog index and individual posts
 [ ] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
 [ ] Maybe photography
+[ ] CV
+
 
 ## Todos
 
-* better share layout-related CSS like widths and margins
 * better CSS
-    * colors
     * margins
     * font-sizes
-* better naming between blog, article, preview...
 * think of pagination
 * better naming around templates- and components and index pages...
+* Better 404 page
