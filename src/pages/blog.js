@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './blog.module.css'
+import style from './blog.module.scss'
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 import { NavBar } from '../components/navigation'

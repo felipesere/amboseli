@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
-import style from './blog-post.module.css'
+import style from './blog-post.module.scss'
 import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
 import { Tags } from '../components/tags'

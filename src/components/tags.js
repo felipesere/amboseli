@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import style from './tags.module.css'
+import style from './tags.module.scss'
 
 export const Tags = ({ tags }) => {
   if (tags.length == 0) {

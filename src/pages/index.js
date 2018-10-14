@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { SplitLayout } from '../components/split-layout'
-import style from './index.module.css'
+import style from './index.module.scss'
 import { graphql, Link } from 'gatsby'
 import github from './github.png'
 import twitter from './twitter.png'

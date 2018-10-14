@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
-import style from './tags.module.css'
+import style from './tags.module.scss'
 
 const Tags = ({pageContext, data}) => {
   const posts = data.allMarkdownRemark.edges

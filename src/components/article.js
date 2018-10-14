@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import { Link } from 'gatsby'
-import style from './article.module.css'
+import style from './article.module.scss'
 
 export const Article = ({ post, isPromo, withShadow = true }) => {
   const title = post.node.frontmatter.title

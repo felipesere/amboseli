@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './split-layout.module.css'
+import style from './split-layout.module.scss'
 import Img from 'gatsby-image'
 
 const SplitImage = ({ image }) => {
