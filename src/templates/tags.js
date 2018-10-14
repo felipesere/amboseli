@@ -4,14 +4,16 @@ import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
 import style from './tags.module.scss'
 
-const Tags = ({pageContext, data}) => {
+const Tags = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <React.Fragment>
       <NavBar />
       <div className={style.allBlogs}>
         <section className={style.promo}>
-          <h1 className={style.title}>These articles are tagged as <strong>{pageContext.tag}</strong></h1>
+          <h1 className={style.title}>
+            These articles are tagged as <strong>{pageContext.tag}</strong>
+          </h1>
         </section>
         <section className={style.blogPreviews}>
           {posts.map(p => (

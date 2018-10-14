@@ -29,7 +29,9 @@ export default function Blog(props) {
           <Article post={first} isPromo withShadow={false} />
         </section>
         <section className={style.blogPreviews}>
-          {posts.map(p => <Article key={p.node.frontmatter.title} post={p} />)}
+          {posts.map(p => (
+            <Article key={p.node.frontmatter.title} post={p} />
+          ))}
         </section>
         <div className={style.tagArea}>
           <AvailableTags />

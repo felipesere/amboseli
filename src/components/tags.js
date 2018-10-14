@@ -10,7 +10,9 @@ export const Tags = ({ tags }) => {
       <React.Fragment>
         <div className={style.tags}>
           {tags.map(t => (
-            <Link className={style.tag} key={t} to={`/tags/${t}`}>{t}</Link>
+            <Link className={style.tag} key={t} to={`/tags/${t}`}>
+              {t}
+            </Link>
           ))}
         </div>
       </React.Fragment>

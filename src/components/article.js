@@ -12,7 +12,7 @@ export const Article = ({ post, isPromo, withShadow = true }) => {
   )
 
   const className = cx(style.post, {
-    [style.withShadow]: withShadow
+    [style.withShadow]: withShadow,
   })
   return (
     <article className={className}>
