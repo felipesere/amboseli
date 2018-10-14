@@ -5,8 +5,13 @@ module.exports = {
     description: 'Felipes path to mastery',
     siteUrl: 'https://felipesere.com',
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/',
   plugins: [
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -31,7 +36,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-              showCaptions: true
+              showCaptions: true,
             },
           },
           {
@@ -45,9 +50,9 @@ module.exports = {
             options: {
               aliases: {
                 elm: 'haskell',
-                sh: 'bash'
+                sh: 'bash',
               },
-              noInlineHighlight: true
+              noInlineHighlight: true,
             },
           },
           'gatsby-remark-copy-linked-files',
@@ -56,10 +61,10 @@ module.exports = {
             resolve: `gatsby-remark-oembed`,
             options: {
               providers: {
-                include: ["Twitter"]
-              }
-            }
-          }
+                include: ['Twitter'],
+              },
+            },
+          },
         ],
       },
     },
