@@ -1,3 +1,5 @@
+@import '../styles/colors';
+
 .tags {
   margin-top: 0.75rem;
   list-style: none;
@@ -7,8 +9,8 @@
 
 .tag {
   margin: 5px;
-  color: #5b6267;
-  border: 1px solid #9eabb3;
+  color: $darker-graphite;
+  border: 1px solid $graphite;
   text-decoration: none;
   padding: 4px 7px;
   border-radius: 3px;

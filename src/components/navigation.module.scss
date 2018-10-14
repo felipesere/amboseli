@@ -1,8 +1,10 @@
+@import '../styles/colors';
+
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  color: #9eabb3;
+  color: $graphite;
   max-width: 700px;
   margin: auto auto;
 
@@ -14,7 +16,7 @@
     text-align: center;
 
     &:visited {
-      color: #9eabb3;
+      color: $graphite;
     }
   }
 }

@@ -1,3 +1,5 @@
+@import '../styles/colors';
+
 .content {
   height: 100%;
   display: flex;
@@ -19,10 +21,10 @@
   @media (min-width: 800px) {
     font-size: 4.5vw;
   }
-}
 
-.tagline strong {
-  color: rgba(0, 159, 253, 1); /* blue */
+  strong {
+    color: $blue;
+  }
 }
 
 .socialIcon {
@@ -44,7 +46,7 @@
     text-decoration: none;
 
     &:hover {
-      color: rgba(0, 159, 253, 1);
+      color: $blue;
       transition: 0.25s;
     }
   }
