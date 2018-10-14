@@ -3,13 +3,14 @@ name: Felipe Seré
 tagline: Engineer. Coach. Photographer.
 ---
 
-Quisque in feugiat velit.
-Nulla facilisi.
-Maecenas accumsan, tortor ac lobortis cursus, quam velit luctus nunc, et tincidunt est magna quis lacus.
-Aenean facilisis neque leo, quis laoreet justo pellentesque ac.
+*Hello!*
+My name is Felipe and I've been writing software for the last 10 years.
+I enjoy coming up wth clean solutions to problems, no matter what language or framework we happen to use.
+Throughout the years I've mentored apprentices to pass on some of what I've learnt about programming.
 
-Donec at libero id lectus porta dapibus eu in nibh.
-Cras id mauris sapien.
-Fusce viverra luctus urna ac rutrum.
-Duis semper elit eu mi facilisis eleifend.
-Sit amet lacinia nibh enim sed massa.
+
+When I am not writing code myself, I help teams of engineers and managers think
+about how they go about their work and experiment to iterate on it.
+
+
+Other than that I enjoy taking pictures of things and travelling to sunny beaches.
