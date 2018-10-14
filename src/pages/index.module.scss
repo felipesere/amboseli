@@ -1,73 +1,70 @@
 .content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .name {
-    margin-top: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.75rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
 }
 
 .tagline {
-    font-size: 12vw;
-    word-spacing: 100vw;
-}
+  font-size: 12vw;
+  word-spacing: 100vw;
 
-@media (min-width: 800px) {
-    .tagline {
-        font-size: 4.5vw;
-    }
+  @media (min-width: 800px) {
+    font-size: 4.5vw;
+  }
 }
 
 .tagline strong {
-    color: rgba(0, 159, 253, 1); /* blue */
+  color: rgba(0, 159, 253, 1); /* blue */
 }
 
 .socialIcon {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 .splitLists {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40px;
-    vertical-align: top;
-    font-size: 0.75rem;
-}
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+  vertical-align: top;
+  font-size: 0.75rem;
 
-.splitLists a {
+  a {
     color: black;
     text-decoration: none;
-}
 
-.splitLists a:hover {
-    color: rgba(0, 159, 253, 1);
-    transition: 0.25s;
+    &:hover {
+      color: rgba(0, 159, 253, 1);
+      transition: 0.25s;
+    }
+  }
 }
 
 .list {
   margin-right: 60px;
-}
 
-.list h1 {
+  h1 {
     font-size: 0.65rem;
     text-transform: uppercase;
     margin-bottom: 0.6rem;
-}
+  }
 
-.list ol {
+  ol {
     list-style: none;
     margin: 0;
-}
+  }
 
-.list li {
+  li {
     margin-bottom: 0.5rem;
+  }
 }
-

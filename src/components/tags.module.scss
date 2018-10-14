@@ -13,16 +13,17 @@
   padding: 4px 7px;
   border-radius: 3px;
   font-size: 0.5rem;
-}
-.tag:first-child {
-  margin-left: 0px;
-}
 
-.tag:last-child {
-  margin-right: 0px;
-}
+  &:first-child {
+    margin-left: 0px;
+  }
 
-.tag:hover {
-  color: black;
-  border-color: black;
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &:hover {
+    color: black;
+    border-color: black;
+  }
 }
