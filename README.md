@@ -27,7 +27,10 @@ Inspiration:
 ## Todos
 
 * better share layout-related CSS like widths and margins
-* better share colors, I think I am spreading definitions
+* better CSS
+    * colors
+    * margins
+    * font-sizes
 * better naming between blog, article, preview...
 * think of pagination
 * better naming around templates- and components and index pages...

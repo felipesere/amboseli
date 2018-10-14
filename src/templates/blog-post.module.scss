@@ -1,13 +1,21 @@
 .main {
   width: 90%;
   margin: 1rem auto;
-}
 
-@media (min-width: 800px) {
-  .main {
+  @media (min-width: 800px) {
     margin-top: 5rem;
     margin-bottom: 5rem;
     width: 700px;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+  }
+
+  h3 {
+    margin-top: 2rem;
+    margin-bottom: .5rem;
   }
 }
 
@@ -24,22 +32,12 @@
   font-size: 0.75rem;
 }
 
-.main h3 {
-  margin-top: 2rem;
-  margin-bottom: .5rem;
-}
-
-.main h2 {
-  margin-top: 2rem;
-  margin-bottom: .5rem;
-}
-
 .navigation {
   margin: 0;
-}
 
-.navigation li {
-  list-style: none;
+  li {
+    list-style: none;
+  }
 }
 
 .navigationButton {
@@ -49,13 +47,13 @@
   padding: 8px 15px;
   border-radius: 2px;
   font-size: 0.6rem;
-}
 
-.navigationButton svg {
-  vertical-align: middle;
-  margin-left: 5px;
-  margin-right: 5px;
-  transform: translateY(-2px);
+  svg {
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    transform: translateY(-2px);
+  }
 }
 
 .previous {

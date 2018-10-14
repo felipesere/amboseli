@@ -6,6 +6,14 @@
 
 .splitImage {
   display: none;
+
+  @media (min-width: 800px) {
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    display: block;
+  }
 }
 
 .splitContent {
@@ -13,18 +21,8 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-}
 
-@media (min-width: 800px) {
-  .splitImage {
-    width: 50%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center center;
-    display: block;
-  }
-
-  .splitContent {
+  @media (min-width: 800px) {
     width: 50%;
     min-height: 100vh;
     padding: 0 80px;
