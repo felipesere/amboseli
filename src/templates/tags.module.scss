@@ -7,19 +7,25 @@
 
 .promo {
   background: white;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 800px) {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
 }
 
 .blogPreviews {
-  padding-top: 5rem;
+  @media (min-width: 800px) {
+    padding-top: 5rem;
+  }
 }
 
 .title {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  padding: 30px;
 
   strong {
     color: $blue;
