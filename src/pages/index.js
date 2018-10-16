@@ -90,6 +90,7 @@ const Connect = () => {
       elements={[
         <Link to="/blog">Blog</Link>,
         <a href="mailto:felipesere@gmail.com">Email</a>,
+        <Link to="/portfolio">Portfolio</Link>,
       ]}
     />
   )
