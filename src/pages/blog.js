@@ -51,7 +51,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { slug: { ne: "/" } } }
+      filter: { fields: { slug: { regex: "/blog/" } } }
     ) {
       edges {
         node {
