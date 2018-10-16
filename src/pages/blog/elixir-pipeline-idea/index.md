@@ -1,11 +1,7 @@
 ---
 title: 'Transformation Pipeline'
 date: 2018-01-06T10:40:06Z
-categories: []
 tags: [elixir, design, idea, fp]
-keywords: []
-coverImage: https://www.clariant.com/~/media/Images/Business-Units/Oil-and-Mining-Services/Oil-Services/hero-pipeline.jpg
-coverSize: partial
 ---
 
 For a new project I've been thinking about an idea/abstraction/pattern that is really not new (few things are anyway)

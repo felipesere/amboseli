@@ -1,11 +1,7 @@
 ---
 title: 'Requirements Fatigue'
 date: 2018-06-27T22:55:18+01:00
-categories: []
 tags: []
-keywords: []
-#thumbnailImage: //example.com/image.jpg
-coverImage: https://www.alleycatscratch.com/lotr/Things/OneRing/Paper_8571_TornLon_med.jpg
 draft: true
 ---
 

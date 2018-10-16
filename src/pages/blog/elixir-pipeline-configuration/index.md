@@ -1,12 +1,7 @@
 ---
 title: 'Elixir Pipeline - Configuration'
 date: 2018-01-14T21:40:25Z
-categories: []
 tags: [elixir, design]
-keywords: []
-#thumbnailImage: //example.com/image.jpg
-coverImage: https://www.portent.com/images/2016/03/Old-tools-on-a-wooden-table-000046154920_Full.jpg
-coverSize: partial
 ---
 
 <!--more-->

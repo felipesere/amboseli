@@ -1,13 +1,7 @@
 ---
 title: 'Long and Short of Readability'
 date: 2017-09-04T18:29:09+01:00
-categories: []
 tags: [design]
-keywords: []
-#thumbnailImage: //example.com/image.jpg
-coverImage: /images/lego_depth.jpg
-coverSize: partial
-coverMeta: out
 ---
 
 Today we talked through a rewrite of a largish chunk of legacy code.

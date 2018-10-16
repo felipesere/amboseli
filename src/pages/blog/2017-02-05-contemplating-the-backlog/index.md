@@ -1,10 +1,7 @@
 ---
 title: Contemplating The Backlog
 date: 2017-02-08 22:03:35
-categories: [team, agile]
-tags: []
-published: true
-image: images/contemplating-user-stories.jpg
+tags: [team, agile]
 ---
 
 We were recently talking about the backlog of user stories for a project on the near horizon. We wanted to create an exemplary backlog with meaningful stories that would allow the team to succeed. The backlog should also show the less technical side of the organisation that they needn't deliver all functionality in one large push. When the question of which story to tackle first came up, "do the most important thing" didn't feel good enough.

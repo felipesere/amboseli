@@ -1,10 +1,7 @@
 ---
 title: Feedback app idea
 date: 2017-03-03 22:05:53
-categories: []
 tags: [personal, idea]
-published: true
-image: /images/constructing-feedback-form.jpg
 ---
 
 Today was a fairly 'feedback-centric' day for me. I had multiple conversations with different people. In some conversations, I was explicitly asking for feedback on a presentation that was given a few days ago. In others, people were asking me for feedback on where they currently are on their path to mastery and how to progress on it. And finally, in a different conversation we talked about our current feedback process, why we do it, what shortcomings it has and how we could improve it. All of this made me think about what makes feedback useful and whether or not the way we are collecting it adds or detracts value from that feedback.

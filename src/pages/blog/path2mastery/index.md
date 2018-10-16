@@ -2,7 +2,6 @@
 title: Path to Mastery App
 date: 2018-05-15T21:48:33+01:00
 tags: [personal, idea]
-coverImage: ./p2m-title-image.jpg
 ---
 
 Ever since I joined 8th Light 4 years ago as an apprentice, our apprenticeship has been changing.
