@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
+import { Promo } from '../components/promo'
 
 const notDraft = post => {
   if (!inProd()) {
@@ -25,9 +26,9 @@ export default function Blog(props) {
     <React.Fragment>
       <NavBar />
       <div className={style.allBlogs}>
-        <section className={style.promo}>
+        <Promo>
           <Article post={first} isPromo withShadow={false} />
-        </section>
+        </Promo>
         <section className={style.blogPreviews}>
           {posts.map(p => (
             <Article key={p.node.frontmatter.title} post={p} />

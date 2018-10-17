@@ -21,13 +21,14 @@ Inspiration:
 
 [x] Intro
 [x] Blog index and individual posts
-[ ] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
+[~] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
 [ ] Maybe photography
 [ ] CV
 
 
 ## Todos
 
+* Extract a common layout for /blogs, /tags, and /portfolio
 * better CSS
     * margins
     * font-sizes

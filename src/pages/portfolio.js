@@ -6,27 +6,30 @@ import Img from 'gatsby-image'
 import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
+import { Promo } from '../components/promo'
 
 const Portfolio = props => {
-  console.log(props.data)
   const projects = props.data.allMarkdownRemark.edges
   return (
-    <div className={style.main}>
+    <React.Fragment>
       <NavBar />
-      <section className={style.promo}>
-        <h1 className={style.title}>
-          Here are some <strong>projects</strong> of mine:
-        </h1>
-      </section>
-      <div className={style.showCases}>
-        {projects.map(p => <ShowCase key={p.title} project={p} />)}
+      <div className={style.main}>
+        <Promo>
+          <h1 className={style.title}>
+            Here are some <strong>projects</strong> of mine
+          </h1>
+        </Promo>
+        <section className={style.showCases}>
+          {projects.map(p => (
+            <ShowCase key={p.title} project={p} />
+          ))}
+        </section>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 
 const ShowCase = ({ project }) => {
-  console.log(project)
   return (
     <section className={style.showCase}>
       <Img
