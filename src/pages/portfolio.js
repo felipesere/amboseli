@@ -8,15 +8,16 @@ import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
 import { Promo } from '../components/promo'
 import { PromoLayout } from '../components/promo-layout'
+import { Title } from '../components/title'
 
 const Portfolio = props => {
   const projects = props.data.allMarkdownRemark.edges
   return (
     <PromoLayout
       top={
-        <h1 className={style.title}>
+        <Title>
           Here are some <strong>projects</strong> of mine
-        </h1>
+        </Title>
       }
       bottom={projects.map(p => <ShowCase key={p.title} project={p} />)}
     />

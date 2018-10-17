@@ -3,17 +3,17 @@ import { Link, graphql } from 'gatsby'
 import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
 import { Promo } from '../components/promo'
-import style from './tags.module.scss'
 import { PromoLayout } from '../components/promo-layout'
+import { Title } from '../components/title'
 
 const Tags = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <PromoLayout
       top={
-        <h1 className={style.title}>
+        <Title>
           These articles are tagged as <strong>{pageContext.tag}</strong>
-        </h1>
+        </Title>
       }
       bottom={posts.map(p => (
         <Article key={p.node.frontmatter.title} post={p} />
