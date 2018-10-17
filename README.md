@@ -28,7 +28,6 @@ Inspiration:
 
 ## Todos
 
-* Extract a common layout for /blogs, /tags, and /portfolio
 * better CSS
     * margins
     * font-sizes
