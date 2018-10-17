@@ -15,10 +15,24 @@ $swift-grey: #d3d3d3;
   &:nth-of-type(even) {
     flex-direction: row-reverse;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    &:nth-of-type(even) {
+      flex-direction: column;
+    }
+  }
 }
 
 .showCaseImage {
   width: 50%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 }
 
 .separator {
@@ -42,4 +56,7 @@ $swift-grey: #d3d3d3;
     text-transform: uppercase;
   }
 
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 }
