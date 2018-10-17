@@ -2,10 +2,9 @@ import React from 'react'
 import style from './blog.module.scss'
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
-import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
-import { Promo } from '../components/promo'
+import { PromoLayout } from '../components/promo-layout'
 
 const notDraft = post => {
   if (!inProd()) {
@@ -23,22 +22,19 @@ export default function Blog(props) {
   )
 
   return (
-    <React.Fragment>
-      <NavBar />
-      <div className={style.allBlogs}>
-        <Promo>
-          <Article post={first} isPromo withShadow={false} />
-        </Promo>
-        <section className={style.blogPreviews}>
-          {posts.map(p => (
-            <Article key={p.node.frontmatter.title} post={p} />
-          ))}
-        </section>
-        <div className={style.tagArea}>
-          <AvailableTags />
-        </div>
-      </div>
-    </React.Fragment>
+    <PromoLayout
+      top={<Article post={first} isPromo withShadow={false} />}
+      bottom={
+        <React.Fragment>
+          {
+            posts.map(p => <Article key={p.node.frontmatter.title} post={p} />)
+          }
+          <div className={style.tagArea}>
+            <AvailableTags />
+          </div>
+        </React.Fragment>
+      }
+    />
   )
 }
 

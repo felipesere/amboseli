@@ -1,16 +1,5 @@
 @import '../styles/colors';
 
-.allBlogs {
-  background: $light-grey;
-  padding-bottom: 5rem;
-}
-
-.blogPreviews {
-  @media (min-width: 800px) {
-    padding-top: 5rem;
-  }
-}
-
 .title {
   max-width: 700px;
   margin-left: auto;

@@ -7,25 +7,19 @@ import { NavBar } from '../components/navigation'
 import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
 import { Promo } from '../components/promo'
+import { PromoLayout } from '../components/promo-layout'
 
 const Portfolio = props => {
   const projects = props.data.allMarkdownRemark.edges
   return (
-    <React.Fragment>
-      <NavBar />
-      <div className={style.main}>
-        <Promo>
-          <h1 className={style.title}>
-            Here are some <strong>projects</strong> of mine
-          </h1>
-        </Promo>
-        <section className={style.showCases}>
-          {projects.map(p => (
-            <ShowCase key={p.title} project={p} />
-          ))}
-        </section>
-      </div>
-    </React.Fragment>
+    <PromoLayout
+      top={
+        <h1 className={style.title}>
+          Here are some <strong>projects</strong> of mine
+        </h1>
+      }
+      bottom={projects.map(p => <ShowCase key={p.title} project={p} />)}
+    />
   )
 }
 
