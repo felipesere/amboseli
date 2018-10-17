@@ -4,34 +4,33 @@ $swift-grey: #d3d3d3;
 
 .showCase {
   display: flex;
-  flex-direction: row;
-  width: 70%;
-  height: 327px; // Awful hack!
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2.5em;
   background: $swift-grey;
 
-  &:nth-of-type(even) {
-    flex-direction: row-reverse;
-  }
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+  @media (min-width: 800px) {
+    flex-direction: row;
+    height: 350px; // I want something better here!
 
     &:nth-of-type(even) {
-      flex-direction: column;
+      flex-direction: row-reverse;
     }
+  }
+
+  @media (min-width: 1200px) {
+    width: 70%;
   }
 }
 
 .showCaseImage {
-  width: 50%;
+  width: 100%;
 
-  @media (max-width: 800px) {
-    width: 100%;
+  @media (min-width: 800px) {
+    width: 50%;
   }
 }
 
