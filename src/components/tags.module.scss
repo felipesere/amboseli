@@ -1,10 +1,9 @@
 @import '../styles/colors';
 
 .tags {
-  margin-top: 0.75rem;
   list-style: none;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
 }
 
 .tag {
@@ -28,4 +27,9 @@
     color: black;
     border-color: black;
   }
+}
+
+.blue .tag {
+  color: $blue;
+  border: 1px solid $blue;
 }

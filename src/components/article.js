@@ -2,6 +2,8 @@ import React from 'react'
 import cx from 'classnames'
 import { Link } from 'gatsby'
 import style from './article.module.scss'
+import striptags from 'striptags'
+import { Tags } from './tags'
 
 export const Article = ({ post, isPromo, withShadow = true }) => {
   const title = post.node.frontmatter.title
@@ -20,6 +22,8 @@ export const Article = ({ post, isPromo, withShadow = true }) => {
       <p>{post.node.excerpt}</p>
       <footer className={style.footer}>
         <p>{post.node.frontmatter.date}</p>
+        <p>{timeToRead(post.node.html)}min read</p>
+        <Tags tags={post.node.frontmatter.tags} blue />
       </footer>
       <Link to={post.node.fields.slug} className={style.readMore} />
     </article>
@@ -42,3 +46,5 @@ const Header = ({ title }) => {
     </header>
   )
 }
+
+const timeToRead = (html) => Math.max( Math.round( striptags(html).split(" ").length / 200), 1)

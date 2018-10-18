@@ -52,6 +52,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          html
           excerpt
           fields {
             slug
@@ -60,6 +61,7 @@ export const pageQuery = graphql`
             draft
             date(formatString: "DD MMMM, YYYY")
             title
+            tags
           }
         }
       }
