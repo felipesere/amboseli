@@ -2,7 +2,10 @@
 
 .all {
   background: $light-grey;
-  padding-bottom: 5rem;
+
+  @media (min-width: 800px) {
+    padding-bottom: 3rem;
+  }
 }
 
 .bottom {
