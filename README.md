@@ -19,18 +19,23 @@ Inspiration:
 
 ## Pages
 
-[x] Intro
-[x] Blog index and individual posts
-[~] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
-[ ] Maybe photography
-[ ] CV
+- [x] Intro
+- [x] Blog index and individual posts
+- [~] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
+- [ ] Maybe photography
+- [ ] CV
 
 
 ## Todos
 
-* better CSS
-    * margins
-    * font-sizes
-* think of pagination
-* better naming around templates- and components and index pages...
-* Better 404 page
+- [ ] better CSS
+  - [ ] margins
+  - [ ] font-sizes
+- [ ] think of pagination
+- [ ] better naming around templates- and components and index pages...
+- [ ] Better 404 page
+- [ ] Move navigation on landing page to the top
+- [ ] Make all clickable things at least 45px tall/wide for mobile
+- [ ] Include tags on blog 'preview'
+- [ ] Add some sort of 'Estimated reading time...'
+
