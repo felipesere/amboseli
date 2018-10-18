@@ -36,6 +36,6 @@ Inspiration:
 - [ ] Better 404 page
 - [ ] Move navigation on landing page to the top
 - [ ] Make all clickable things at least 45px tall/wide for mobile
-- [ ] Include tags on blog 'preview'
-- [ ] Add some sort of 'Estimated reading time...'
+- [x] Include tags on blog 'preview'
+- [x] Add some sort of 'Estimated reading time...'
 

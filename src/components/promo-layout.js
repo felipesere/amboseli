@@ -6,7 +6,7 @@ import style from './promo-layout.module.scss'
 export const PromoLayout = ({top, bottom}) => {
   return (
   <React.Fragment>
-    <NavBar />
+    <NavBar center />
     <div className={style.all}>
       <Promo>
         {top}
