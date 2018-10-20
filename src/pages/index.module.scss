@@ -53,6 +53,14 @@
 
   li {
     margin-right: 1.5rem;
+    border: 1px solid $graphite;
+    padding: 4px 7px;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $light-grey;
+      transition: 0.25s;
+    }
   }
 
   a {
