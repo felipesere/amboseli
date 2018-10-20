@@ -8,6 +8,7 @@ import style from './blog-post.module.scss'
 import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
 import { Tags } from '../components/tags'
+import { Social } from '../components/social'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -40,6 +41,8 @@ class BlogPostTemplate extends React.Component {
 
             <hr />
           </article>
+
+          <Social socialConfig={{title: 'foo', twitterHandle: '@felipesere', url: 'https://felipesere.com'}} tags={tags} />
           <Navigation previous={previous} next={next} />
         </main>
       </React.Fragment>

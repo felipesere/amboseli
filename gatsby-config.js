@@ -4,6 +4,7 @@ module.exports = {
     author: 'Felipe Sere',
     description: 'Felipes path to mastery',
     siteUrl: 'https://felipesere.com',
+    twitterHandle: '@felipesere'
   },
   pathPrefix: '/',
   plugins: [

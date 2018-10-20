@@ -1,0 +1,43 @@
+$brand-colors: (
+        facebook: #3b5998,
+        twitter: #1da1f2,
+        linkedin: #0077b5,
+        reddit: #ff4500,
+);
+
+.social {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 115px);
+  grid-gap: 1rem;
+  width: 100%;
+}
+
+.share {
+  float: left;
+  white-space: nowrap;
+  margin-right: 1em;
+}
+
+@each $brand, $color in $brand-colors {
+  .#{$brand} {
+    color: $color;
+    border: 1px solid $color;
+    padding: 4px 7px;
+    border-radius: 3px;
+    height: 32px; // hack
+    font-size: 0.75rem;
+
+    &:hover {
+      background-color: $color;
+      border-color: $color;
+      color: #fff;
+    }
+  }
+}
+
