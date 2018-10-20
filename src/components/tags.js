@@ -30,7 +30,7 @@ export const TagLabels = ({ tags }) => {
     return (
       <div className={style.tags}>
         {tags.map(t => (
-          <div className={style.tagLabel}>{t}</div>
+          <div key={t} className={style.tagLabel}>{t}</div>
         ))}
       </div>
     )

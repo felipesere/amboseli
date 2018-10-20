@@ -14,6 +14,7 @@ const Portfolio = props => {
   const projects = props.data.allMarkdownRemark.edges
   return (
     <PromoLayout
+      title={"Felipe's Portfolio"}
       top={
         <Title>
           Here are some <strong>projects</strong> of mine

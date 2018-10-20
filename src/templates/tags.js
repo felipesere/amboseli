@@ -10,6 +10,7 @@ const Tags = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <PromoLayout
+      title={'Tagged articles'}
       top={
         <Title>
           These articles are tagged as <strong>{pageContext.tag}</strong>
