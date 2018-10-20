@@ -19,7 +19,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <React.Fragment>
-        <NavBar />
+        <NavBar center />
         <main className={style.main}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
