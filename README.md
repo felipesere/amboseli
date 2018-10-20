@@ -31,6 +31,7 @@ Inspiration:
 - [ ] better CSS
   - [ ] margins
   - [ ] font-sizes
+  - [ ] consider extracting functions
 - [ ] think of pagination
 - [ ] better naming around templates- and components and index pages...
 - [ ] Better 404 page
