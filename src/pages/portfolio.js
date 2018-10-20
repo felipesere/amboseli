@@ -19,7 +19,7 @@ const Portfolio = props => {
           Here are some <strong>projects</strong> of mine
         </Title>
       }
-      bottom={projects.map(p => <ShowCase key={p.title} project={p} />)}
+      bottom={projects.map(p => <ShowCase key={p.node.frontmatter.title} project={p} />)}
     />
   )
 }
