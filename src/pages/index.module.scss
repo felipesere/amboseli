@@ -30,17 +30,30 @@
 
 .socialIcon {
   width: 18px;
-  height: 18px;
   vertical-align: middle;
   margin-right: 5px;
 }
 
-.splitLists {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 40px;
-  vertical-align: top;
+.list {
   font-size: 0.75rem;
+  margin-top: 2rem;
+
+  h1 {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  ol {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    margin-right: 1.5rem;
+  }
 
   a {
     color: black;
@@ -50,24 +63,5 @@
       color: $blue;
       transition: 0.25s;
     }
-  }
-}
-
-.list {
-  margin-right: 60px;
-
-  h1 {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    margin-bottom: 0.6rem;
-  }
-
-  ol {
-    list-style: none;
-    margin: 0;
-  }
-
-  li {
-    margin-bottom: 0.5rem;
   }
 }

@@ -34,7 +34,7 @@ Inspiration:
 - [ ] think of pagination
 - [ ] better naming around templates- and components and index pages...
 - [ ] Better 404 page
-- [ ] Move navigation on landing page to the top
+- [x] Move navigation on landing page to the top
 - [ ] Make all clickable things at least 45px tall/wide for mobile
 - [x] Include tags on blog 'preview'
 - [x] Add some sort of 'Estimated reading time...'

@@ -6,6 +6,7 @@ import { graphql, Link } from 'gatsby'
 import github from './github.png'
 import twitter from './twitter.png'
 import keybase from './keybase.png'
+import email from './email.png'
 import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
 
@@ -54,10 +55,7 @@ export default function Me({ data, location }) {
 
         <Prose text={post.html} />
 
-        <div className={style.splitLists}>
-          <Connect />
-          <Social />
-        </div>
+        <Social />
       </div>
     </SplitLayout>
   )
@@ -66,7 +64,7 @@ export default function Me({ data, location }) {
 const Social = () => {
   return (
     <List
-      title="Social"
+      title="Social:"
       elements={[
         <a href="https://twitter.com/felipesere">
           <img src={twitter} className={style.socialIcon} />
@@ -80,19 +78,10 @@ const Social = () => {
           <img src={keybase} className={style.socialIcon} />
           Keybase
         </a>,
-      ]}
-    />
-  )
-}
-
-const Connect = () => {
-  return (
-    <List
-      title="Connect"
-      elements={[
-        <Link to="/blog">Blog</Link>,
-        <a href="mailto:felipesere@gmail.com">Email</a>,
-        <Link to="/portfolio">Portfolio</Link>,
+        <a href="mailto:felipesere@gmail.com">
+          <img src={email} className={style.socialIcon} />
+          Email
+        </a>,
       ]}
     />
   )
