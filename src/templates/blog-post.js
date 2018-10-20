@@ -17,6 +17,8 @@ class BlogPostTemplate extends React.Component {
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
 
+    const title = get(post, 'frontmatter.title')
+
     return (
       <React.Fragment>
         <NavBar center />
@@ -24,11 +26,11 @@ class BlogPostTemplate extends React.Component {
           <Helmet
             htmlAttributes={{ lang: 'en' }}
             meta={[{ name: 'description', content: siteDescription }]}
-            title={`${post.frontmatter.title} | ${siteTitle}`}
+            title={`${title} | ${siteTitle}`}
             link={[{ rel: 'shortcut icon', type: 'image/png', href: icon }]}
           />
           <article>
-            <h1 className={style.title}>{post.frontmatter.title}</h1>
+            <h1 className={style.title}>{title}</h1>
             <div className={style.metadata}>
               <span className={style.date}>{post.frontmatter.date}</span>
               <Tags tags={tags} blue />

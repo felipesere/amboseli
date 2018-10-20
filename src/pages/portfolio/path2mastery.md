@@ -11,5 +11,3 @@ The rough prototype is a pure JavaScript and React app.
 You can read more about it in this [blog](/blog/path2mastery).
 
 See it running at: https://path2mastery.herokuapp.com
-
-

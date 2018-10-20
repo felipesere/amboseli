@@ -10,12 +10,14 @@ const NotFoundPage = () => (
       <p className={style.subtitle}>
         You've just hit a route that doesn't exist... dang!
       </p>
-      <p>
-        Let's get you back on track:
-      </p>
+      <p>Let's get you back on track:</p>
       <div className={style.links}>
-        <Link className={style.link} to="/">Home</Link>
-        <Link className={style.link} to="/blog">Blog</Link>
+        <Link className={style.link} to="/">
+          Home
+        </Link>
+        <Link className={style.link} to="/blog">
+          Blog
+        </Link>
       </div>
     </div>
   </React.Fragment>

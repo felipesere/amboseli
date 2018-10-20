@@ -22,7 +22,10 @@ export const Article = ({ post, isPromo, withShadow = true }) => {
       <p>{post.node.excerpt}</p>
       <footer className={style.footer}>
         <p>{post.node.frontmatter.date}</p>
-        <p>{timeToRead(post.node.html)}min read</p>
+        <p>
+          {timeToRead(post.node.html)}
+          min read
+        </p>
         <TagLabels tags={post.node.frontmatter.tags} />
       </footer>
       <Link to={post.node.fields.slug} className={style.readMore} />
@@ -47,4 +50,5 @@ const Header = ({ title }) => {
   )
 }
 
-const timeToRead = (html) => Math.max( Math.round( striptags(html).split(" ").length / 200), 1)
+const timeToRead = html =>
+  Math.max(Math.round(striptags(html).split(' ').length / 200), 1)

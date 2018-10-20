@@ -26,9 +26,9 @@ export default function Blog(props) {
       top={<Article post={first} isPromo withShadow={false} />}
       bottom={
         <React.Fragment>
-          {
-            posts.map(p => <Article key={p.node.frontmatter.title} post={p} />)
-          }
+          {posts.map(p => (
+            <Article key={p.node.frontmatter.title} post={p} />
+          ))}
           <div className={style.tagArea}>
             <AvailableTags />
           </div>

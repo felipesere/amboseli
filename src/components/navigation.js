@@ -3,10 +3,9 @@ import style from './navigation.module.scss'
 import { Link } from 'gatsby'
 import cx from 'classnames'
 
-export const NavBar = ({center = false}) => {
-
+export const NavBar = ({ center = false }) => {
   const className = cx(style.navbar, {
-    [style.centered]: center
+    [style.centered]: center,
   })
 
   return (
