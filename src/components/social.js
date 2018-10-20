@@ -16,7 +16,7 @@ import {
   faRedditAlien,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons'
-import { StaticQuery } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 
 library.add(fas, faTwitter, faFacebookF, faRedditAlien, faLinkedinIn)
 
