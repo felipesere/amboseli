@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { Link } from 'gatsby'
 import style from './article.module.scss'
 import striptags from 'striptags'
-import { Tags } from './tags'
+import { TagLabels } from './tags'
 
 export const Article = ({ post, isPromo, withShadow = true }) => {
   const title = post.node.frontmatter.title
@@ -23,7 +23,7 @@ export const Article = ({ post, isPromo, withShadow = true }) => {
       <footer className={style.footer}>
         <p>{post.node.frontmatter.date}</p>
         <p>{timeToRead(post.node.html)}min read</p>
-        <Tags tags={post.node.frontmatter.tags} blue />
+        <TagLabels tags={post.node.frontmatter.tags} />
       </footer>
       <Link to={post.node.fields.slug} className={style.readMore} />
     </article>

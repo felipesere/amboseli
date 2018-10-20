@@ -7,21 +7,32 @@ export const Tags = ({ tags, blue = false }) => {
   if (tags.length == 0) {
     return null
   } else {
-
     const className = cx(style.tags, {
-      [style.blue]: blue
+      [style.blue]: blue,
     })
 
     return (
-      <React.Fragment>
-        <div className={className}>
-          {tags.map(t => (
-            <Link className={style.tag} key={t} to={`/tags/${t}`}>
-              {t}
-            </Link>
-          ))}
-        </div>
-      </React.Fragment>
+      <div className={className}>
+        {tags.map(t => (
+          <Link className={style.tag} key={t} to={`/tags/${t}`}>
+            {t}
+          </Link>
+        ))}
+      </div>
+    )
+  }
+}
+
+export const TagLabels = ({ tags }) => {
+  if (tags.length == 0) {
+    return null
+  } else {
+    return (
+      <div className={style.tags}>
+        {tags.map(t => (
+          <div className={style.tagLabel}>{t}</div>
+        ))}
+      </div>
     )
   }
 }

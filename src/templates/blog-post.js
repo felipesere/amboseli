@@ -31,7 +31,7 @@ class BlogPostTemplate extends React.Component {
             <h1 className={style.title}>{post.frontmatter.title}</h1>
             <div className={style.metadata}>
               <span className={style.date}>{post.frontmatter.date}</span>
-              <Tags tags={tags} />
+              <Tags tags={tags} blue />
             </div>
 
             <div dangerouslySetInnerHTML={{ __html: post.html }} />

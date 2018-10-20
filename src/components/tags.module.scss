@@ -1,7 +1,6 @@
 @import '../styles/colors';
 
 .tags {
-  list-style: none;
   display: flex;
   flex-flow: wrap;
 }
@@ -26,7 +25,14 @@
   &:hover {
     color: black;
     border-color: black;
+    background-color: $light-grey;
   }
+}
+
+.tagLabel {
+  background: $light-blue;
+  border-radius: 3px;
+  padding: 4px 7px;
 }
 
 .blue .tag {
