@@ -42,7 +42,7 @@ class BlogPostTemplate extends React.Component {
             <hr />
           </article>
 
-          <Social socialConfig={{title: 'foo', twitterHandle: '@felipesere', url: 'https://felipesere.com'}} tags={tags} />
+          <Social title={title} tags={tags} slug={post.fields.slug}/>
           <Navigation previous={previous} next={next} />
         </main>
       </React.Fragment>
@@ -95,6 +95,9 @@ export const pageQuery = graphql`
       id
       excerpt
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         tags
