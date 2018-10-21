@@ -63,7 +63,7 @@ export default function Me({ data, location }) {
 
 const Social = () => {
   return (
-    <div>
+    <div className={style.social}>
       <p className={style.reachMe}>You can reach me on:</p>
       <Icons>
         <a href="https://twitter.com/felipesere">
