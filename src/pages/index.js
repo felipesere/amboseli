@@ -2,13 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { SplitLayout } from '../components/split-layout'
 import style from './index.module.scss'
-import { graphql, Link } from 'gatsby'
-import github from './github.png'
-import twitter from './twitter.png'
-import keybase from './keybase.png'
-import email from './email.png'
+import { graphql } from 'gatsby'
 import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
+
+import { Email, Github, Icons, Keybase, LinkedIn, Twitter, Xing } from '../components/share/social'
 
 const Tagline = ({ children }) => {
   const [first, second, third] = children
@@ -30,7 +28,7 @@ const Name = ({ children }) => {
 
 const Prose = ({ text }) => {
   return (
-    <div className={style.prose} dangerouslySetInnerHTML={{ __html: text }} />
+    <div className={style.prose} dangerouslySetInnerHTML={{ __html: text }}/>
   )
 }
 
@@ -48,14 +46,16 @@ export default function Me({ data, location }) {
         link={[{ rel: 'shortcut icon', type: 'image/png', href: icon }]}
       />
       <div className={style.content}>
-        <NavBar />
+        <NavBar/>
         <Name>{post.frontmatter.name}</Name>
 
         <Tagline>{post.frontmatter.tagline}</Tagline>
 
-        <Prose text={post.html} />
+        <Prose text={post.html}/>
 
-        <Social />
+        <hr className={style.separator}/>
+
+        <Social/>
       </div>
     </SplitLayout>
   )
@@ -63,39 +63,28 @@ export default function Me({ data, location }) {
 
 const Social = () => {
   return (
-    <List
-      title="Social:"
-      elements={[
+    <div>
+      <p className={style.reachMe}>You can reach me on:</p>
+      <Icons>
         <a href="https://twitter.com/felipesere">
-          <img src={twitter} className={style.socialIcon} />
-          Twitter
-        </a>,
+          <Twitter/>
+        </a>
         <a href="https://github.com/felipesere">
-          <img src={github} className={style.socialIcon} />
-          Github
-        </a>,
+          <Github/>
+        </a>
         <a href="https://keybase.io/felipesere">
-          <img src={keybase} className={style.socialIcon} />
-          Keybase
-        </a>,
+          <Keybase/>
+        </a>
+        <a href="https://www.xing.com/profile/Felipe_Sere">
+          <Xing/>
+        </a>
+        <a href="https://uk.linkedin.com/in/felipe-sere-47a999106">
+          <LinkedIn/>
+        </a>
         <a href="mailto:felipesere@gmail.com">
-          <img src={email} className={style.socialIcon} />
-          Email
-        </a>,
-      ]}
-    />
-  )
-}
-
-const List = ({ title, elements }) => {
-  return (
-    <div className={style.list}>
-      <h1>{title}</h1>
-      <ol>
-        {elements.map((e, i) => (
-          <li key={i}>{e}</li>
-        ))}
-      </ol>
+          <Email/>
+        </a>
+      </Icons>
     </div>
   )
 }

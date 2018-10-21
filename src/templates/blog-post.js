@@ -8,7 +8,7 @@ import style from './blog-post.module.scss'
 import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
 import { Tags } from '../components/tags'
-import { Social } from '../components/social'
+import { Share } from '../components/share'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -42,7 +42,7 @@ class BlogPostTemplate extends React.Component {
             <hr />
           </article>
 
-          <Social title={title} tags={tags} slug={post.fields.slug}/>
+          <Share title={title} tags={tags} slug={post.fields.slug}/>
           <Navigation previous={previous} next={next} />
         </main>
       </React.Fragment>
