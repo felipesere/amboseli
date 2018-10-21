@@ -23,6 +23,7 @@ Inspiration:
 - [x] Blog index and individual posts
 - [~] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
 - [ ] Maybe photography
+- [ ] Books i like
 - [ ] CV
 
 
