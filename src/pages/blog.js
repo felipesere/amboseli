@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './blog.module.scss'
 import get from 'lodash/get'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
 import { PromoLayout } from '../components/promo-layout'
@@ -27,10 +27,10 @@ export default function Blog(props) {
       top={<Article post={first} isPromo withShadow={false} />}
       bottom={
         <React.Fragment>
-          {posts.map(p => <Article key={p.node.frontmatter.title} post={p} />)}
           <div className={style.tagArea}>
             <AvailableTags />
           </div>
+          {posts.map(p => <Article key={p.node.frontmatter.title} post={p} />)}
         </React.Fragment>
       }
     />

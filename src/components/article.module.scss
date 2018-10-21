@@ -36,7 +36,7 @@
   font-size: 0.65rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -44,10 +44,19 @@
 }
 
 .footer * {
-  margin: 0;
-  margin-right: 2em;
+  margin: 0 2em 0 0;
 
   @media (max-width: 800px) {
     margin-top: 0.5em;
   }
 }
+
+.tags {
+  flex-grow: 1;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 50%
+  }
+}
+

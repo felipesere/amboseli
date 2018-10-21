@@ -4,12 +4,14 @@ import style from './tags.module.scss'
 import cx from 'classnames'
 
 export const Tags = ({ tags, blue = false }) => {
-  if (tags.length == 0) {
+  if (tags.length === 0) {
     return null
   } else {
     const className = cx(style.tags, {
       [style.blue]: blue,
     })
+
+    tags.sort()
 
     return (
       <div className={className}>

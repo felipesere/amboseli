@@ -1,26 +1,18 @@
 @import '../styles/colors';
 
 .tags {
-  display: flex;
-  flex-flow: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px ,1fr));
+  grid-gap: 0.25rem;
 }
 
 .tag {
-  margin: 5px;
   color: $darker-graphite;
   border: 1px solid $graphite;
   text-decoration: none;
   padding: 4px 7px;
   border-radius: 3px;
   font-size: 0.5rem;
-
-  &:first-child {
-    margin-left: 0px;
-  }
-
-  &:last-child {
-    margin-right: 0px;
-  }
 
   &:hover {
     color: black;

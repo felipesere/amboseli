@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, Link, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import { Tags } from './tags'
 
 export const AvailableTags = () => {
@@ -23,7 +23,7 @@ export const AvailableTags = () => {
       `}
       render={data => {
         const tags = extractTags(data.allMarkdownRemark.edges)
-        return <Tags tags={tags} />
+        return (<Tags tags={tags}/>)
       }}
     />
   )

@@ -7,6 +7,7 @@ import { TagLabels } from './tags'
 
 export const Article = ({ post, isPromo, withShadow = true }) => {
   const title = post.node.frontmatter.title
+  const html = post.node.html
   const header = isPromo ? (
     <PromoHeader title={title} />
   ) : (
@@ -22,11 +23,10 @@ export const Article = ({ post, isPromo, withShadow = true }) => {
       <p>{post.node.excerpt}</p>
       <footer className={style.footer}>
         <p>{post.node.frontmatter.date}</p>
-        <p>
-          {timeToRead(post.node.html)}
-          min read
-        </p>
-        <TagLabels tags={post.node.frontmatter.tags} />
+        <p>{timeToRead(html)}min read</p>
+        <div className={style.tags}>
+          <TagLabels tags={post.node.frontmatter.tags} />
+        </div>
       </footer>
       <Link to={post.node.fields.slug} className={style.readMore} />
     </article>
