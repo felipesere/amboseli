@@ -32,7 +32,7 @@ export const Share = ({ title, tags, slug }) => {
         return (
           <ShareIcons
             title={title}
-            tag={tags}
+            tags={tags}
             twitter={twitterHandle}
             url={`${siteUrl}${slug}`}
           />
