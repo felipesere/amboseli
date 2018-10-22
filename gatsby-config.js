@@ -85,7 +85,6 @@ module.exports = {
         icon: `src/assets/favicon.png`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',
