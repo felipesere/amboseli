@@ -56,14 +56,15 @@ const ShareIcons = ({ title, tags, twitter, url }) => {
           <Twitter />
         </TwitterShareButton>
         <FacebookShareButton url={url}>
-          <Facebook/>
+          <Facebook />
         </FacebookShareButton>
         <LinkedinShareButton url={url} title={title}>
-          <LinkedIn/>
+          <LinkedIn />
         </LinkedinShareButton>
         <RedditShareButton url={url} title={title}>
           <Reddit />
-        </RedditShareButton>{}
+        </RedditShareButton>
+        {}
       </Icons>
     </div>
   )

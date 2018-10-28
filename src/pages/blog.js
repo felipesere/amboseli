@@ -30,7 +30,9 @@ export default function Blog(props) {
           <div className={style.tagArea}>
             <AvailableTags />
           </div>
-          {posts.map(p => <Article key={p.node.frontmatter.title} post={p} />)}
+          {posts.map(p => (
+            <Article key={p.node.frontmatter.title} post={p} />
+          ))}
         </React.Fragment>
       }
     />

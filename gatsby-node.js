@@ -7,7 +7,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost     = path.resolve('./src/templates/blog-post.js')
+    const blogPost = path.resolve('./src/templates/blog-post.js')
     const tagsTemplate = path.resolve('./src/templates/tags.js')
 
     resolve(
@@ -72,16 +72,16 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         let tags = []
-        published.forEach((x) => {
+        published.forEach(x => {
           tags = tags.concat(x.node.frontmatter.tags || [])
         })
         tags = _.uniq(tags)
 
-        tags.forEach((tag) => {
+        tags.forEach(tag => {
           createPage({
             path: `/tags/${tag}`,
             component: tagsTemplate,
-            context: {tag}
+            context: { tag },
           })
         })
       })

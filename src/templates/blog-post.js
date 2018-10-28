@@ -42,7 +42,7 @@ class BlogPostTemplate extends React.Component {
             <hr />
           </article>
 
-          <Share title={title} tags={tags} slug={post.fields.slug}/>
+          <Share title={title} tags={tags} slug={post.fields.slug} />
           <Navigation previous={previous} next={next} />
         </main>
       </React.Fragment>

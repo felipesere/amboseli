@@ -23,7 +23,7 @@ export const AvailableTags = () => {
       `}
       render={data => {
         const tags = extractTags(data.allMarkdownRemark.edges)
-        return (<Tags tags={tags}/>)
+        return <Tags tags={tags} />
       }}
     />
   )

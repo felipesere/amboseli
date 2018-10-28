@@ -23,7 +23,10 @@ export const Article = ({ post, isPromo, withShadow = true }) => {
       <p>{post.node.excerpt}</p>
       <footer className={style.footer}>
         <p>{post.node.frontmatter.date}</p>
-        <p>{timeToRead(html)}min read</p>
+        <p>
+          {timeToRead(html)}
+          min read
+        </p>
         <div className={style.tags}>
           <TagLabels tags={post.node.frontmatter.tags} />
         </div>

@@ -7,7 +7,15 @@ import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
 import { Separator } from '../components/separator'
 
-import { Email, Github, Icons, Keybase, LinkedIn, Twitter, Xing } from '../components/share/social'
+import {
+  Email,
+  Github,
+  Icons,
+  Keybase,
+  LinkedIn,
+  Twitter,
+  Xing,
+} from '../components/share/social'
 
 const Tagline = ({ children }) => {
   const [first, second, third] = children
@@ -29,7 +37,7 @@ const Name = ({ children }) => {
 
 const Prose = ({ text }) => {
   return (
-    <div className={style.prose} dangerouslySetInnerHTML={{ __html: text }}/>
+    <div className={style.prose} dangerouslySetInnerHTML={{ __html: text }} />
   )
 }
 
@@ -47,16 +55,16 @@ export default function Me({ data, location }) {
         link={[{ rel: 'shortcut icon', type: 'image/png', href: icon }]}
       />
       <div className={style.content}>
-        <NavBar/>
+        <NavBar />
         <Name>{post.frontmatter.name}</Name>
 
         <Tagline>{post.frontmatter.tagline}</Tagline>
 
-        <Prose text={post.html}/>
+        <Prose text={post.html} />
 
         <Separator />
 
-        <Social/>
+        <Social />
       </div>
     </SplitLayout>
   )
@@ -68,22 +76,22 @@ const Social = () => {
       <p className={style.reachMe}>You can reach me on:</p>
       <Icons>
         <a href="https://twitter.com/felipesere">
-          <Twitter/>
+          <Twitter />
         </a>
         <a href="https://github.com/felipesere">
-          <Github/>
+          <Github />
         </a>
         <a href="https://keybase.io/felipesere">
-          <Keybase/>
+          <Keybase />
         </a>
         <a href="https://www.xing.com/profile/Felipe_Sere">
-          <Xing/>
+          <Xing />
         </a>
         <a href="https://uk.linkedin.com/in/felipe-sere-47a999106">
-          <LinkedIn/>
+          <LinkedIn />
         </a>
         <a href="mailto:felipesere@gmail.com">
-          <Email/>
+          <Email />
         </a>
       </Icons>
     </div>
