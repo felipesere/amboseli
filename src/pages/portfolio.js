@@ -9,6 +9,7 @@ import { AvailableTags } from '../components/available-tags'
 import { Promo } from '../components/promo'
 import { PromoLayout } from '../components/promo-layout'
 import { Title } from '../components/title'
+import { Separator } from '../components/separator'
 
 const Portfolio = props => {
   const projects = props.data.allMarkdownRemark.edges
@@ -36,7 +37,9 @@ const ShowCase = ({ project }) => {
       />
       <article className={style.description}>
         <h1>{project.node.frontmatter.title}</h1>
-        <hr className={style.separator} />
+
+        <Separator />
+
         <div dangerouslySetInnerHTML={{ __html: project.node.html }} />
       </article>
     </section>

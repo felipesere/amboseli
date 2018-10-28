@@ -5,6 +5,7 @@ import style from './index.module.scss'
 import { graphql } from 'gatsby'
 import icon from '../assets/favicon.png'
 import { NavBar } from '../components/navigation'
+import { Separator } from '../components/separator'
 
 import { Email, Github, Icons, Keybase, LinkedIn, Twitter, Xing } from '../components/share/social'
 
@@ -53,7 +54,7 @@ export default function Me({ data, location }) {
 
         <Prose text={post.html}/>
 
-        <hr className={style.separator}/>
+        <Separator />
 
         <Social/>
       </div>
