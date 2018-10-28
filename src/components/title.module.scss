@@ -3,6 +3,7 @@
 
 .title {
   @include core-width();
+  padding: 30px;
 
   strong {
     color: $blue;

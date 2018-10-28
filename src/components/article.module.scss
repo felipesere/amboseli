@@ -2,6 +2,7 @@
 
 .post {
   @include core-width();
+  padding: 30px;
   margin-bottom: 30px;
 
   position: relative;
