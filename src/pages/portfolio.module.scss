@@ -52,7 +52,7 @@ $swift-grey: #d3d3d3;
 
 .description {
   padding: 0 1em 0 1em;
-  width: 50%;
+  width: 100%;
   font-size: 0.75rem;
 
   h1 {
@@ -62,7 +62,7 @@ $swift-grey: #d3d3d3;
     text-transform: uppercase;
   }
 
-  @media (max-width: 800px) {
-    width: 100%;
+  @media (min-width: 800px) {
+    width: 50%;
   }
 }

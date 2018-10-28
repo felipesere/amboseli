@@ -34,19 +34,19 @@
 .footer {
   font-size: 0.65rem;
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
+  flex-direction: column;
 
-  @media (max-width: 800px) {
-    flex-direction: column;
+  @media (min-width: 800px) {
+    flex-direction: row;
   }
 }
 
 .footer * {
-  margin: 0 2em 0 0;
+  margin: 0.25rem 2em 0 0;
 
-  @media (max-width: 800px) {
-    margin-top: 0.5em;
+  @media (min-width: 800px) {
+    margin-top: 0;
   }
 }
 
@@ -55,7 +55,6 @@
   width: 100%;
 
   @media (min-width: 800px) {
-    width: 50%
+    width: 50%;
   }
 }
-
