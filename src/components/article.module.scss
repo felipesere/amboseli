@@ -42,7 +42,7 @@
   }
 }
 
-.footer * {
+.footer p {
   margin: 0.25rem 2em 0 0;
 
   @media (min-width: 800px) {
@@ -53,8 +53,10 @@
 .tags {
   flex-grow: 1;
   width: 100%;
+  margin-top: 0.25rem;
 
   @media (min-width: 800px) {
+    margin-top: 0;
     width: 50%;
   }
 }
