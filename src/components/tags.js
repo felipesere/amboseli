@@ -15,7 +15,7 @@ export const Tags = ({ tags, blue = false }) => {
 
     return (
       <div className={className}>
-        {tags.map(t => (
+        {tags.map((t) => (
           <Link className={style.tag} key={t} to={`/tags/${t}`}>
             {t}
           </Link>
@@ -31,7 +31,7 @@ export const TagLabels = ({ tags }) => {
   } else {
     return (
       <div className={style.tags}>
-        {tags.map(t => (
+        {tags.map((t) => (
           <div key={t} className={style.tagLabel}>
             {t}
           </div>

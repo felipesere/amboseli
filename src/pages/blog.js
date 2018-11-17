@@ -6,7 +6,7 @@ import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
 import { PromoLayout } from '../components/promo-layout'
 
-const notDraft = post => {
+const notDraft = (post) => {
   if (!inProd()) {
     return true
   }
@@ -18,7 +18,7 @@ const inProd = () => process.env.NODE_ENV === 'production'
 
 export default function Blog(props) {
   const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges').filter(
-    p => notDraft(p)
+    (p) => notDraft(p)
   )
 
   return (
@@ -30,7 +30,7 @@ export default function Blog(props) {
           <div className={style.tagArea}>
             <AvailableTags />
           </div>
-          {posts.map(p => (
+          {posts.map((p) => (
             <Article key={p.node.frontmatter.title} post={p} />
           ))}
         </React.Fragment>

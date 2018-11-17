@@ -53,5 +53,5 @@ const Header = ({ title }) => {
   )
 }
 
-const timeToRead = html =>
+const timeToRead = (html) =>
   Math.max(Math.round(striptags(html).split(' ').length / 200), 1)

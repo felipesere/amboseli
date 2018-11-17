@@ -16,7 +16,7 @@ const Tags = ({ pageContext, data }) => {
           These articles are tagged as <strong>{pageContext.tag}</strong>
         </Title>
       }
-      bottom={posts.map(p => (
+      bottom={posts.map((p) => (
         <Article key={p.node.frontmatter.title} post={p} />
       ))}
     />

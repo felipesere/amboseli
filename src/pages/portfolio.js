@@ -7,7 +7,7 @@ import { PromoLayout } from '../components/promo-layout'
 import { Title } from '../components/title'
 import { Separator } from '../components/separator'
 
-const Portfolio = props => {
+const Portfolio = (props) => {
   const projects = props.data.allMarkdownRemark.edges
   return (
     <PromoLayout
@@ -17,7 +17,7 @@ const Portfolio = props => {
           Here are some <strong>projects</strong> of mine
         </Title>
       }
-      bottom={projects.map(p => (
+      bottom={projects.map((p) => (
         <ShowCase key={p.node.frontmatter.title} project={p} />
       ))}
     />

@@ -21,7 +21,7 @@ export const AvailableTags = () => {
           }
         }
       `}
-      render={data => {
+      render={(data) => {
         const tags = extractTags(data.allMarkdownRemark.edges)
         return <Tags tags={tags} />
       }}
@@ -29,8 +29,8 @@ export const AvailableTags = () => {
   )
 }
 
-const extractTags = posts => {
+const extractTags = (posts) => {
   let tags = []
-  posts.forEach(p => (tags = tags.concat(p.node.frontmatter.tags || [])))
+  posts.forEach((p) => (tags = tags.concat(p.node.frontmatter.tags || [])))
   return Array.from(new Set(tags))
 }

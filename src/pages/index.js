@@ -20,8 +20,8 @@ import {
 const Tagline = ({ children }) => {
   const [first, second, third] = children
     .split('.')
-    .map(t => t.replace(/ /g, ''))
-    .map(name => name + '. ')
+    .map((t) => t.replace(/ /g, ''))
+    .map((name) => name + '. ')
   return (
     <h1 className={style.tagline}>
       {first}
