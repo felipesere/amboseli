@@ -1,0 +1,34 @@
+@import '../styles/utils';
+@import '../styles/colors';
+
+$desktop-square: 10%;
+
+.square {
+  height: 0;
+  padding-bottom: $desktop-square;
+  width: $desktop-square;
+  background: $graphite;
+}
+
+.day {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.adventDay {
+  @include core-width();
+  display: flex;
+  margin-bottom: 25px;
+  background: white;
+  @include shadow();
+}
+
+.main {
+  margin-left: 10px;
+}
+
+.title {
+}
+
+.prose {
+}
