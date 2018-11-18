@@ -3,7 +3,16 @@
 
 .title {
   @include core-width();
-  padding: 30px;
+
+  strong {
+    color: $blue;
+  }
+}
+
+.subtitle {
+  @include core-width();
+  font-style: italic;
+  font-weight: lighter;
 
   strong {
     color: $blue;

@@ -3,67 +3,73 @@ import classnames from 'classnames'
 import style from './advent.module.scss'
 import { graphql } from 'gatsby'
 import { PromoLayout } from '../components/promo-layout'
-import { Title } from '../components/title'
+import { Title, Subtitle } from '../components/title'
+import moment from 'moment'
+
 
 const AdventCalendar = (props) => {
-  const days = [3, 2, 1]
-  console.log('Hi there')
+  console.log(props)
+  const {data: {allMarkdownRemark: {edges: days}}} = props
   return (
     <PromoLayout
       title={'Advent of Coder'}
       top={
-        <Title>
-          Advent of <strong>Coder</strong>
-        </Title>
+        <div className={style.adventTop}>
+          <Title>Advent of <strong>Code</strong></Title>
+          <Subtitle>Small nuggets worth looking at running up to Christmas.</Subtitle>
+        </div>
       }
-      bottom={days.map((day) => (
+      bottom={days.map(({node: {excerpt: excerpt, frontmatter: f}}) => (
         <AdventDay
-          key={day}
-          day={day}
-          title={'Vim text navigation'}
-          prose={'Bla bla bla'}
+          key={f.date}
+          date={f.date}
+          title={f.title}
         />
       ))}
     />
   )
 }
 
-const AdventDay = ({ day, title, prose }) => {
+const AdventDay = ({ date, title, prose }) => {
+  const day = moment(date).date()
   return (
     <article className={style.adventDay}>
-      <div className={classnames(style.day, style.square)}>{day}</div>
+      <Square><div className={style.day}>{day}</div></Square>
       <section className={style.main}>
-        <div className={style.title}>{title}</div>
+        {title}
       </section>
     </article>
   )
 }
 
-/*
+const Square = ({children}) => {
+  return (
+    <div className={style.square}>
+      <div className={style.squareContent}>
+        {children}
+      </div>
+    </div>
+  )
+}
+
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(filter: { fields: { slug: { regex: "/advent/" } } }) {
+    allMarkdownRemark(
+    filter: { fields: { slug: { regex: "/advent/" } } }
+    sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
+          excerpt
           html
-          fields {
-            slug
-          }
           frontmatter {
             title
-            projectImage {
-              childImageSharp {
-                fluid(maxWidth: 700) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            date
           }
         }
       }
     }
   }
 `
-*/
 
 export default AdventCalendar
