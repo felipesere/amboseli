@@ -1,12 +1,14 @@
 import React from 'react'
 import classnames from 'classnames'
 import style from './advent.module.scss'
-import ReactModal from 'react-modal'
 import { graphql } from 'gatsby'
 import { PromoLayout }     from '../components/promo-layout'
 import { Title, Subtitle } from '../components/title'
 import { Day }             from '../components/calendar-day'
 import { Separator } from '../components/separator'
+import { Modal, initModal } from '../components/modal'
+
+initModal()
 
 const AdventCalendar = (props) => {
   const {
@@ -73,20 +75,6 @@ class AdventDay extends React.Component {
   }
 }
 
-ReactModal.setAppElement('#___gatsby')
-
-const Modal = ({ isOpen, onClose, children }) => {
-  return (
-    <ReactModal
-      className={style.modal}
-      overlayClassName={style.overlay}
-      isOpen={isOpen}
-      onRequestClose={onClose}
-    >
-      {children}
-    </ReactModal>
-  )
-}
 
 export const pageQuery = graphql`
   {
