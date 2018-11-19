@@ -1,11 +1,11 @@
 import React from 'react'
 import classnames from 'classnames'
 import style from './advent.module.scss'
-import { graphql } from 'gatsby'
-import { PromoLayout } from '../components/promo-layout'
-import { Title, Subtitle } from '../components/title'
-import moment from 'moment'
 import ReactModal from 'react-modal'
+import { graphql } from 'gatsby'
+import { PromoLayout }     from '../components/promo-layout'
+import { Title, Subtitle } from '../components/title'
+import { Day }             from '../components/calendar-day'
 
 const AdventCalendar = (props) => {
   const {
@@ -52,7 +52,6 @@ class AdventDay extends React.Component {
 
   render() {
     const { date, title, children } = this.props
-    const day = moment(date).date()
     return (
       <React.Fragment>
         <Modal isOpen={this.state.modalOpen} onClose={this.toggleModal}>
@@ -69,17 +68,6 @@ class AdventDay extends React.Component {
       </React.Fragment>
     )
   }
-}
-
-const Day = ({datetime}) => {
-  const theday = moment(datetime)
-  return (
-    <time dateTime="2014-09-20" className={style.calendarDay}>
-      <em>{theday.format('dddd')}</em>
-      <strong>{theday.format('MMMM')}</strong>
-      <span>{theday.date()}</span>
-    </time>
-  )
 }
 
 ReactModal.setAppElement('#___gatsby')
