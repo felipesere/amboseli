@@ -59,9 +59,7 @@ class AdventDay extends React.Component {
           {children}
         </Modal>
         <article className={style.adventDay} onClick={this.toggleModal}>
-          <Square>
-            <div className={style.day}>{day}</div>
-          </Square>
+          <Day datetime={date} />
           <section className={style.main}>
             <div className={style.title} >
             {title}
@@ -73,11 +71,14 @@ class AdventDay extends React.Component {
   }
 }
 
-const Square = ({ children }) => {
+const Day = ({datetime}) => {
+  const theday = moment(datetime)
   return (
-    <div className={style.square}>
-      <div className={style.squareContent}>{children}</div>
-    </div>
+    <time dateTime="2014-09-20" className={style.calendarDay}>
+      <em>{theday.format('dddd')}</em>
+      <strong>{theday.format('MMMM')}</strong>
+      <span>{theday.date()}</span>
+    </time>
   )
 }
 

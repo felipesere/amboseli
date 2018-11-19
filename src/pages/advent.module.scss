@@ -1,36 +1,20 @@
-@import '../styles/utils';
-@import '../styles/colors';
+@import "../styles/utils";
+@import "../styles/colors";
 
 $squareSize: 60px;
 
 .adventTop {
-  @include core-width();
-}
-
-.square {
-  width: $squareSize;
-  height: $squareSize;
-  border: 5px solid $graphite;
-  border-radius: 3px 0 0 3px;
-  color: $darker-graphite;
-}
-
-.squareContent {
-  transform: translateY(-5px);
-}
-
-.day {
-  font-size: 40px;
-  text-align: center;
+  @include core-width;
 }
 
 .adventDay {
-  @include core-width();
-  @include shadow();
+  @include core-width;
+  @include shadow;
+
   display: flex;
   margin-bottom: 25px;
   background: white;
-  border-radius: 3px 0 0 3px;
+  border-radius: 10px 0 0 10px;
 }
 
 .main {
@@ -44,7 +28,6 @@ $squareSize: 60px;
 
 .modal {
   border: 1px solid rgb(204, 204, 204);
-  background: rgb(255, 255, 255);
   overflow: auto;
   outline: none;
   border-radius: 5px;
@@ -52,6 +35,7 @@ $squareSize: 60px;
   width: 80%;
   margin: 0 auto;
   margin-top: 50px;
+  background: white;
 }
 
 .overlay {
@@ -61,4 +45,51 @@ $squareSize: 60px;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.75);
+}
+
+.calendarDay {
+  /* change icon size */
+  font-size: 0.5em;
+
+  display: block;
+  position: relative;
+  width: 7em;
+  height: 7em;
+  background-color: #fff;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transform-origin: 50% 10%;
+  background-color: $lighter-graphite;
+}
+
+.calendarDay * {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+.calendarDay strong {
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #fff;
+  background-color: $darker-graphite;
+  box-shadow: 0 2px 0 $darker-graphite;
+}
+
+.calendarDay em {
+  position: absolute;
+  bottom: 0.3em;
+  color: $darker-graphite;
+}
+
+.calendarDay span {
+  width: 100%;
+  font-size: 2.8em;
+  letter-spacing: -0.05em;
+  padding-top: 0.8em;
+  color: #2f2f2f;
 }
