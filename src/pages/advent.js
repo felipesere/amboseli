@@ -1,10 +1,9 @@
 import React from 'react'
-import classnames from 'classnames'
 import style from './advent.module.scss'
 import { graphql } from 'gatsby'
-import { PromoLayout }     from '../components/promo-layout'
+import { PromoLayout } from '../components/promo-layout'
 import { Title, Subtitle } from '../components/title'
-import { Day }             from '../components/calendar-day'
+import { Day } from '../components/calendar-day'
 import { Separator } from '../components/separator'
 import { Modal, initModal } from '../components/modal'
 
@@ -29,13 +28,15 @@ const AdventCalendar = (props) => {
           </Subtitle>
         </div>
       }
-      bottom={days.map(({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => (
-        <AdventDay key={f.date} date={f.date} title={f.title} >
-          <h1 className={style.modalTitle}>{f.title}</h1>
-          <Separator />
-          <div dangerouslySetInnerHTML={{__html: html}} />
-        </AdventDay>
-      ))}
+      bottom={days.map(
+        ({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => (
+          <AdventDay key={f.date} date={f.date} title={f.title}>
+            <h1 className={style.modalTitle}>{f.title}</h1>
+            <Separator />
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </AdventDay>
+        )
+      )}
     />
   )
 }
@@ -65,16 +66,13 @@ class AdventDay extends React.Component {
         <article className={style.adventDay} onClick={this.toggleModal}>
           <Day datetime={date} />
           <section className={style.main}>
-            <div className={style.title} >
-            {title}
-            </div>
+            <div className={style.title}>{title}</div>
           </section>
         </article>
       </React.Fragment>
     )
   }
 }
-
 
 export const pageQuery = graphql`
   {

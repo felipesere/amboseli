@@ -2,11 +2,11 @@ import React from 'react'
 import style from './modal.module.scss'
 import ReactModal from 'react-modal'
 
-let initialised;
+let initialised
 
 export const initModal = () => {
   if (initialised) {
-    return;
+    return
   } else {
     initialised = true
     ReactModal.setAppElement('#___gatsby')
