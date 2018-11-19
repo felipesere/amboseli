@@ -6,9 +6,9 @@ export const Day = ({ datetime }) => {
   const theday = moment(datetime)
   return (
     <time dateTime="2014-09-20" className={style.calendarDay}>
-      <em>{theday.format('dddd')}</em>
-      <strong>{theday.format('MMMM')}</strong>
-      <span>{theday.date()}</span>
+      <div className={style.month}>{theday.format('MMMM')}</div>
+      <div className={style.date}>{theday.date()}</div>
+      <div className={style.dayOfWeek}>{theday.format('dddd')}</div>
     </time>
   )
 }
