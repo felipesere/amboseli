@@ -1,8 +1,6 @@
 @import "../styles/utils";
 @import "../styles/colors";
 
-$squareSize: 60px;
-
 .adventTop {
   @include core-width;
 }
@@ -36,6 +34,12 @@ $squareSize: 60px;
   margin: 0 auto;
   margin-top: 50px;
   background: white;
+}
+
+.modalTitle {
+  text-align: center;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 .overlay {

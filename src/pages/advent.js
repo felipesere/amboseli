@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import { PromoLayout }     from '../components/promo-layout'
 import { Title, Subtitle } from '../components/title'
 import { Day }             from '../components/calendar-day'
+import { Separator } from '../components/separator'
 
 const AdventCalendar = (props) => {
   const {
@@ -28,6 +29,8 @@ const AdventCalendar = (props) => {
       }
       bottom={days.map(({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => (
         <AdventDay key={f.date} date={f.date} title={f.title} >
+          <h1 className={style.modalTitle}>{f.title}</h1>
+          <Separator />
           <div dangerouslySetInnerHTML={{__html: html}} />
         </AdventDay>
       ))}
