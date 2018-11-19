@@ -62,7 +62,11 @@ class AdventDay extends React.Component {
           <Square>
             <div className={style.day}>{day}</div>
           </Square>
-          <section className={style.main}>{title}</section>
+          <section className={style.main}>
+            <div className={style.title} >
+            {title}
+            </div>
+          </section>
         </article>
       </React.Fragment>
     )

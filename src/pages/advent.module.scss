@@ -1,48 +1,45 @@
 @import '../styles/utils';
 @import '../styles/colors';
 
-$desktop-square: 10%;
+$squareSize: 60px;
 
 .adventTop {
   @include core-width();
 }
 
 .square {
-  position: relative;
-  width: 10%;
-  border: 3px solid $graphite;
+  width: $squareSize;
+  height: $squareSize;
+  border: 5px solid $graphite;
   border-radius: 3px 0 0 3px;
-}
-
-.square:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+  color: $darker-graphite;
 }
 
 .squareContent {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  transform: translateY(-5px);
 }
 
 .day {
-  font-size: 2rem;
+  font-size: 40px;
   text-align: center;
 }
 
 .adventDay {
   @include core-width();
+  @include shadow();
   display: flex;
   margin-bottom: 25px;
   background: white;
-  @include shadow();
   border-radius: 3px 0 0 3px;
 }
 
 .main {
   margin-left: 10px;
   text-align: center;
+}
+
+.title {
+  margin-top: 20px;
 }
 
 .modal {
