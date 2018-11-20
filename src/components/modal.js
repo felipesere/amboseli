@@ -21,7 +21,10 @@ export const Modal = ({ isOpen, onClose, children }) => {
       isOpen={isOpen}
       onRequestClose={onClose}
     >
-      {children}
+      <Close onClick={onClose} />
+        {children}
     </ReactModal>
   )
 }
+
+const Close = ({onClick}) => <div onClick={onClick} className={style.close}>+</div>
