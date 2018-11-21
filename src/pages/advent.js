@@ -33,11 +33,20 @@ const AdventCalendar = (props) => {
           <AdventDay key={f.date} date={f.date} title={f.title}>
             <h1 className={style.modalTitle}>{f.title}</h1>
             <Separator />
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <Entry html={html} />
           </AdventDay>
         )
       )}
     />
+  )
+}
+
+const Entry = ({html}) => {
+  console.log(style)
+  return (
+    <div className={style.prose} >
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </div>
   )
 }
 
