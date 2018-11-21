@@ -3,6 +3,7 @@
 
 .title {
   @include core-width();
+  text-align: center;
 
   strong {
     color: $blue;
@@ -13,6 +14,7 @@
   @include core-width();
   font-style: italic;
   font-weight: lighter;
+  text-align: center;
 
   strong {
     color: $blue;
