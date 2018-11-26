@@ -1,15 +1,10 @@
 import Typography from 'typography'
 
 const typography = new Typography({
-  googleFonts: [
-    {
-      name: 'Source Sans Pro',
-      styles: ['200', '400', '400i', '700'],
-    },
-  ],
-  headerFontFamily: ['Montserrat'],
-  bodyFontFamily: ['Source Sans Pro', 'sans-serif'],
-  baseFontSize: '22px',
+  headerFontFamily: ['Open Sans', 'sans-serif'],
+  bodyFontFamily: ['Montserrat', 'sans-serif'],
+  bodyWeight: 'lighter',
+  baseFontSize: '20px'
 })
 
 // Hot reload typography in development.
