@@ -9,10 +9,13 @@ export const PromoLayout = ({ title, top, bottom }) => {
   return (
     <React.Fragment>
       <Helmet>
-        <html lang='en' />
+        <html lang="en" />
         <title>{title}</title>
         <link rel={'shortcut icon'} type={'image/png'} href={'icon'} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
       </Helmet>
       <NavBar center />
       <div className={style.all}>
