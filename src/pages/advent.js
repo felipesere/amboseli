@@ -6,15 +6,32 @@ import { Title, Subtitle } from '../components/title'
 import { Day } from '../components/calendar-day'
 import { Separator } from '../components/separator'
 import { Modal, initModal } from '../components/modal'
+import moment from 'moment'
 
 initModal()
 
 const AdventCalendar = (props) => {
   const {
     data: {
-      allMarkdownRemark: { edges: days },
+      allMarkdownRemark: { edges: edges },
     },
   } = props
+
+  const today = moment().startOf('day')
+  const days = edges
+    .map(({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => {
+      return {
+        excerpt: excerpt,
+        frontmatter: f,
+        html: html,
+        date: moment(f.date),
+      }
+    })
+    .filter(
+      ({ date: date }) =>
+        today.isAfter(date) || process.env.NODE_ENV !== 'production'
+    )
+
   return (
     <PromoLayout
       title={'Advent of Coder'}
@@ -29,8 +46,8 @@ const AdventCalendar = (props) => {
         </div>
       }
       bottom={days.map(
-        ({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => (
-          <AdventDay key={f.date} date={f.date} title={f.title}>
+        ({ excerpt: excerpt, frontmatter: f, html: html, date: date }) => (
+          <AdventDay key={date} date={date} title={f.title}>
             <h1 className={style.modalTitle}>{f.title}</h1>
             <Separator />
             <Entry html={html} />
@@ -41,10 +58,9 @@ const AdventCalendar = (props) => {
   )
 }
 
-const Entry = ({html}) => {
-  console.log(style)
+const Entry = ({ html }) => {
   return (
-    <div className={style.prose} >
+    <div className={style.prose}>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   )
