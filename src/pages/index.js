@@ -55,7 +55,6 @@ export default function Me({ data, location }) {
         link={[{ rel: 'shortcut icon', type: 'image/png', href: icon }]}
       />
       <div className={style.content}>
-        <NavBar />
         <Name>{post.frontmatter.name}</Name>
 
         <Tagline>{post.frontmatter.tagline}</Tagline>

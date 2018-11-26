@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './split-layout.module.scss'
 import Img from 'gatsby-image'
+import { NavBar } from '../components/navigation'
 
 const SplitImage = ({ image }) => {
   return (
@@ -9,14 +10,21 @@ const SplitImage = ({ image }) => {
 }
 
 const SplitContent = ({ children }) => {
-  return <div className={style.splitContent}>{children}</div>
+  return (
+    <div className={style.split}>
+      <NavBar />
+      <div className={style.content}>{children}</div>
+    </div>
+  )
 }
 
 export const SplitLayout = ({ children, image }) => {
   return (
     <div className={style.splitContainer}>
       <SplitImage image={image} />
-      <SplitContent>{children}</SplitContent>
+      <SplitContent>
+        {children}
+      </SplitContent>
     </div>
   )
 }

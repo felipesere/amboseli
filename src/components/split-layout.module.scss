@@ -16,17 +16,21 @@
   }
 }
 
-.splitContent {
+.split {
+  @media (min-width: 800px) {
+    width: 50%;
+    min-height: 100vh;
+    overflow: auto;
+  }
+}
+
+.content {
   padding: 0;
-  width: 90%;
   margin-left: auto;
   margin-right: auto;
 
   @media (min-width: 800px) {
-    width: 50%;
-    min-height: 100vh;
     padding: 0 80px;
-    overflow: auto;
   }
 }
 
