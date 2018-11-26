@@ -41,7 +41,8 @@ const AdventCalendar = (props) => {
             Advent of <strong>Code</strong>
           </Title>
           <Subtitle>
-            Small nuggets worth looking at running up to Christmas.
+            Welcome to my advent of code effort.
+            I intend to share an interesting <strong>nugget</strong> each day up to Christmas. These could be pratical things for vim &amp; friends or more thoughtprovoking piece around programming. Enjoy!
           </Subtitle>
         </div>
       }
