@@ -1,10 +1,14 @@
+var moment = require('moment')
+
 module.exports = {
   siteMetadata: {
     title: 'Path 2 Mastery',
     author: 'Felipe Sere',
     description: 'Felipes path to mastery',
     siteUrl: 'https://felipesere.com',
-    twitterHandle: '@felipesere'
+    twitterHandle: '@felipesere',
+    gitSha: process.env.COMMIT_REF | 'none',
+    buildTime: moment().toISOString(),
   },
   pathPrefix: '/',
   plugins: [
