@@ -1,4 +1,7 @@
 var moment = require('moment')
+var revision = require('child_process')
+  .execSync('git rev-parse --short HEAD')
+  .toString().trim()
 
 module.exports = {
   siteMetadata: {
@@ -7,7 +10,7 @@ module.exports = {
     description: 'Felipes path to mastery',
     siteUrl: 'https://felipesere.com',
     twitterHandle: '@felipesere',
-    gitSha: process.env.COMMIT_REF | 'none',
+    gitSha: revision,
     buildTime: moment().toISOString(),
   },
   pathPrefix: '/',
