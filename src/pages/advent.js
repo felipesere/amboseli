@@ -7,6 +7,7 @@ import { Day } from '../components/calendar-day'
 import { Separator } from '../components/separator'
 import { Modal, initModal } from '../components/modal'
 import moment from 'moment'
+import queryString from 'query-string'
 
 initModal()
 
@@ -16,6 +17,9 @@ const AdventCalendar = (props) => {
       allMarkdownRemark: { edges: edges },
     },
   } = props
+
+  const queryParams = queryString.parse(props.location.search)
+  let day = parseInt(queryParams.day)
 
   const today = moment().startOf('day')
   const days = edges
@@ -48,7 +52,7 @@ const AdventCalendar = (props) => {
       }
       bottom={days.map(
         ({ excerpt: excerpt, frontmatter: f, html: html, date: date }) => (
-          <AdventDay key={date} date={date} title={f.title}>
+          <AdventDay key={date} date={date} title={f.title} queriedDay={day}>
             <h1 className={style.modalTitle}>{f.title}</h1>
             <Separator />
             <Entry html={html} />
@@ -71,19 +75,18 @@ class AdventDay extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      modalOpen: false,
+      modalOpen: props.date.date() === props.queriedDay || false,
     }
   }
 
   toggleModal = (e) => {
-    console.log('toggling')
     this.setState((prevState) => {
       return { modalOpen: !prevState.modalOpen }
     })
   }
 
   render() {
-    const { date, title, children } = this.props
+    const { date, title, children} = this.props
     return (
       <React.Fragment>
         <Modal isOpen={this.state.modalOpen} onClose={this.toggleModal}>
