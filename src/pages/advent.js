@@ -29,7 +29,7 @@ const AdventCalendar = (props) => {
     })
     .filter(
       ({ date: date }) =>
-        today.isAfter(date) || process.env.NODE_ENV !== 'production'
+        !today.isBefore(date) || process.env.NODE_ENV !== 'production'
     )
 
   return (
