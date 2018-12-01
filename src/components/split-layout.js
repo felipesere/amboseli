@@ -22,9 +22,7 @@ export const SplitLayout = ({ children, image }) => {
   return (
     <div className={style.splitContainer}>
       <SplitImage image={image} />
-      <SplitContent>
-        {children}
-      </SplitContent>
+      <SplitContent>{children}</SplitContent>
     </div>
   )
 }

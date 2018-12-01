@@ -45,8 +45,10 @@ const AdventCalendar = (props) => {
             Advent of <strong>Code</strong>
           </Title>
           <Subtitle>
-            Welcome to my advent of code effort.
-            I intend to share an interesting <strong>nugget</strong> each day up to Christmas. These could be pratical things for vim &amp; friends or more thought provoking bits around programming. Enjoy!
+            Welcome to my advent of code effort. I intend to share an
+            interesting <strong>nugget</strong> each day up to Christmas. These
+            could be pratical things for vim &amp; friends or more thought
+            provoking bits around programming. Enjoy!
           </Subtitle>
         </div>
       }
@@ -86,7 +88,7 @@ class AdventDay extends React.Component {
   }
 
   render() {
-    const { date, title, children} = this.props
+    const { date, title, children } = this.props
     return (
       <React.Fragment>
         <Modal isOpen={this.state.modalOpen} onClose={this.toggleModal}>
