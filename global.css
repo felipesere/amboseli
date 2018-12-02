@@ -9,3 +9,8 @@ blockquote {
   font-style: italic;
   background-color: #f1f1f1;
 }
+
+.gatsby-resp-image-figcaption {
+  text-align: center;
+}
+
