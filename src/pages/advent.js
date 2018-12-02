@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import style from './advent.module.scss'
 import { graphql } from 'gatsby'
 import { PromoLayout } from '../components/promo-layout'
@@ -55,6 +56,7 @@ const AdventCalendar = (props) => {
       bottom={days.map(
         ({ excerpt: excerpt, frontmatter: f, html: html, date: date }) => (
           <AdventDay key={date} date={date} title={f.title} queriedDay={day}>
+            <TwitterCard title={f.title} />
             <h1 className={style.modalTitle}>{f.title}</h1>
             <Separator />
             <Entry html={html} />
@@ -70,6 +72,16 @@ const Entry = ({ html }) => {
     <div className={style.prose}>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
+  )
+}
+
+const TwitterCard = ({title}) => {
+  return (
+    <Helmet>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@felipesere" />
+      <meta name="twitter:title" content={title} />
+    </Helmet>
   )
 }
 
