@@ -1,113 +1,106 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import style from './advent.module.scss'
 import { graphql } from 'gatsby'
 import { PromoLayout } from '../components/promo-layout'
 import { Title, Subtitle } from '../components/title'
 import { Day } from '../components/calendar-day'
-import { Separator } from '../components/separator'
 import { Modal, initModal } from '../components/modal'
 import moment from 'moment'
 import queryString from 'query-string'
 
 initModal()
 
-const AdventCalendar = (props) => {
-  const {
-    data: {
-      allMarkdownRemark: { edges: edges },
-    },
-  } = props
+class AdventCalendar extends React.Component {
+  constructor(props) {
+    super(props)
+    const {
+      data: {
+        allMarkdownRemark: { edges: edges },
+      },
+    } = this.props
+    const queryParams = queryString.parse(this.props.location.search)
+    let day = parseInt(queryParams.day)
+    const today = moment().startOf('day')
+    const days = edges
+      .map(({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => {
+        return {
+          excerpt: excerpt,
+          frontmatter: f,
+          html: html,
+          date: moment(f.date),
+        }
+      })
+      .filter(
+        ({ date: date }) =>
+          !today.isBefore(date) || process.env.NODE_ENV !== 'production',
+      )
 
-  const queryParams = queryString.parse(props.location.search)
-  let day = parseInt(queryParams.day)
+    this.state = {
+      days: days,
+      openedDay: days[days.length - day],
+    }
+  }
 
-  const today = moment().startOf('day')
-  const days = edges
-    .map(({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => {
-      return {
-        excerpt: excerpt,
-        frontmatter: f,
-        html: html,
-        date: moment(f.date),
-      }
+  openModal = (title) => {
+    this.setState((prevState) => {
+      const openedDay = prevState.days.find((day) => day.frontmatter.title === title)
+      console.log(openedDay)
+      return { ...prevState, openedDay }
     })
-    .filter(
-      ({ date: date }) =>
-        !today.isBefore(date) || process.env.NODE_ENV !== 'production'
+  }
+
+  closeModal = () => {
+    this.setState({ openedDay: undefined })
+  }
+
+
+  render() {
+    return (
+      <PromoLayout
+        title={'Advent of Coder'}
+        top={
+          <div className={style.adventTop}>
+            <Title>
+              Advent of <strong>Code</strong>
+            </Title>
+            <Subtitle>
+              Welcome to my advent of code effort. I intend to share an
+              interesting <strong>nugget</strong> each day up to Christmas. These
+              could be pratical things for vim &amp; friends or more thought
+              provoking bits around programming. Enjoy!
+            </Subtitle>
+          </div>
+        }
+        bottom={
+          <React.Fragment>
+            {this.state.days.map(
+              ({ excerpt: excerpt, frontmatter: f, html: html, date: date }) => (
+                <AdventDay key={date} date={date} title={f.title} onClick={this.openModal}/>
+              ),
+            )}}
+            <Modal day={this.state.openedDay} onClose={this.closeModal} />
+          </React.Fragment>
+        }
+      />
     )
-
-  return (
-    <PromoLayout
-      title={'Advent of Coder'}
-      top={
-        <div className={style.adventTop}>
-          <Title>
-            Advent of <strong>Code</strong>
-          </Title>
-          <Subtitle>
-            Welcome to my advent of code effort. I intend to share an
-            interesting <strong>nugget</strong> each day up to Christmas. These
-            could be pratical things for vim &amp; friends or more thought
-            provoking bits around programming. Enjoy!
-          </Subtitle>
-        </div>
-      }
-      bottom={days.map(
-        ({ excerpt: excerpt, frontmatter: f, html: html, date: date }) => (
-          <AdventDay key={date} date={date} title={f.title} queriedDay={day}>
-            <TwitterCard title={f.title} />
-            <h1 className={style.modalTitle}>{f.title}</h1>
-            <Separator />
-            <Entry html={html} />
-          </AdventDay>
-        )
-      )}
-    />
-  )
-}
-
-const Entry = ({ html }) => {
-  return (
-    <div className={style.prose}>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </div>
-  )
-}
-
-const TwitterCard = ({title}) => {
-  return (
-    <Helmet>
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@felipesere" />
-      <meta name="twitter:title" content={title} />
-    </Helmet>
-  )
+  }
 }
 
 class AdventDay extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      modalOpen: props.date.date() === props.queriedDay || false,
-    }
   }
 
-  toggleModal = (e) => {
-    this.setState((prevState) => {
-      return { modalOpen: !prevState.modalOpen }
-    })
+  reportTitle = () => {
+    this.props.onClick(this.props.title)
   }
 
   render() {
-    const { date, title, children } = this.props
+    const { date, title } = this.props
     return (
       <React.Fragment>
-        <Modal isOpen={this.state.modalOpen} onClose={this.toggleModal}>
-          {children}
-        </Modal>
-        <article className={style.adventDay} onClick={this.toggleModal}>
-          <Day datetime={date} />
+        <article className={style.adventDay} onClick={this.reportTitle}>
+          <Day datetime={date}/>
           <div className={style.title}>{title}</div>
         </article>
       </React.Fragment>

@@ -41,3 +41,23 @@
   right: 40px;
   width: 30px;
 }
+
+.modalTitle {
+  text-align: center;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.prose {
+  & * {
+    font-size: 0.8rem;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+}
