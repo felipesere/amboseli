@@ -108,9 +108,7 @@ class AdventDay extends React.Component {
         </Modal>
         <article className={style.adventDay} onClick={this.toggleModal}>
           <Day datetime={date} />
-          <section className={style.main}>
-            <div className={style.title}>{title}</div>
-          </section>
+          <div className={style.title}>{title}</div>
         </article>
       </React.Fragment>
     )
