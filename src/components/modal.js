@@ -50,6 +50,7 @@ const InnerModal = ({ title, html }) => {
 }
 
 const Entry = ({ html }) => {
+  setTimeout(() => twttr.widgets.load(), 100) //  meh...🤦
   return (
     <div className={style.prose}>
       <div dangerouslySetInnerHTML={{ __html: html }}/>
