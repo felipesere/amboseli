@@ -32,7 +32,7 @@ class AdventCalendar extends React.Component {
       })
       .filter(
         ({ date: date }) =>
-          !today.isBefore(date) || process.env.NODE_ENV !== 'production' || process.env.CONTEXT === 'deploy-preview',
+          !today.isBefore(date) || process.env.NODE_ENV !== 'production'
       )
 
     this.state = {
