@@ -10,6 +10,12 @@
   max-height: 100%;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+
+  @media (min-width: 800px) {
+    width: 50%;
+    max-height: 90%;
+    margin-top: 2rem;
+  }
 }
 
 .overlay {
