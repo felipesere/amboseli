@@ -31,8 +31,11 @@ class AdventCalendar extends React.Component {
         }
       })
       .filter(
-        ({ date: date }) =>
-          !today.isBefore(date) || process.env.NODE_ENV !== 'production'
+        ({ date: date }) => {
+          const midday = moment(date).startOf('day')
+          const isInPast = today.isSameOrAfter(midday)
+          return isInPast
+        }
       )
 
     this.state = {
