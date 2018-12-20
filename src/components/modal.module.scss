@@ -12,7 +12,8 @@
   -webkit-overflow-scrolling: touch;
 
   @media (min-width: 800px) {
-    width: 50%;
+    max-width: 50%;
+    min-width: 650px;
     max-height: 90%;
     margin-top: 2rem;
   }
