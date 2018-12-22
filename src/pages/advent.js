@@ -34,7 +34,7 @@ class AdventCalendar extends React.Component {
         ({ date: date }) => {
           const midday = moment(date).startOf('day')
           const isInPast = today.isSameOrAfter(midday)
-          return isInPast
+          return isInPast || process.env.NODE_ENV === 'development'
         }
       )
 
