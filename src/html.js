@@ -1,5 +1,5 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class HTML extends React.Component {
   render() {
@@ -22,7 +22,11 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script async type="text/javascript" src="https://neatmetrics.herokuapp.com/js/analytics.js"></script>
+          <script
+            async
+            type="text/javascript"
+            src="https://neatmetrics.herokuapp.com/js/analytics.js"
+          />
         </body>
       </html>
     )

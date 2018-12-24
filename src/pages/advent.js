@@ -30,13 +30,11 @@ class AdventCalendar extends React.Component {
           date: moment(f.date),
         }
       })
-      .filter(
-        ({ date: date }) => {
-          const midday = moment(date).startOf('day')
-          const isInPast = today.isSameOrAfter(midday)
-          return isInPast || process.env.NODE_ENV === 'development'
-        }
-      )
+      .filter(({ date: date }) => {
+        const midday = moment(date).startOf('day')
+        const isInPast = today.isSameOrAfter(midday)
+        return isInPast || process.env.NODE_ENV === 'development'
+      })
 
     this.state = {
       days: days,
@@ -46,7 +44,9 @@ class AdventCalendar extends React.Component {
 
   openModal = (title) => {
     this.setState((prevState) => {
-      const openedDay = prevState.days.find((day) => day.frontmatter.title === title)
+      const openedDay = prevState.days.find(
+        (day) => day.frontmatter.title === title
+      )
       console.log(openedDay)
       return { ...prevState, openedDay }
     })
@@ -55,7 +55,6 @@ class AdventCalendar extends React.Component {
   closeModal = () => {
     this.setState({ openedDay: undefined })
   }
-
 
   render() {
     return (
@@ -68,20 +67,30 @@ class AdventCalendar extends React.Component {
             </Title>
             <Subtitle>
               Welcome to my advent of code effort. I intend to share an
-              interesting <strong>nugget</strong> each day up to Christmas. These
-              could be pratical things for vim &amp; friends or more thought
-              provoking bits around programming. Enjoy!
+              interesting <strong>nugget</strong> each day up to Christmas.
+              These could be pratical things for vim &amp; friends or more
+              thought provoking bits around programming. Enjoy!
             </Subtitle>
           </div>
         }
         bottom={
           <React.Fragment>
             {this.state.days.map(
-              ({ excerpt: excerpt, frontmatter: f, html: html, date: date }) => (
-                <AdventDay key={date} date={date} title={f.title} onClick={this.openModal}/>
-              ),
-            )}}
-            <Modal day={this.state.openedDay} onClose={this.closeModal} />
+              ({
+                excerpt: excerpt,
+                frontmatter: f,
+                html: html,
+                date: date,
+              }) => (
+                <AdventDay
+                  key={date}
+                  date={date}
+                  title={f.title}
+                  onClick={this.openModal}
+                />
+              )
+            )}
+            }<Modal day={this.state.openedDay} onClose={this.closeModal} />
           </React.Fragment>
         }
       />
@@ -103,7 +112,7 @@ class AdventDay extends React.Component {
     return (
       <React.Fragment>
         <article className={style.adventDay} onClick={this.reportTitle}>
-          <Day datetime={date}/>
+          <Day datetime={date} />
           <div className={style.title}>{title}</div>
         </article>
       </React.Fragment>

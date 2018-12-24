@@ -25,8 +25,8 @@ export class Modal extends Component {
         isOpen={!!day}
         onRequestClose={onClose}
       >
-        <Close onClick={onClose}/>
-        {day && (<InnerModal title={day.frontmatter.title} html={day.html}/>)}
+        <Close onClick={onClose} />
+        {day && <InnerModal title={day.frontmatter.title} html={day.html} />}
       </ReactModal>
     )
   }
@@ -41,10 +41,10 @@ const Close = ({ onClick }) => (
 const InnerModal = ({ title, html }) => {
   return (
     <React.Fragment>
-      <TwitterCard title={title}/>
+      <TwitterCard title={title} />
       <h1 className={style.modalTitle}>{title}</h1>
-      <Separator/>
-      <Entry html={html}/>
+      <Separator />
+      <Entry html={html} />
     </React.Fragment>
   )
 }
@@ -53,7 +53,7 @@ const Entry = ({ html }) => {
   setTimeout(() => twttr.widgets.load(), 100) //  meh...🤦
   return (
     <div className={style.prose}>
-      <div dangerouslySetInnerHTML={{ __html: html }}/>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   )
 }
@@ -61,9 +61,9 @@ const Entry = ({ html }) => {
 const TwitterCard = ({ title }) => {
   return (
     <Helmet>
-      <meta name="twitter:card" content="summary"/>
-      <meta name="twitter:site" content="@felipesere"/>
-      <meta name="twitter:title" content={title}/>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@felipesere" />
+      <meta name="twitter:title" content={title} />
     </Helmet>
   )
 }
