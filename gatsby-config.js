@@ -70,7 +70,7 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           {
-            resolve: `gatsby-remark-oembed`,
+            resolve: `@raae/gatsby-remark-oembed`,
             options: {
               providers: {
                 include: ['Twitter'],
