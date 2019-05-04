@@ -1,4 +1,6 @@
-.promo {
+import styled from 'styled-components'
+
+export const Promo = styled.section`
     background: white;
     padding-bottom: 1rem;
     padding-top: 1rem;
@@ -9,4 +11,4 @@
     padding-bottom: 5rem;
     padding-top: 5rem;
   }
-}
+`
