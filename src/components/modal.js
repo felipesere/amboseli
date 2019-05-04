@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import style from './modal.module.scss'
 import ReactModal from 'react-modal'
 import Helmet from 'react-helmet'
-import { Separator } from '../components/separator'
+import { Separator } from './separator'
 
 let initialised
 

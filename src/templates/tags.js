@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { NavBar } from '../components/navigation'
+import { graphql } from 'gatsby'
 import { Article } from '../components/article'
-import { Promo } from '../components/promo'
 import { PromoLayout } from '../components/promo-layout'
 import { Title } from '../components/title'
 

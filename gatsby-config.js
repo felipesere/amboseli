@@ -15,6 +15,8 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {

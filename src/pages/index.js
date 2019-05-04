@@ -4,7 +4,6 @@ import { SplitLayout } from '../components/split-layout'
 import style from './index.module.scss'
 import { graphql } from 'gatsby'
 import icon from '../assets/favicon.png'
-import { NavBar } from '../components/navigation'
 import { Separator } from '../components/separator'
 
 import {
