@@ -14,11 +14,11 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const tags = post.frontmatter.tags || []
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title.tsx')
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
 
-    const title = get(post, 'frontmatter.title.tsx')
+    const title = get(post, 'frontmatter.title')
 
     return (
       <React.Fragment>
