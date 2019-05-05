@@ -1,31 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library, IconPrefix, IconName } from '@fortawesome/fontawesome-svg-core'
-import { fas, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
-import {
-  faTwitter,
-  faLinkedinIn,
-  faGithub,
-  faKeybase,
-  faXing,
-  faFacebookF,
-  faRedditAlien,
-} from '@fortawesome/free-brands-svg-icons'
 import { colors } from '../styles'
-
-library.add(
-  fas,
-  faEnvelopeSquare,
-  faTwitter,
-  faLinkedinIn,
-  faGithub,
-  faKeybase,
-  faXing,
-  faFacebookF,
-  faRedditAlien,
-)
 
 export const Icons = styled.div`
   display: grid;
@@ -39,7 +14,7 @@ export const Icons = styled.div`
 
 type BrandProps = {
   name: string,
-  icon: [IconPrefix, IconName]
+  icon: [string, string]
   color: string
 }
 
@@ -47,7 +22,7 @@ const brand = (brand: BrandProps) => {
   return () => (
     <BrandColor color={brand.color}>
       <Icon>
-        <FontAwesomeIcon icon={brand.icon}/>
+        <i className={`${brand.icon[0]} fa-${brand.icon[1]}`}></i>
       </Icon>
       <BrandName>{brand.name}</BrandName>
     </BrandColor>
@@ -81,7 +56,7 @@ const BrandColor = styled.div`
 export const Twitter = brand({ name: 'Twitter', icon: ['fab', 'twitter'], color: '#1da1f2' })
 export const Github = brand({ name: 'Github', icon: ['fab', 'github'], color: '#333' })
 export const Keybase = brand({ name: 'Keybase', icon: ['fab', 'keybase'], color: '#33A0FF' })
-export const Email = brand({ name: 'Email', icon: ['fa' as any, 'envelope'], color: colors.graphite })
+export const Email = brand({ name: 'Email', icon: ['far', 'envelope'], color: colors.graphite })
 export const Xing = brand({ name: 'Xing', icon: ['fab', 'xing'], color: '#026466' })
 export const LinkedIn = brand({ name: 'LinkedIn', icon: ['fab', 'linkedin-in'], color: '#0077b5' })
 export const Reddit = brand({ name: 'Reddit', icon: ['fab', 'reddit-alien'], color: '#FF4301' })

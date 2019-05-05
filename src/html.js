@@ -12,6 +12,15 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/regular.css"
+                integrity="sha384-FKw7x8fCxuvzBwOJmhTJJsKzBl8dnN9e2R4+pXRfYoHivikuHkzWyhKWDSMcGNK8"
+                crossOrigin="anonymous" />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css"
+                integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv"
+                crossOrigin="anonymous" />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css"
+                integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq"
+                crossOrigin="anonymous" />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
