@@ -1,25 +1,58 @@
 import React from 'react'
-import style from './navigation.module.scss'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
-import cx from 'classnames'
 import moment from 'moment'
+import { colors } from '../styles'
 
 export const NavBar = ({ center = false }) => {
-  const className = cx(style.navbar, {
-    [style.centered]: center,
-  })
-
+  const Container = center ? CenteredNavBarContainer : NavBarContainer
   return (
-    <div className={style.background}>
-      <nav className={className}>
+    <Background>
+      <Container>
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/portfolio">Portfolio</Link>
         {isXmas() && <Link to="/advent">Advent</Link>}
-      </nav>
-    </div>
+      </Container>
+    </Background>
   )
 }
+
+const Background = styled.div`
+  background: ${colors.grey};
+`
+
+const NavBarContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  color: ${colors.graphite};
+
+  padding: 0.5rem 80px 0.25rem 80px;
+  font-weight: normal;
+
+  a {
+    text-decoration: none;
+    font-size: 0.6rem;
+    text-align: center;
+    color: ${colors.darkerGraphite};
+
+    &:visited {
+      color: ${colors.darkerGraphite};
+    }
+  }
+`
+
+const CenteredNavBarContainer = styled(NavBarContainer)`
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  @media (min-width: 800px) {
+    max-width: 700px;
+  }
+`
 
 const isXmas = () => {
   const decemberFirst = moment('2018-12-01').startOf('date')
