@@ -1,11 +1,11 @@
-import React from 'react'
+import * as React from 'react'
 import {
   FacebookShareButton,
   LinkedinShareButton,
   RedditShareButton,
   TwitterShareButton,
 } from 'react-share'
-import style from './social.module.scss'
+import styled from 'styled-components'
 
 import { graphql, StaticQuery } from 'gatsby'
 import { Facebook, Icons, LinkedIn, Reddit, Twitter } from './share/social'
@@ -44,8 +44,8 @@ export const Share = ({ title, tags, slug }) => {
 
 const ShareIcons = ({ title, tags, twitter, url }) => {
   return (
-    <div className={style.social}>
-      <p className={style.share}>Share on</p>
+    <Social>
+      <ShareOn>Share on</ShareOn>
       <Icons>
         <TwitterShareButton
           url={url}
@@ -66,6 +66,19 @@ const ShareIcons = ({ title, tags, twitter, url }) => {
         </RedditShareButton>
         {}
       </Icons>
-    </div>
+    </Social>
   )
 }
+
+const Social = styled.div`
+  margin-bottom: 2em;
+`
+
+const ShareOn = styled.p`
+  white-space: nowrap;
+  margin-right: 1em;
+
+  @media (min-width: 800px) {
+    float: left;
+  }
+`
