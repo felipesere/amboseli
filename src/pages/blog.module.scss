@@ -1,8 +1,0 @@
-@import '../styles/colors';
-@import '../styles/utils';
-
-.tagArea {
-  @include core-width();
-
-  margin-bottom: 2rem;
-}

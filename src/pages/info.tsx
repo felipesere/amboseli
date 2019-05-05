@@ -1,20 +1,17 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import style from './404.module.scss'
-import { NavBar } from '../components/navigation'
+import * as React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
+import { Title } from '../components/title'
+import { Links, Main, NavItem } from './404'
 
 const Info = () => (
   <React.Fragment>
-    <div className={style.main}>
-      <h1 className={style.title}>Info</h1>
+    <Main>
+      <Title>Info</Title>
       <EnvironmentVariables />
-      <div className={style.links}>
-        <Link className={style.link} to="/">
-          Home
-        </Link>
-      </div>
-    </div>
+      <Links>
+        <NavItem to="/">Home</NavItem>
+      </Links>
+    </Main>
   </React.Fragment>
 )
 

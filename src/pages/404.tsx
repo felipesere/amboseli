@@ -18,7 +18,7 @@ const NotFoundPage = () => (
   </Main>
 )
 
-const NavItem = styled(Link)`
+export const NavItem = styled(Link)`
   margin: 5px;
   color: ${colors.darkerGraphite};
   border: 1px solid ${colors.graphite};
@@ -41,7 +41,7 @@ const NavItem = styled(Link)`
   }
 `
 
-const Links = styled.div`
+export const Links = styled.div`
   margin-top: 0.75rem;
   list-style: none;
   display: flex;
@@ -52,7 +52,7 @@ const ErrorTitle = styled(Title)`
   color: ${colors.blue};
 `
 
-const Main = styled.div`
+export const Main = styled.div`
   width: 90%;
   margin: 1rem auto;
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import style from './blog.module.scss'
 import get from 'lodash/get'
 import { graphql } from 'gatsby'
 import { Article } from '../components/article'
@@ -27,9 +26,7 @@ export default function Blog(props) {
       top={<Article post={first} isPromo withShadow={false} />}
       bottom={
         <React.Fragment>
-          <div className={style.tagArea}>
-            <AvailableTags />
-          </div>
+          <AvailableTags />
           {posts.map((p) => (
             <Article key={p.node.frontmatter.title} post={p} />
           ))}

@@ -1,6 +1,13 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Tags } from './tags'
+import { coreWidth } from '../styles'
+import styled from 'styled-components'
+
+const TagArea = styled.div`
+  ${coreWidth()};
+  margin-bottom: 2rem;
+`
 
 export const AvailableTags = () => {
   return (
@@ -23,7 +30,11 @@ export const AvailableTags = () => {
       `}
       render={(data) => {
         const tags = extractTags(data.allMarkdownRemark.edges)
-        return <Tags tags={tags} />
+        return (
+          <TagArea>
+            <Tags tags={tags} />
+          </TagArea>
+        )
       }}
     />
   )
