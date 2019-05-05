@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import moment from 'moment'
@@ -46,8 +46,8 @@ const CenteredNavBarContainer = styled(NavBarContainer)`
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 
   @media (min-width: 800px) {
     max-width: 700px;
