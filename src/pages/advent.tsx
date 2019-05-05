@@ -1,16 +1,53 @@
 import React from 'react'
-import style from './advent.module.scss'
 import { graphql } from 'gatsby'
 import { PromoLayout } from '../components/promo-layout'
 import { Title, Subtitle } from '../components/title'
 import { Day } from '../components/calendar-day'
 import { Modal, initModal } from '../components/modal'
-import moment from 'moment'
+import moment, { Moment } from 'moment'
 import queryString from 'query-string'
+import styled from 'styled-components'
+import { coreWidth, shadow } from '../styles'
 
 initModal()
 
-class AdventCalendar extends React.Component {
+type Day = {
+  excerpt: string
+  frontmatter: Frontmatter,
+  html: string,
+  date: Moment,
+}
+
+type Node = {
+  node: {
+    excerpt: string,
+    frontmatter: Frontmatter,
+    html: string,
+  }
+}
+
+type Frontmatter = {
+  date: string,
+  title: string,
+}
+
+type AdventCalendarState = {
+  days: Day[],
+  openedDay: Day | undefined
+}
+
+type AdventCalendarProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: Node[],
+    }
+  },
+  location: {
+    search: string
+  }
+}
+
+class AdventCalendar extends React.Component<AdventCalendarProps, AdventCalendarState> {
   constructor(props) {
     super(props)
     const {
@@ -18,20 +55,20 @@ class AdventCalendar extends React.Component {
         allMarkdownRemark: { edges: edges },
       },
     } = this.props
-    const queryParams = queryString.parse(this.props.location.search)
+    const queryParams = queryString.parse(this.props.location.search) as { day: string }
     let day = parseInt(queryParams.day)
     const today = moment().startOf('day')
     const days = edges
-      .map(({ node: { excerpt: excerpt, frontmatter: f, html: html } }) => {
+      .map(({ node: { excerpt, frontmatter, html } }) => {
         return {
-          excerpt: excerpt,
-          frontmatter: f,
-          html: html,
-          date: moment(f.date),
+          excerpt,
+          frontmatter,
+          html,
+          date: moment(frontmatter.date),
         }
       })
-      .filter(({ date: date }) => {
-        const midday = moment(date).startOf('day')
+      .filter(({ date }) => {
+        const midday = date.startOf('day')
         const isInPast = today.isSameOrAfter(midday)
         return isInPast || process.env.NODE_ENV === 'development'
       })
@@ -42,17 +79,16 @@ class AdventCalendar extends React.Component {
     }
   }
 
-  openModal = (title) => {
+  openModal(title) {
     this.setState((prevState) => {
       const openedDay = prevState.days.find(
-        (day) => day.frontmatter.title === title
+        (day) => day.frontmatter.title === title,
       )
-      console.log(openedDay)
       return { ...prevState, openedDay }
     })
   }
 
-  closeModal = () => {
+  closeModal() {
     this.setState({ openedDay: undefined })
   }
 
@@ -61,7 +97,7 @@ class AdventCalendar extends React.Component {
       <PromoLayout
         title={'Advent of Coder'}
         top={
-          <div className={style.adventTop}>
+          <AdventTop>
             <Title>
               Advent of <strong>Code</strong>
             </Title>
@@ -71,26 +107,26 @@ class AdventCalendar extends React.Component {
               These could be pratical things for vim &amp; friends or more
               thought provoking bits around programming. Enjoy!
             </Subtitle>
-          </div>
+          </AdventTop>
         }
         bottom={
           <React.Fragment>
             {this.state.days.map(
               ({
-                excerpt: excerpt,
-                frontmatter: f,
-                html: html,
-                date: date,
-              }) => (
+                 excerpt: excerpt,
+                 frontmatter: f,
+                 html: html,
+                 date: date,
+               }) => (
                 <AdventDay
-                  key={date}
+                  key={date.toISOString()}
                   date={date}
                   title={f.title}
                   onClick={this.openModal}
                 />
-              )
+              ),
             )}
-            }<Modal day={this.state.openedDay} onClose={this.closeModal} />
+            }<Modal day={this.state.openedDay} onClose={this.closeModal}/>
           </React.Fragment>
         }
       />
@@ -98,27 +134,54 @@ class AdventCalendar extends React.Component {
   }
 }
 
-class AdventDay extends React.Component {
+const AdventTop = styled.div`
+  ${coreWidth()}
+`
+
+type AdventDayProps = {
+  onClick: (string) => void,
+  title: string,
+  date: Moment,
+}
+
+class AdventDay extends React.Component<AdventDayProps> {
   constructor(props) {
     super(props)
   }
 
-  reportTitle = () => {
+  reportTitle() {
     this.props.onClick(this.props.title)
   }
 
   render() {
     const { date, title } = this.props
     return (
-      <React.Fragment>
-        <article className={style.adventDay} onClick={this.reportTitle}>
-          <Day datetime={date} />
-          <div className={style.title}>{title}</div>
-        </article>
-      </React.Fragment>
+      <AdventDayLayout onClick={this.reportTitle}>
+        <Day datetime={date}/>
+        <AdventTitle>{title}</AdventTitle>
+      </AdventDayLayout>
     )
   }
 }
+
+const AdventDayLayout = styled.article`
+  ${coreWidth()}
+  ${shadow()}
+
+  display: flex;
+  margin-bottom: 25px;
+  background: white;
+  border-radius: 10px 0 0 10px;
+`
+
+const AdventTitle = styled.div`
+  margin-left: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 70%;
+`
 
 export const pageQuery = graphql`
   {
