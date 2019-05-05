@@ -53,7 +53,7 @@ const Name = styled.p`
 
 const Prose = ({ text }) => (<div dangerouslySetInnerHTML={{ __html: text }}/>)
 
-const Me = ({ data, location }) => {
+const Me = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
   const siteDescription = data.site.siteMetadata.description
   const post = data.markdownRemark
@@ -123,12 +123,15 @@ const Social = () => {
 }
 
 const ReachMe = styled.p`
-  margin-right: 1em;
+  margin: 0 1em 0.5rem 0;
   font-size: 0.8rem;
 `
 
 const SocialBar = styled.div`
   margin-bottom: 2rem;
+  @media (min-width: 800px) {
+    margin-bottom: 0;
+  }
 `
 
 export const query = graphql`

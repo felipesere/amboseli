@@ -57,6 +57,6 @@ export const Github = brand({ name: 'Github', icon: ['fab', 'github'], color: '#
 export const Keybase = brand({ name: 'Keybase', icon: ['fab', 'keybase'], color: '#33A0FF' })
 export const Email = brand({ name: 'Email', icon: ['far', 'envelope'], color: colors.graphite })
 export const Xing = brand({ name: 'Xing', icon: ['fab', 'xing'], color: '#026466' })
-export const LinkedIn = brand({ name: 'LinkedIn', icon: ['fab', 'linkedin-in'], color: '#0077b5' })
+export const LinkedIn = brand({ name: 'LinkedIn', icon: ['fab', 'linkedin'], color: '#0077b5' })
 export const Reddit = brand({ name: 'Reddit', icon: ['fab', 'reddit-alien'], color: '#FF4301' })
 export const Facebook = brand({ name: 'Facebook', icon: ['fab', 'facebook-f'], color: '#3C5898' })
