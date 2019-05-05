@@ -36,7 +36,7 @@ const TaglineLayout = styled.h1`
   word-spacing: 100vw;
 
   @media (min-width: 800px) {
-    font-size: 4.5vw;
+    font-size: 4vw;
   }
 
   strong {
@@ -150,7 +150,7 @@ export const query = graphql`
     }
     profile: file(relativePath: { eq: "felipe.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
+        fluid(maxWidth: 4160) {
           ...GatsbyImageSharpFluid
         }
       }
