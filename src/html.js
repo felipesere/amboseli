@@ -1,6 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
+import {
+  faTwitter,
+  faLinkedinIn,
+  faGithub,
+  faKeybase,
+  faXing,
+  faFacebookF,
+  faRedditAlien,
+} from '@fortawesome/free-brands-svg-icons'
+
+library.add(
+  fas,
+  faEnvelopeSquare,
+  faTwitter,
+  faLinkedinIn,
+  faGithub,
+  faKeybase,
+  faXing,
+  faFacebookF,
+  faRedditAlien,
+)
+
 export default class HTML extends React.Component {
   render() {
     return (
