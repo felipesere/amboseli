@@ -21,10 +21,12 @@ export const shadow = () => {
 
 const lightGrey = '#f9f9f9'
 const graphite = '#9eabb3'
+const blue = `rgba(0, 159, 253, 1)`
 
 export const colors = {
-  blue: `rgba(0, 159, 253, 1)`,
+  blue,
   lightBlue: `rgba(0, 159, 253, 0.25)`,
+  darkerBlue: darken(0.05, blue),
   graphite,
   darkerGraphite: '#5b6267',
   lighterGraphite: lighten(0.25, graphite),
