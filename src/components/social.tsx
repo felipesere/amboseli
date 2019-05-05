@@ -68,7 +68,7 @@ const BrandColor = styled.div`
     border: 1px solid ${(props) => props.color};
     padding: 4px 7px;
     border-radius: 3px;
-    height: 32px; // hack
+    height: 32px;
     font-size: 0.75rem;
 
     &:hover {
