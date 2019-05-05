@@ -1,11 +1,11 @@
 import React from 'react'
-import style from './portfolio.module.scss'
-import get from 'lodash/get'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { PromoLayout } from '../components/promo-layout'
 import { Title } from '../components/title'
 import { Separator } from '../components/separator'
+import styled from 'styled-components'
+import { colors, shadow } from '../styles'
 
 const Portfolio = (props) => {
   const projects = props.data.allMarkdownRemark.edges
@@ -26,21 +26,69 @@ const Portfolio = (props) => {
 
 const ShowCase = ({ project }) => {
   return (
-    <section className={style.showCase}>
-      <Img
-        className={style.showCaseImage}
-        fluid={project.node.frontmatter.projectImage.childImageSharp.fluid}
-      />
-      <article className={style.description}>
+    <ShowCaseLayout>
+      <ShowCaseImage fluid={project.node.frontmatter.projectImage.childImageSharp.fluid} />
+      <Description>
         <h1>{project.node.frontmatter.title}</h1>
-
         <Separator />
-
         <div dangerouslySetInnerHTML={{ __html: project.node.html }} />
-      </article>
-    </section>
+      </Description>
+    </ShowCaseLayout>
   )
 }
+
+const ShowCaseImage = styled(Img)`
+  border: 3px ${colors.blue} solid;
+  border-radius: 3px;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 50%;
+  }
+`
+
+const ShowCaseLayout = styled.section`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em;
+  background: white;
+  ${shadow()};
+
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    height: 350px; // I want something better here!
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    width: 70%;
+  }
+`
+
+const Description = styled.article`
+  padding: 0 1em 0 1em;
+  width: 100%;
+  font-size: 0.75rem;
+
+  h1 {
+    margin: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 800px) {
+    width: 50%;
+  }
+`
 
 export const pageQuery = graphql`
   {
