@@ -5,7 +5,12 @@ import { TagLabels } from './tags'
 import styled from 'styled-components'
 import { coreWidth, shadow } from '../styles'
 
-export const Article = ({ post, isPromo, withShadow = true }) => {
+type ArticleProps = {
+  post: any,
+  isPromo?: boolean,
+  withShadow?: boolean,
+}
+export const Article = ({ post, isPromo = false, withShadow = true }: ArticleProps) => {
   const title = post.node.frontmatter.title
   const html = post.node.html
   const ArticleHeader = isPromo ? PromoHeader : Header
@@ -27,10 +32,6 @@ export const Article = ({ post, isPromo, withShadow = true }) => {
       <ReadMore to={post.node.fields.slug} />
     </InnerArticle>
   )
-}
-
-type ArticleProps = {
-  withShadow: boolean,
 }
 
 const InnerArticle = styled.article<ArticleProps>`

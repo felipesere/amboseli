@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import get from 'lodash/get'
 import { graphql } from 'gatsby'
 import { Article } from '../components/article'
@@ -10,10 +10,12 @@ const notDraft = (post) => {
     return true
   }
 
-  return get(post, 'node.frontmatter.draft') !== true
+  return !get(post, 'node.frontmatter.draft')
 }
 
 const inProd = () => process.env.NODE_ENV === 'production'
+
+
 
 export default function Blog(props) {
   const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges').filter(
