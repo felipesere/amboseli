@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import Helmet from 'react-helmet'
 import { SplitLayout } from '../components/split-layout'
-import style from './index.module.scss'
 import { graphql } from 'gatsby'
 import icon from '../assets/favicon.png'
 import { Separator } from '../components/separator'
+import styled from 'styled-components'
 
 import {
   Email,
@@ -15,6 +15,7 @@ import {
   Twitter,
   Xing,
 } from '../components/social'
+import { colors } from '../styles'
 
 const Tagline = ({ children }) => {
   const [first, second, third] = children
@@ -22,79 +23,113 @@ const Tagline = ({ children }) => {
     .map((t) => t.replace(/ /g, ''))
     .map((name) => name + '. ')
   return (
-    <h1 className={style.tagline}>
+    <TaglineLayout>
       {first}
       <strong>{second}</strong>
       {third}
-    </h1>
+    </TaglineLayout>
   )
 }
 
-const Name = ({ children }) => {
-  return <p className={style.name}>{children}</p>
-}
+const TaglineLayout = styled.h1`
+  font-size: 12vw;
+  word-spacing: 100vw;
 
-const Prose = ({ text }) => {
-  return (
-    <div className={style.prose} dangerouslySetInnerHTML={{ __html: text }} />
-  )
-}
+  @media (min-width: 800px) {
+    font-size: 4.5vw;
+  }
 
-export default function Me({ data, location }) {
+  strong {
+    color: ${colors.blue};
+  }
+`
+
+const Name = styled.p`
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+`
+
+const Prose = ({ text }) => (<div dangerouslySetInnerHTML={{ __html: text }}/>)
+
+const Me = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const siteDescription = data.site.siteMetadata.description
   const post = data.markdownRemark
 
   return (
-    <SplitLayout location={location} image={data.profile}>
+    <SplitLayout image={data.profile}>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: siteDescription }]}
         title={siteTitle}
         link={[{ rel: 'shortcut icon', type: 'image/png', href: icon }]}
       />
-      <div className={style.content}>
+      <Content>
         <Name>{post.frontmatter.name}</Name>
 
         <Tagline>{post.frontmatter.tagline}</Tagline>
 
-        <Prose text={post.html} />
+        <Prose text={post.html}/>
 
-        <Separator />
+        <Separator/>
 
-        <Social />
-      </div>
+        <Social/>
+      </Content>
     </SplitLayout>
   )
 }
+export default Me
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0 10px;
+
+  @media (min-width: 800px) {
+    padding: 0;
+  }
+`
 
 const Social = () => {
   return (
-    <div className={style.social}>
-      <p className={style.reachMe}>You can reach me on:</p>
+    <SocialBar>
+      <ReachMe>You can reach me on:</ReachMe>
       <Icons>
         <a href="https://twitter.com/felipesere">
-          <Twitter />
+          <Twitter/>
         </a>
         <a href="https://github.com/felipesere">
-          <Github />
+          <Github/>
         </a>
         <a href="https://keybase.io/felipesere">
-          <Keybase />
+          <Keybase/>
         </a>
         <a href="https://www.xing.com/profile/Felipe_Sere">
-          <Xing />
+          <Xing/>
         </a>
         <a href="https://uk.linkedin.com/in/felipe-sere-47a999106">
-          <LinkedIn />
+          <LinkedIn/>
         </a>
         <a href="mailto:felipesere@gmail.com">
-          <Email />
+          <Email/>
         </a>
       </Icons>
-    </div>
+    </SocialBar>
   )
 }
+
+const ReachMe = styled.p`
+  margin-right: 1em;
+  font-size: 0.8rem;
+`
+
+const SocialBar = styled.div`
+  margin-bottom: 2rem;
+`
 
 export const query = graphql`
   query {
