@@ -18,13 +18,13 @@ type BrandProps = {
   color: string
 }
 
-const brand = (brand: BrandProps) => {
+const brand = ({name, icon: [family, icon], color}: BrandProps) => {
   return () => (
-    <BrandColor color={brand.color}>
+    <BrandColor color={color}>
       <Icon>
-        <i className={`${brand.icon[0]} fa-${brand.icon[1]}`}></i>
+        <i className={`${family} fa-${icon} fa-s`}/>
       </Icon>
-      <BrandName>{brand.name}</BrandName>
+      <BrandName>{name}</BrandName>
     </BrandColor>
   )
 }
@@ -43,7 +43,6 @@ const BrandColor = styled.div`
     border: 1px solid ${(props) => props.color};
     padding: 4px 7px;
     border-radius: 3px;
-    height: 32px;
     font-size: 0.75rem;
 
     &:hover {
