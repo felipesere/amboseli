@@ -5,9 +5,7 @@ import styled from 'styled-components'
 
 const SplitImage = ({ image }) => {
   return (
-    <HiddenOnMobile>
-      <Img fluid={image.childImageSharp.fluid}/>
-    </HiddenOnMobile>
+    <HiddenOnMobile fluid={image.childImageSharp.fluid}/>
   )
 }
 
@@ -53,14 +51,14 @@ const SplitContainer = styled.div`
   display: flex;
 `
 
-const HiddenOnMobile = styled.div`
+const HiddenOnMobile = styled(Img)`
   display: none;
 
   @media (min-width: 800px) {
     width: 50%;
-    height: 100vh;
     background-size: cover;
     background-position: center center;
     display: block;
+    overflow: hidden;
   }
 `
