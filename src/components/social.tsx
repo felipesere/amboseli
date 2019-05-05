@@ -2,8 +2,30 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconPrefix, IconName } from '@fortawesome/fontawesome-svg-core'
+import { library, IconPrefix, IconName } from '@fortawesome/fontawesome-svg-core'
+import { fas, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
+import {
+  faTwitter,
+  faLinkedinIn,
+  faGithub,
+  faKeybase,
+  faXing,
+  faFacebookF,
+  faRedditAlien,
+} from '@fortawesome/free-brands-svg-icons'
 import { colors } from '../styles'
+
+library.add(
+  fas,
+  faEnvelopeSquare,
+  faTwitter,
+  faLinkedinIn,
+  faGithub,
+  faKeybase,
+  faXing,
+  faFacebookF,
+  faRedditAlien,
+)
 
 export const Icons = styled.div`
   display: grid;
