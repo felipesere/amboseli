@@ -8,6 +8,17 @@ export const coreWidth = () => {
   `
 }
 
+export const shadow = () => {
+ return `
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.15s ease-in-out;
+  }
+  `
+}
+
 const lightGrey = '#f9f9f9'
 const graphite = '#9eabb3'
 
