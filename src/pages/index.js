@@ -14,7 +14,7 @@ import {
   LinkedIn,
   Twitter,
   Xing,
-} from '../components/share/social'
+} from '../components/social'
 
 const Tagline = ({ children }) => {
   const [first, second, third] = children

@@ -8,7 +8,7 @@ import {
 import styled from 'styled-components'
 
 import { graphql, StaticQuery } from 'gatsby'
-import { Facebook, Icons, LinkedIn, Reddit, Twitter } from './share/social'
+import { Facebook, Icons, LinkedIn, Reddit, Twitter } from './social'
 
 export const Share = ({ title, tags, slug }) => {
   return (
