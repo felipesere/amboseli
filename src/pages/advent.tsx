@@ -79,7 +79,7 @@ class AdventCalendar extends React.Component<AdventCalendarProps, AdventCalendar
     }
   }
 
-  openModal(title) {
+  openModal = (title) => {
     this.setState((prevState) => {
       const openedDay = prevState.days.find(
         (day) => day.frontmatter.title === title,
@@ -88,7 +88,7 @@ class AdventCalendar extends React.Component<AdventCalendarProps, AdventCalendar
     })
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({ openedDay: undefined })
   }
 
@@ -149,7 +149,7 @@ class AdventDay extends React.Component<AdventDayProps> {
     super(props)
   }
 
-  reportTitle() {
+  reportTitle = () => {
     this.props.onClick(this.props.title)
   }
 
