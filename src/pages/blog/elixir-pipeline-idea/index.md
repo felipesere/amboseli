@@ -21,7 +21,7 @@ The transformations we need to do are likely temporary, as the other systems con
 Hence, we might need to add more transformations or remove other throughout the lifetime.
 
 The validations on the other hand will depend on the data we pass through. They probably check the shape of the data, not necessarily the contents.
-For example, we will need to check that something is a non-negative currency in either U$D, EUR, GBP, or BRL, but not whether the value is greater than something stored in a DB somewhere.
+For example, we will need to check that something is a non-negative currency in either U\$D, EUR, GBP, or BRL, but not whether the value is greater than something stored in a DB somewhere.
 
 We are thinking of two places where we want to put data to rest, with different retention characteristics.
 

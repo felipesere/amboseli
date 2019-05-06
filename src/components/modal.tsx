@@ -27,16 +27,16 @@ export class Modal extends React.Component<ModalProps> {
         isOpen={!!day}
         onRequestClose={onClose}
       >
-        <Close onClick={onClose} >+</Close>
-        {day && <InnerModal title={day.frontmatter.title} html={day.html} />}
+        <Close onClick={onClose}>+</Close>
+        {day && <InnerModal title={day.frontmatter.title} html={day.html}/>}
       </StyledModal>
     )
   }
 }
 
-const ReactModalAdapter = ({className,  ...props }) => {
-  const contentClassName = `${className}__content`;
-  const overlayClassName = `${className}__overlay`;
+const ReactModalAdapter = ({ className, ...props }) => {
+  const contentClassName = `${className}__content`
+  const overlayClassName = `${className}__overlay`
   return (
     <ReactModal
       portalClassName={className}
@@ -104,10 +104,10 @@ const Close = styled.div`
 const InnerModal = ({ title, html }) => {
   return (
     <>
-      <TwitterCard title={title} />
+      <TwitterCard title={title}/>
       <ModalTitle>{title}</ModalTitle>
-      <Separator />
-      <Entry html={html} />
+      <Separator/>
+      <Entry html={html}/>
     </>
   )
 }
@@ -121,9 +121,9 @@ const ModalTitle = styled.div`
 const TwitterCard = ({ title }) => {
   return (
     <Helmet>
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@felipesere" />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:card" content="summary"/>
+      <meta name="twitter:site" content="@felipesere"/>
+      <meta name="twitter:title" content={title}/>
     </Helmet>
   )
 }
@@ -131,7 +131,7 @@ const TwitterCard = ({ title }) => {
 const Entry = ({ html }) => {
   return (
     <Prose>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div dangerouslySetInnerHTML={{ __html: html }}/>
     </Prose>
   )
 }
