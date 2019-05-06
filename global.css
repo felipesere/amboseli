@@ -13,3 +13,11 @@ blockquote {
 .gatsby-resp-image-figcaption {
     text-align: center;
 }
+
+.timeline-item-date {
+    top: 0 !important;
+}
+
+.entry .title:before {
+    top: 50% !important;
+}

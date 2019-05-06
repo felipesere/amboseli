@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
-import { SplitLayout } from '../components/split-layout'
+import { SplitLayout } from '../layout/split-layout'
 import { graphql } from 'gatsby'
 import icon from '../assets/favicon.png'
 import { Separator } from '../components/separator'

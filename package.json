@@ -44,9 +44,11 @@
     "react-modal": "^3.6.1",
     "react-share": "^2.3.1",
     "react-typography": "^0.16.13",
+    "showdown": "^1.9.0",
     "striptags": "^3.1.1",
     "styled-components": "^4.2.0",
-    "typography": "^0.16.17"
+    "typography": "^0.16.17",
+    "vertical-timeline-component-for-react": "^1.0.6"
   },
   "devDependencies": {
     "@types/react": "^16.8.15",

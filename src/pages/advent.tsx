@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { PromoLayout } from '../components/promo-layout'
+import { PromoLayout } from '../layout/promo-layout'
 import { Title, Subtitle } from '../components/title'
 import { Day } from '../components/calendar-day'
 import { Modal, initModal } from '../components/modal'

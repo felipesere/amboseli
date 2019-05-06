@@ -3,7 +3,7 @@ import get from 'lodash/get'
 import { graphql } from 'gatsby'
 import { Article } from '../components/article'
 import { AvailableTags } from '../components/available-tags'
-import { PromoLayout } from '../components/promo-layout'
+import { PromoLayout } from '../layout/promo-layout'
 
 const notDraft = (post) => {
   if (!inProd()) {

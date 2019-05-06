@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import { NavBar } from '../components/navigation'
-import { Promo } from './promo'
+import { Promo } from '../components/promo'
 import icon from '../assets/favicon.png'
 import {colors} from '../styles'
 import styled from 'styled-components'

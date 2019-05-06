@@ -13,6 +13,7 @@ export const NavBar = ({ center = false }) => {
         <Link to="/blog">Blog</Link>
         <Link to="/portfolio">Portfolio</Link>
         {isXmas() && <Link to="/advent">Advent</Link>}
+        <Link to="/profile">Profile</Link>
       </Container>
     </Background>
   )

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { Article } from '../components/article'
-import { PromoLayout } from '../components/promo-layout'
+import { PromoLayout } from '../layout/promo-layout'
 import { Title } from '../components/title'
 
 const Tags = ({ pageContext, data }) => {
