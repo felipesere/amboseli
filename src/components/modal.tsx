@@ -34,22 +34,21 @@ export class Modal extends React.Component<ModalProps> {
   }
 }
 
-function ReactModalAdapter ({className, overlayClassName, ...props }) {
+const ReactModalAdapter = ({className,  ...props }) => {
+  const contentClassName = `${className}__content`;
+  const overlayClassName = `${className}__overlay`;
   return (
     <ReactModal
       portalClassName={className}
+      className={contentClassName}
       overlayClassName={overlayClassName}
-
-      className={className}
       {...props}
     />
   )
 }
 
-const StyledModal = styled(ReactModalAdapter).attrs({
-    overlayClassName: 'Overlay',
-  })`
-  .Overlay {
+const StyledModal = styled(ReactModalAdapter)`
+  &__overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -58,23 +57,25 @@ const StyledModal = styled(ReactModalAdapter).attrs({
     background-color: rgba(0, 0, 0, 0.75);
   }
   
-  border: 1px solid rgb(204, 204, 204);
-  outline: none;
-  border-radius: 5px;
-  padding: 20px;
-  width: 95%;
-  margin: 5px auto;
-  background: white;
-  position: relative;
-  max-height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  &__content {
+    border: 1px solid rgb(204, 204, 204);
+    outline: none;
+    border-radius: 5px;
+    padding: 20px;
+    width: 95%;
+    margin: 5px auto;
+    background: white;
+    position: relative;
+    max-height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 
-  @media (min-width: 800px) {
-    max-width: 50%;
-    min-width: 650px;
-    max-height: 90%;
-    margin-top: 2rem;
+    @media (min-width: 800px) {
+      max-width: 50%;
+      min-width: 650px;
+      max-height: 90%;
+      margin-top: 2rem;
+    }
   }
 `
 
