@@ -7,8 +7,8 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
-    const tagsTemplate = path.resolve('./src/templates/tags.js')
+    const blogPost = path.resolve('./src/templates/blog-post.tsx')
+    const tagsTemplate = path.resolve('./src/templates/tags.tsx')
 
     resolve(
       graphql(
