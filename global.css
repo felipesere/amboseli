@@ -21,3 +21,7 @@ blockquote {
 .entry .title:before {
     top: 50% !important;
 }
+
+.entry .body p:first-child {
+    font-weight:  lighter !important;
+}

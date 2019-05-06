@@ -1,13 +1,11 @@
 import * as React from 'react'
-import showdown from 'showdown'
 
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
 import { colors } from '../../styles'
 import { Base } from '../../layout/base'
 import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
-const converter = new showdown.Converter()
-console.log(converter.makeHtml('# foo bar'))
 
 const Title = styled.h1`
   &&& {
@@ -18,7 +16,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   &&& {
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: normal;
     margin-bottom: 10px;
   }
 `
@@ -80,69 +78,45 @@ const TimelineEntry = ({ date, children, highlight }: TimelineEntryProps) => {
   )
 }
 
-export default () => (
-  <Base>
-    <MyTimeline lineColor={'#ddd'}>
-      {personalTimeline.map( (entry, i) => {
-        console.log(converter.makeHtml(entry.story))
-        return (
-          <TimelineEntry key={i} date={`${entry.from} - ${entry.to}`} highlight={entry.highlight}>
-            <Title>{entry.title}</Title>
-            <Subtitle>{entry.subtitle}</Subtitle>
-            <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(entry.story) }}/>
-          </TimelineEntry>
+export default function Index(props) {
+  const entries = props.data.allMarkdownRemark.edges
+  return (
+    <Base>
+      <MyTimeline lineColor={'#ddd'}>
+        {entries.map(({node: {frontmatter, html}}, i) => {
+            return (
+              <TimelineEntry key={i} date={`${frontmatter.from} - ${frontmatter.to}`} highlight={frontmatter.highlight}>
+                <Title>{frontmatter.title}</Title>
+                <Subtitle>{frontmatter.subtitle}</Subtitle>
+                <div dangerouslySetInnerHTML={{__html: html}}/>
+              </TimelineEntry>
+            )
+          },
         )}
-      )}
-    </MyTimeline>
-  </Base>
-)
+      </MyTimeline>
+    </Base>
+  )
+}
 
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { fields: fileAbsolutePath, order: DESC }
+      filter: { fields: { slug: { regex: "/profile/" } } }
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+            subtitle
+            from
+            to
+            highlight
+          }
+        }
+      }
+    }
+  }
+`
 
-const personalTimeline = [
-  {
-    from: "July 2018",
-    to: "present",
-    title: "8th Light, London",
-    subtitle: "Principal Software Crafter",
-    story: "",
-    highlight: true,
-  },
-  {
-    from: "July 2014",
-    to: "July 2018",
-    title: "8th Light, London",
-    subtitle: "Software Crafter",
-    story: "",
-    highlight: false,
-  },
-  {
-    from: 'April 2012',
-    to: 'May 2014',
-    title: '1&1 Internet AG, Karlsruhe',
-    subtitle: 'Software Engineer',
-    story: 'As part of the "Hosting Core Services" department, I developed services for in-house applications as part of a Scrum team. ' +
-      'Our focus was on RESTful APIs for service discovery, data storage and OAuth2 security.' +
-      'I was also the bridge between German and Romanian development team.',
-    highlight: false,
-  },
-  {
-    from: 'October 2008',
-    to: 'April 2012',
-    title: 'Karlsruhe Institute of Technology',
-    subtitle: 'Bachelors degree in Engineering/Industrial Management, Grade 2.2',
-    story: `Industrial engineering is an interdisciplinary field combining computer science, classical engineering, economics and business administration.
-      My personal focus was on computer science as well as management of eBusinesses and eServices.
-      Thesis: Semi-Automatic Composition of BPMN Processes: A Platform Prototype. Grade 1.7`,
-    highlight: false,
-  },
-  {
-    from: '2002',
-    to: 'October 2008',
-    title: 'German School Nairobi, Kenya',
-    subtitle: 'Abitur, Grade 1.4',
-    story: `Student representative in parent teacher association 2007-2008.
-    Extra curricular activities included working backstage (audio, lightning, stage props) for drama class,
-    and playing Volleyball for the school team.`,
-    highlight: false,
-  },
-]
