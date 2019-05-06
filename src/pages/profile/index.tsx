@@ -2,8 +2,8 @@ import * as React from 'react'
 import showdown from 'showdown'
 
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
-import { colors } from '../styles'
-import { Base } from '../layout/base'
+import { colors } from '../../styles'
+import { Base } from '../../layout/base'
 import styled from 'styled-components'
 
 const converter = new showdown.Converter()

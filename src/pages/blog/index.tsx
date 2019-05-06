@@ -1,9 +1,9 @@
 import * as React from 'react'
 import get from 'lodash/get'
 import { graphql } from 'gatsby'
-import { Article } from '../components/article'
-import { AvailableTags } from '../components/available-tags'
-import { PromoLayout } from '../layout/promo-layout'
+import { Article } from '../../components/article'
+import { AvailableTags } from '../../components/available-tags'
+import { PromoLayout } from '../../layout/promo-layout'
 
 const notDraft = (post) => {
   if (!inProd()) {
@@ -17,7 +17,7 @@ const inProd = () => process.env.NODE_ENV === 'production'
 
 
 
-export default function Blog(props) {
+export default function Index(props) {
   const [first, ...posts] = get(props, 'data.allMarkdownRemark.edges').filter(
     (p) => notDraft(p)
   )
