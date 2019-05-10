@@ -96,6 +96,11 @@ const Footer = styled.footer`
   @media (min-width: 800px) {
     flex-direction: row;
   }
+
+  & p {
+    margin-right: 20px;
+    font-size: 0.65rem;
+  }
 `
 
 const timeToRead = (html) =>
