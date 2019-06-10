@@ -8,13 +8,7 @@ import {
 import styled from 'styled-components'
 
 import { graphql, StaticQuery } from 'gatsby'
-import {
-  ColoredFacebook,
-  ColoredLinkedIn,
-  ColoredReddit,
-  ColoredTwitter,
-  Icons,
-} from './social'
+import { Facebook, Icons, LinkedIn, Reddit, Twitter } from './social'
 
 export const Share = ({ title, tags, slug }) => {
   return (
@@ -59,16 +53,16 @@ const ShareIcons = ({ title, tags, twitter, url }) => {
           via={twitter.split('@').join('')}
           hashtags={tags}
         >
-          <ColoredTwitter />
+          <Twitter />
         </TwitterShareButton>
         <FacebookShareButton url={url}>
-          <ColoredFacebook />
+          <Facebook />
         </FacebookShareButton>
         <LinkedinShareButton url={url} title={title}>
-          <ColoredLinkedIn />
+          <LinkedIn />
         </LinkedinShareButton>
         <RedditShareButton url={url} title={title}>
-          <ColoredReddit />
+          <Reddit />
         </RedditShareButton>
         {}
       </Icons>
