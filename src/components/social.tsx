@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { colors } from '../styles'
 
 export const Icons = styled.div`
   display: grid;
@@ -11,14 +10,16 @@ export const Icons = styled.div`
     text-decoration: none;
   }
 `
-
-type BrandProps = {
-  name: string,
-  icon: [string, string]
-  color: string
+const roundIcon = (family: string, icon: string) => {
+  return () => (
+    <span className="fa-stack fa-lg">
+      <i className="fas fa-circle fa-stack-2x"/>
+      <i className={`${family} fa-${icon} fa-stack-1x fa-inverse`}/>
+    </span>
+  )
 }
 
-const brand = ({name, icon: [family, icon], color}: BrandProps) => {
+const coloredIcon = (family: string, icon: string, color: string, name: string) => {
   return () => (
     <BrandColor color={color}>
       <Icon>
@@ -52,11 +53,17 @@ const BrandColor = styled.div`
     }
 `
 
-export const Twitter = brand({ name: 'Twitter', icon: ['fab', 'twitter'], color: '#1da1f2' })
-export const Github = brand({ name: 'Github', icon: ['fab', 'github'], color: '#333' })
-export const Keybase = brand({ name: 'Keybase', icon: ['fab', 'keybase'], color: '#33A0FF' })
-export const Email = brand({ name: 'Email', icon: ['far', 'envelope'], color: colors.graphite })
-export const Xing = brand({ name: 'Xing', icon: ['fab', 'xing'], color: '#026466' })
-export const LinkedIn = brand({ name: 'LinkedIn', icon: ['fab', 'linkedin'], color: '#0077b5' })
-export const Reddit = brand({ name: 'Reddit', icon: ['fab', 'reddit-alien'], color: '#FF4301' })
-export const Facebook = brand({ name: 'Facebook', icon: ['fab', 'facebook-f'], color: '#3C5898' })
+export const Twitter = roundIcon('fab', 'twitter')
+export const Github = roundIcon('fab', 'github')
+export const Keybase = roundIcon('fab', 'keybase')
+export const Email = roundIcon('far', 'envelope')
+export const Xing = roundIcon('fab', 'xing')
+export const LinkedIn = roundIcon('fab', 'linkedin')
+export const Reddit = roundIcon('fab', 'reddit-alien')
+export const Facebook = roundIcon('fab', 'facebook-f')
+
+
+export const ColoredTwitter = coloredIcon('fab', 'twitter', '#1da1f2', 'Twitter')
+export const ColoredFacebook = coloredIcon('fab', 'facebook-f', '#3C5898', 'Facebook')
+export const ColoredLinkedIn = coloredIcon('fab', 'linkedin', '#0077b5', 'LinkedIn')
+export const ColoredReddit = coloredIcon('fab', 'reddit-alien', '#FF4301', 'Reddit')

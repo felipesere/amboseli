@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import { SplitLayout } from '../layout/split-layout'
 import { graphql } from 'gatsby'
 import icon from '../assets/favicon.png'
-import { Separator } from '../components/separator'
 import styled from 'styled-components'
 
 import {
@@ -73,8 +72,6 @@ const Me = ({ data }) => {
 
         <Prose text={post.html}/>
 
-        <Separator/>
-
         <Social/>
       </Content>
     </SplitLayout>
@@ -97,41 +94,68 @@ const Content = styled.div`
 const Social = () => {
   return (
     <SocialBar>
-      <ReachMe>You can reach me on:</ReachMe>
-      <Icons>
-        <a href="https://twitter.com/felipesere">
-          <Twitter/>
-        </a>
-        <a href="https://github.com/felipesere">
-          <Github/>
-        </a>
-        <a href="https://keybase.io/felipesere">
-          <Keybase/>
-        </a>
-        <a href="https://www.xing.com/profile/Felipe_Sere">
-          <Xing/>
-        </a>
-        <a href="https://uk.linkedin.com/in/felipe-sere-47a999106">
-          <LinkedIn/>
-        </a>
-        <a href="mailto:felipesere@gmail.com">
-          <Email/>
-        </a>
-      </Icons>
+      <ul>
+        <li>
+          <a href="https://twitter.com/felipesere">
+            <Twitter/>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/felipesere">
+            <Github/>
+          </a>
+        </li>
+        <li>
+          <a href="https://keybase.io/felipesere">
+            <Keybase/>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.xing.com/profile/Felipe_Sere">
+            <Xing/>
+          </a>
+        </li>
+        <li>
+          <a href="https://uk.linkedin.com/in/felipe-sere-47a999106">
+            <LinkedIn/>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:felipesere@gmail.com">
+            <Email/>
+          </a>
+        </li>
+      </ul>
     </SocialBar>
   )
 }
 
-const ReachMe = styled.p`
-  margin: 0 1em 0.5rem 0;
-  font-size: 0.8rem;
-`
-
 const SocialBar = styled.div`
+  font-size: 16px;
+  margin-top: 3rem;
   margin-bottom: 2rem;
   @media (min-width: 800px) {
     margin-bottom: 0;
   }
+  
+  ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  a {
+    color: #484848;
+    text-decoration: none;
+    
+    &:hover {
+      color: ${colors.blue};
+    }
+  } 
 `
 
 export const query = graphql`
