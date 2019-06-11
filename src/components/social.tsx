@@ -10,6 +10,7 @@ export const Icons = styled.div`
     text-decoration: none;
   }
 `
+
 const roundIcon = (family: string, icon: string) => {
   return () => (
     <span className="fa-stack fa-lg">
@@ -18,6 +19,7 @@ const roundIcon = (family: string, icon: string) => {
     </span>
   )
 }
+
 
 const coloredIcon = (family: string, icon: string, color: string, name: string) => {
   return () => (
