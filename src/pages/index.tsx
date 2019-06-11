@@ -149,7 +149,7 @@ const SocialBar = styled.div`
   }
   
   a {
-    color: #484848;
+    color: ${colors.almostBlack};
     text-decoration: none;
     
     &:hover {

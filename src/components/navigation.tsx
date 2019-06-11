@@ -27,17 +27,18 @@ const NavBarContainer = styled.nav`
   justify-content: space-between;
   color: ${colors.graphite};
 
-  padding: 0.5rem 80px 0.25rem 80px;
-  font-weight: normal;
+  padding: 1rem 80px;
+  font-weight: bolder;
 
   a {
     text-decoration: none;
+    text-transform: uppercase;
     font-size: 0.6rem;
     text-align: center;
-    color: ${colors.darkerGraphite};
-
+    color: ${colors.almostBlack};
+    
     &:visited {
-      color: ${colors.darkerGraphite};
+      color: ${colors.almostBlack};
     }
   }
 `

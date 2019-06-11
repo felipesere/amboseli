@@ -32,4 +32,5 @@ export const colors = {
   lighterGraphite: lighten(0.25, graphite),
   lightGrey,
   grey: darken(0.05, lightGrey),
+  almostBlack: '#484848',
 }
