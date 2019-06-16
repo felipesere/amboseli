@@ -177,8 +177,8 @@ export const query = graphql`
     }
     profile: file(relativePath: { eq: "felipe.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 4160) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 4096) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
