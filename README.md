@@ -4,6 +4,7 @@ Inspiration:
 * for the me page: https://github.com/christianmendoza/hugo-split-theme
 * for the blogs themeselves: https://github.com/nanxiaobei/hugo-paper/
 * for the portfolio: https://github.com/ageekymonk/hugo-tracks-theme
+* alternative for portfolio: https://gatsby-casper.netlify.com/ & https://github.com/scttcper/gatsby-casper
 
 ## Running in development
 `gatsby develop`
@@ -21,7 +22,7 @@ Inspiration:
 
 - [x] Intro
 - [x] Blog index and individual posts
-- [~] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
+- [x] Portfolio with Path2Mastery, Advisor, Elixir Koans, ...
 - [ ] Maybe photography
 - [ ] Books i like
 - [ ] CV
@@ -33,9 +34,9 @@ Inspiration:
   - [ ] margins
   - [ ] font-sizes
   - [ ] consider extracting functions
-- [ ] think of pagination
-- [ ] better naming around templates- and components and index pages...
-- [ ] Better 404 page
+- [x] think of pagination
+- [x] better naming around templates- and components and index pages...
+- [x] Better 404 page
 - [x] Move navigation on landing page to the top
 - [ ] Make all clickable things at least 45px tall/wide for mobile
 - [x] Include tags on blog 'preview'
