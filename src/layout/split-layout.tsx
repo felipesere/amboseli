@@ -33,7 +33,7 @@ const Content = styled.div`
 
 const Split = styled.div`
   @media (min-width: 800px) {
-    width: 50%;
+    max-width: 50%;
     min-height: 100vh;
     overflow: auto;
   }
@@ -49,7 +49,7 @@ const HiddenOnMobile = styled(Img)`
   display: none;
 
   @media (min-width: 800px) {
-    max-width: 50%;
+    width: 50%;
     background-size: cover;
     background-position: center center;
     display: block;
