@@ -3,12 +3,6 @@ import Img from 'gatsby-image'
 import { NavBar } from '../components/navigation'
 import styled from 'styled-components'
 
-const SplitImage = ({ image }) => {
-  return (
-    <HiddenOnMobile fluid={image.childImageSharp.fluid}/>
-  )
-}
-
 const SplitContent = ({ children }) => {
   return (
     <Split>
@@ -21,7 +15,7 @@ const SplitContent = ({ children }) => {
 export const SplitLayout = ({ children, image }) => {
   return (
     <SplitContainer>
-      <SplitImage image={image}/>
+      <HiddenOnMobile fluid={image.childImageSharp.fluid} durationFadeIn={1000}/>
       <SplitContent>{children}</SplitContent>
     </SplitContainer>
   )
@@ -39,7 +33,7 @@ const Content = styled.div`
 
 const Split = styled.div`
   @media (min-width: 800px) {
-    width: 50%;
+    max-width: 50%;
     min-height: 100vh;
     overflow: auto;
   }
