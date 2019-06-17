@@ -5,7 +5,7 @@ var revision = require('child_process')
 
 module.exports = {
   siteMetadata: {
-    title: 'Path 2 Mastery',
+    title: 'felipesere.com',
     author: 'Felipe Sere',
     description: 'Felipes path to mastery',
     siteUrl: 'https://felipesere.com',
@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Path 2 Mastery`,
+        name: `felipesere.com`,
         short_name: `P2M`,
         start_url: `/`,
         background_color: `#ffffff`,
