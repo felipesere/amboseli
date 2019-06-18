@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import moment from 'moment'
 import { colors } from '../styles'
 
 export const NavBar = ({ center = false }) => {
@@ -27,8 +26,12 @@ const NavBarContainer = styled.nav`
   justify-content: space-between;
   color: ${colors.graphite};
 
-  padding: 1rem 80px;
+  padding: 1rem 1rem;
   font-weight: bolder;
+  
+  @media (min-width: 800px) {
+    padding: 1rem 80px;
+  }
 
   a {
     text-decoration: none;
@@ -54,9 +57,3 @@ const CenteredNavBarContainer = styled(NavBarContainer)`
     max-width: 700px;
   }
 `
-
-const isXmas = () => {
-  const decemberFirst = moment('2018-12-01').startOf('date')
-  const now = moment()
-  return now.isAfter(decemberFirst) || process.env.NODE_ENV !== 'production'
-}
