@@ -23,5 +23,17 @@ blockquote {
 }
 
 .entry .body p:first-child {
-    font-weight:  lighter !important;
+    font-weight: lighter !important;
+}
+
+@media (min-width: 800px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .desktop-only {
+        display: none;
+    }
 }

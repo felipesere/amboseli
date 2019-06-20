@@ -70,6 +70,19 @@ module.exports = {
               },
             },
           },
+          {
+            resolve: "gatsby-remark-custom-blocks",
+            options: {
+              blocks: {
+                mobile: {
+                  classes: "mobile-only",
+                },
+                desktop: {
+                  classes: "desktop-only",
+                },
+              },
+            },
+          },
         ],
       },
     },

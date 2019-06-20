@@ -31,6 +31,7 @@ const Tagline = ({ children }) => {
 }
 
 const TaglineLayout = styled.h1`
+  flex: 0;
   font-size: 12vw;
   word-spacing: 100vw;
 
@@ -44,13 +45,18 @@ const TaglineLayout = styled.h1`
 `
 
 const Name = styled.p`
+  flex: 0;
   margin-top: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.75rem;
 `
 
-const Prose = ({ text }) => (<div dangerouslySetInnerHTML={{ __html: text }}/>)
+const ProseContainer = styled.div`
+  flex: 1;
+`
+
+const Prose = ({ text }) => (<ProseContainer dangerouslySetInnerHTML={{ __html: text }} />)
 
 const Me = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -82,9 +88,8 @@ export default Me
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 2rem;
   padding: 0 10px;
+  height: 100%;
 
   @media (min-width: 800px) {
     padding: 0;
@@ -131,12 +136,13 @@ const Social = () => {
 }
 
 const SocialBar = styled.div`
-  font-size: 16px;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+   flex: 0;
+   margin: 0 2rem 2rem 2rem;
+   
   @media (min-width: 800px) {
-    margin-bottom: 0;
+    margin: 0 0 2rem;
   }
+   
   
   ul {
     list-style: none;

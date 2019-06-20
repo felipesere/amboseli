@@ -15,13 +15,14 @@ const SplitContent = ({ children }) => {
 export const SplitLayout = ({ children, image }) => {
   return (
     <SplitContainer>
-      <HiddenOnMobile fluid={image.childImageSharp.fluid} durationFadeIn={1000} style={{maxWidth: '50%'}}/>
+      <HiddenOnMobile fluid={image.childImageSharp.fluid} durationFadeIn={1000} style={{ maxWidth: '50%' }}/>
       <SplitContent>{children}</SplitContent>
     </SplitContainer>
   )
 }
 
 const Content = styled.div`
+  flex: 1;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
@@ -32,6 +33,9 @@ const Content = styled.div`
 `
 
 const Split = styled.div`
+  display: flex;
+  flex-direction: column;
+  
   @media (min-width: 800px) {
     max-width: 50%;
     min-height: 100vh;

@@ -6,24 +6,20 @@ import { colors } from '../styles'
 export const NavBar = ({ center = false }) => {
   const Container = center ? CenteredNavBarContainer : NavBarContainer
   return (
-    <Background>
-      <Container>
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/profile">Profile</Link>
-      </Container>
-    </Background>
+    <Container>
+      <Link to="/">Home</Link>
+      <Link to="/blog">Blog</Link>
+      <Link to="/portfolio">Portfolio</Link>
+      <Link to="/profile">Profile</Link>
+    </Container>
   )
 }
 
-const Background = styled.div`
-  background: ${colors.grey};
-`
-
 const NavBarContainer = styled.nav`
+  flex: 0;
   display: flex;
   justify-content: space-between;
+  background: ${colors.grey};
   color: ${colors.graphite};
 
   padding: 1rem 1rem;
@@ -47,6 +43,8 @@ const NavBarContainer = styled.nav`
 `
 
 const CenteredNavBarContainer = styled(NavBarContainer)`
+  flex: 0;
+  background: ${colors.grey};
   margin-left: auto;
   margin-right: auto;
   width: 70%;
