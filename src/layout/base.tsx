@@ -5,7 +5,7 @@ import { NavBar } from '../components/navigation'
 
 export const Base = ({children}) => (
   <Background>
-    <NavBar center />
+    <NavBar />
     {children}
   </Background>
 )

@@ -18,7 +18,7 @@ export const PromoLayout = ({ title, top, bottom }) => {
           content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         />
       </Helmet>
-      <NavBar center />
+      <NavBar />
       <All>
         <Promo>{top}</Promo>
         <Bottom>{bottom}</Bottom>
