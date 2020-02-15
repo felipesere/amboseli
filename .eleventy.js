@@ -13,8 +13,10 @@ module.exports = function(eleventyConfig) {
     return dayjs(date).format('MMMM D, YYYY')
   })
 
-  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
-
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
+  let markdownIt = require('markdown-it')
+  let markdownItEmoji = require('markdown-it-emoji')
+  eleventyConfig.setLibrary('md', markdownIt({ html: true }).use(markdownItEmoji))
   return {
     passthroughFileCopy: true,
   }
