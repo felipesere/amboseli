@@ -10,19 +10,19 @@
     <link rel="stylesheet" href="/css/prism.css">
     <title>Felipe Seré</title>
   </head>
-  <body>
-    <div class="container">
+  <body class="container">
       <nav class="horizontal space-around text-gray-300 text-size">
         <a href="/">Home</a>
         <a href="/blogs">Blogs</a>
         <a href="/about">About</a>
       </nav>
 
-      {% block content %}{% endblock %}
+      <main>
+        {% block content %}{% endblock %}
+      </main>
 
       <footer class="center">
         <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
       </footer>
-    </div>
   </body>
 </html>
