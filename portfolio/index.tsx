@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { PromoLayout } from '../../layout/promo-layout'
-import { Title } from '../../components/title'
-import { Separator } from '../../components/separator'
+import { PromoLayout } from '../src/layout/promo-layout'
+import { Title } from '../src/components/title'
+import { Separator } from '../src/components/separator'
 import styled from 'styled-components'
-import { colors, shadow } from '../../styles'
+import { colors, shadow } from '../src/styles'
 
 const Index = (props) => {
   const projects = props.data.allMarkdownRemark.edges

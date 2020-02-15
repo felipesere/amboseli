@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { PromoLayout } from '../../layout/promo-layout'
-import { Title, Subtitle } from '../../components/title'
-import { Day } from '../../components/calendar-day'
-import { Modal, initModal } from '../../components/modal'
+import { PromoLayout } from '../src/layout/promo-layout'
+import { Title, Subtitle } from '../src/components/title'
+import { Day } from '../src/components/calendar-day'
+import { Modal, initModal } from '../src/components/modal'
 import moment, { Moment } from 'moment'
 import queryString from 'query-string'
 import styled from 'styled-components'
-import { coreWidth, shadow } from '../../styles'
+import { coreWidth, shadow } from '../src/styles'
 
 initModal()
 
