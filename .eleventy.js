@@ -1,7 +1,5 @@
 const dayjs = require("dayjs");
 
-console.log(dayjs);
-
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('css')
   eleventyConfig.addPassthroughCopy('assets')
