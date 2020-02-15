@@ -9,12 +9,10 @@
         <p>
     </header>
 
-    <article class="stack text-center text-gray-800">
-        <h1 class="text-size-m"><em class="text-brand">Engineer.</em> Coach. Photographer</h1>
-        <div class="text-lighter">
-            {{  content | safe }}
+    <article>
+        <h1 class="text-gray-900 text-size-xxl"><em class="text-brand">Engineer.</em> Coach. Photographer</h1>
+        <div class="text-lighter stack-small">
+            {{ content | safe }}
         </div>
-
-        {% include "networking.njk" %}
     </article>
 {% endblock %}

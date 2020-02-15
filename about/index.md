@@ -1,7 +1,5 @@
 ---
-layout: home.njk
-name: Felipe Seré
-tagline: Engineer. Coach. Photographer.
+layout: about.njk
 ---
 
 _Hello!_

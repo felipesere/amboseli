@@ -3,4 +3,10 @@ layout: home.njk
 name: Felipe Seré
 ---
 
-:wave: these are some ways you can reach me:
+Hi there! :wave:
+
+I'm a software engineer currently working remotely from Madrid.
+
+You can reach me on any of these networks :arrow_down:. 
+Come say _hello_!
+

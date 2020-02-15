@@ -112,6 +112,10 @@ footer::before {
     margin-top: var(--s1);
 }
 
+.stack > * + * {
+    margin-top: var(--s3);
+}
+
 .horizontal {
     display: flex;
     flex-direction: row;
