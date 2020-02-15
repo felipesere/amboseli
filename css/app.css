@@ -41,10 +41,9 @@ h1 {
   font-size: var(--step-4);
 }
 
-/* reconsider these */
-header {
-  margin-top: var(--s5);
-  margin-bottom: var(--s3);
+nav {
+  margin-top: var(--s0);
+  margin-bottom: var(--s5);
 }
 
 footer {
@@ -68,7 +67,6 @@ footer {
     padding-right: var(--s1);
 }
 
-/* reset top/bottom margin for any non-stack class */
 [class^='stack'] > * {
     margin-top: 0;
     margin-bottom: 0;
@@ -161,7 +159,6 @@ footer {
     height: 125px;
     object-fit: cover;
     border-radius: 100%;
-    filter: grayscale(100%) contrast(110%);
 }
 
 .selfie:hover {
@@ -184,6 +181,8 @@ a:hover, a:focus {
     width: 32px;
     height: 26px;
 }
+
+/* Blog namespacing to only affect articles, blog entries */
 
 .blog {
   margin-top: var(--s3);
@@ -216,8 +215,5 @@ a:hover, a:focus {
 }
 
 .twitter-tweet {
-    margin-top: var(--s2);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: var(--s2);
+    margin: var(--s2) auto;
 }
