@@ -54,7 +54,7 @@ footer {
 
 /* basic structures */
 .container {
-    max-width: 60ch;
+    max-width: 70ch;
     margin-left: auto;
     margin-right: auto;
 }
@@ -142,12 +142,10 @@ footer {
     text-transform: uppercase;
 }
 
-
 .horizontal {
   display: flex;
   flex-direction: row;
 }
-
 
 /* Special stuff */
 
@@ -166,6 +164,7 @@ footer {
 
 a {
     color: var(--almost-black);
+    text-decoration: none;
 }
 
 a:hover, a:focus {
@@ -193,12 +192,4 @@ a:hover, a:focus {
 .blog img {
   margin-top: var(--s1);
   margin-bottom: var(--s1);
-}
-
-nav {
-}
-
-nav a {
-    display: inline-block;
-    text-decoration: none;
 }
