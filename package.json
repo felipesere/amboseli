@@ -45,6 +45,7 @@
     "vertical-timeline-component-for-react": "^1.0.6"
   },
   "devDependencies": {
+    "dayjs": "^1.8.20",
     "@types/react": "^16.8.15",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",

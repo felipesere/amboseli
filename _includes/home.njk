@@ -1,21 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/typography.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <script src="https://kit.fontawesome.com/ace4950f65.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
+{% extends "base.njk" %}
+{% block content %}
     <header class="stack-small">
       <img class="selfie center" alt="Selfie of Felipe Sere" src="/assets/felipe.jpg">
       <p class="text-center text-gray-300 uppercase">Felipe Seré<p>
     </header>
 
-    <article class="container">
+    <article>
         <h1 class="text-brand">{{ tagline }}</h1>
         <div class="text-lighter stack-small">
           {{ content | safe }}
@@ -61,5 +51,4 @@
     <footer class="center">
       <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
     </footer>
-  </body>
-</html>
+{% endblock %}

@@ -34,11 +34,11 @@
 
 body {
     font-family: Helvetica, Sans-Serif, serif;
-    font-size: var(--fluid-0);
+    font-size: var(--step-0);
 }
 
 h1 {
-  font-size: var(--fluid-2);
+  font-size: var(--step-4);
 }
 
 /* reconsider these */
@@ -117,12 +117,15 @@ footer {
 .text-gray-600 {
   color: var(--gray-600);
 }
+
 .text-gray-700 {
   color: var(--gray-700);
 }
+
 .text-gray-800 {
   color: var(--gray-800);
 }
+
 .text-gray-900 {
   color: var(--gray-900);
 }
@@ -137,6 +140,12 @@ footer {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
 }
 
 
@@ -170,3 +179,26 @@ a:hover, a:focus {
     height: 26px;
 }
 
+.blog {
+  margin-top: var(--s3);
+  margin-bottom: var(--s3);
+}
+
+.blog h2 {
+  margin-top: var(--s2);
+  margin-bottom: var(--s-2);
+  color: var(--gray-900);
+}
+
+.blog img {
+  margin-top: var(--s1);
+  margin-bottom: var(--s1);
+}
+
+nav {
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+}
