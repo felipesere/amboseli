@@ -11,7 +11,17 @@
   </head>
   <body>
     <div class="container">
-    {% block content %}{% endblock %}
+      <nav class="horizontal space-around text-gray-300 text-size">
+        <a href="/">Home</a>
+        <a href="/blogs">Blogs</a>
+        <a href="/about">About</a>
+      </nav>
+
+      {% block content %}{% endblock %}
+
+      <footer class="center">
+        <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
+      </footer>
     </div>
-  </body> 
+  </body>
 </html>
