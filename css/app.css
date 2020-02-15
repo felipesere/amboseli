@@ -193,3 +193,24 @@ a:hover, a:focus {
   margin-top: var(--s1);
   margin-bottom: var(--s1);
 }
+
+.blog blockquote {
+    background: var(--gray-50);
+    border-left: 10px solid var(--gray-300);
+    padding: 0.5em 10px;
+}
+
+.blog blockquote p {
+    display: inline;
+}
+
+.index {
+    list-style: none;
+}
+
+.twitter-tweet {
+    margin-top: var(--s2);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--s2);
+}

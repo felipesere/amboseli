@@ -1,0 +1,19 @@
+{% extends "base.njk" %}
+{% block content %}
+    {% include "navbar.njk" %}
+
+    {{ content | safe }}
+
+    <div class="index">
+        <ul class="stack-small">
+            {%- for blog in collections.blogs | reverse -%}
+                <li>
+                    <div class="horizontal">
+                        <a href="{{ blog.url }}">{{- blog.data.title -}}</a>
+                        <p class="text-gray-300">{% humanDate blog.data.date %}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

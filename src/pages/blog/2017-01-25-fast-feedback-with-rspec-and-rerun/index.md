@@ -23,13 +23,13 @@ What if we didn't have to manually run our tests?
 Enter [rerun](https://github.com/alexch/rerun).
 Install it with
 
-```sh
+```bash
    gem install rerun
 ```
 
 and then run
 
-```sh
+```bash
   rerun -cx "rspec --fail-fast
 ```
 

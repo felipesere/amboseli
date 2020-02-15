@@ -38,7 +38,7 @@ The challenge I set myself was to separate the concern _"getting data from a rem
 
 Naive as I was, I just moved the `getData` function over to the **Data.elm** file (_a poor name in hindsight_) and fixed some imports. Sadly, the compiler was not happy about this:
 
-```sh
+```bash
 Error in ./src/Main.elm
 Module build failed: Error: Compiler process exited with error Compilation failed
 -- NAMING ERROR ------------------------------------------------- ./src/Data.elm
@@ -75,7 +75,7 @@ getData msg =
 
 As you can see, the function now takes a parameter and should be invoked as `Data.getData NewData` and produce a `Cmd Msg`. Oh, how nice that would have been. The compiler and I had a slight disagreement about the correctness of this code:
 
-```sh
+```bash
 Module build failed: Error: Compiler process exited with error Compilation failed
 -- TYPE MISMATCH ------------------------------------------------ ./src/Data.elm
 
