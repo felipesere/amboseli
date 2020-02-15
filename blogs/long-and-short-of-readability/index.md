@@ -20,7 +20,7 @@ I believed our code to be obviously superior (“obvious” is a risky assumptio
 We made all of these explicit in their own well-named, little class.
 I’ve come to realize that I and the other developers have a vastly different understanding of what legible code means.
 
-# Abstraction skeptics and LEGO builders
+## Abstraction skeptics and LEGO builders
 
 The title refers to the two extremes along an axis of readability: On the one side, abstraction skeptics that prefer details not be hidden and LEGO builders that prefer to spread a problem over multiple files.
 First things first: neither of these positions is strictly better than the other. It's a matter of experience and preference where one lands.
