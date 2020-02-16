@@ -65,7 +65,6 @@ a:hover, a:focus {
     transition: color .2s;
 }
 
-
 footer {
     margin-top: var(--s2);
     margin-bottom: var(--s1);
@@ -89,6 +88,25 @@ footer::before {
     background: #FFF;
     box-shadow: #FFF 0 0 0 5px;
     border-radius: 3px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0 var(--s1);
+}
+
+tr > :last-child {
+    text-align: right;
+}
+
+@media only screen and (max-width: 500px) {
+   table, tbody, thead, th, tr, td {
+       display: block;
+   }
+
+    tr > :last-child {
+        text-align: left;
+    }
 }
 
 /* basic structures */
@@ -212,10 +230,6 @@ footer::before {
     fill: currentColor;
     width: 32px;
     height: 26px;
-}
-
-.index {
-    list-style: none;
 }
 
 .twitter-tweet {

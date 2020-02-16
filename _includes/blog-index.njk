@@ -2,16 +2,14 @@
 {% block content %}
     {{ content | safe }}
 
-    <div class="index">
-        <ul class="stack-small">
-            {%- for blog in collections.blogs | reverse -%}
-                <li>
-                    <div class="horizontal space-between">
-                        <a href="{{ blog.url }}">{{- blog.data.title -}}</a>
-                        <p class="text-gray-300">{% humanDate blog.data.date %}</p>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+    <table>
+        <tbody class="stack-small">
+        {%- for blog in collections.blogs | reverse -%}
+            <tr>
+                <td><a href="{{ blog.url }}">{{- blog.data.title -}}</a></td>
+                <td><p class="text-gray-300">{% humanDate blog.data.date %}</p></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
