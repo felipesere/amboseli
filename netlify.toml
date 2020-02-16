@@ -2,9 +2,6 @@
   publish = "_site"
   command = "npm run prod"
 
-[build.processing.images]
-  compress = true
-
 [[redirects]]
     from = "/post/:title"
     to = "/blogs/:title"
