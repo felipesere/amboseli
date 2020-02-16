@@ -4,11 +4,15 @@
   "version": "1.0.0",
   "author": "Felipe Seré <felipesere@gmail.com>",
   "dependencies": {
-    "markdown-it-emoji": "^1.4.0",
-    "markdown-it-highlight": "^0.2.0",
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "dayjs": "^1.8.20"
+    "autoprefixer": "^9.7.4",
+    "cssnano": "^4.1.10",
+    "dayjs": "^1.8.20",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-highlight": "^0.2.0",
+    "postcss-cli": "^7.1.0",
+    "postcss-import": "^12.0.1"
   },
   "license": "MIT",
   "main": "n/a",
@@ -17,6 +21,8 @@
     "url": "git+https://github.com/felipesere/amboseli.git"
   },
   "scripts": {
-    "dev": "npx @11ty/eleventy --serve"
+    "css": "postcss css/main.css --dir _site/assets",
+    "dev": "npm run css && eleventy --serve",
+    "prod": "npm run css && eleventy"
   }
 }
