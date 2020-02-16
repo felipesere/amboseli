@@ -15,8 +15,6 @@
     --s5: calc(var(--s4) * var(--ratio));
 
     --brand: #009bf5;
-    --almost-black: #484848;
-    --darker-graphite: #5b6267;
 
     --gray-50: #f3f3f3;
     --gray-100: #dcdcdc;
@@ -47,11 +45,6 @@ h1 {
     font-size: var(--step-4);
 }
 
-.flex {
-    display: flex;
-    flex-direction: column;
-}
-
 main {
     flex: 1 0 auto;
 }
@@ -61,6 +54,17 @@ nav {
     margin-bottom: var(--s5);
     flex-shrink: 0;
 }
+
+a {
+    color: var(--gray-600);
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: var(--brand);
+    transition: color .2s;
+}
+
 
 footer {
     margin-top: var(--s2);
@@ -204,20 +208,18 @@ footer::before {
     transition: filter 0.2s;
 }
 
-a {
-    color: var(--almost-black);
-    text-decoration: none;
-}
-
-a:hover, a:focus {
-    color: var(--brand);
-    transition: color .2s;
-}
-
 .icon {
     fill: currentColor;
     width: 32px;
     height: 26px;
+}
+
+.index {
+    list-style: none;
+}
+
+.twitter-tweet {
+    margin: var(--s2) auto;
 }
 
 /* Blog namespacing to only affect articles, blog entries */
@@ -246,12 +248,4 @@ a:hover, a:focus {
 
 .blog blockquote p {
     display: inline;
-}
-
-.index {
-    list-style: none;
-}
-
-.twitter-tweet {
-    margin: var(--s2) auto;
 }
