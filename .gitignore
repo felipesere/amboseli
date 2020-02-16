@@ -5,3 +5,4 @@ public
 .intermediate-representation/
 .cache/
 _site
+assets/main.css

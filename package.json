@@ -21,7 +21,8 @@
     "url": "git+https://github.com/felipesere/amboseli.git"
   },
   "scripts": {
-    "css": "postcss css/main.css --dir _site/assets",
+    "clean": "rm -rf _site; rm -f assets/main.css",
+    "css": "postcss css/main.css --dir assets",
     "dev": "npm run css && eleventy --serve",
     "prod": "npm run css && eleventy"
   }
