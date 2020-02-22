@@ -8,10 +8,25 @@
             grid-gap: var(--s1);
         }
 
+        .half-width {
+            /*max-width: calc(50% - (var(--s0) / 2));*/
+        }
+
+        .grid-half {
+            column-width: 200px;
+            column-gap: var(--s0);
+        }
+
         .boxed {
             border: 5px solid var(--gray-900);
+            background-color: white;
             padding: 5px;
         }
+
+        .box-background {
+            background-color: var(--gray-100);
+        }
+
 
         .nowrap {
             white-space: nowrap;
@@ -19,6 +34,50 @@
 
         .inline {
             display: inline;
+        }
+
+        .m-5 {
+            margin-left: var(--s-5);
+        }
+
+        .m-4 {
+            margin-left: var(--s-4);
+        }
+
+        .m-3 {
+            margin-left: var(--s-3);
+        }
+
+        .m-2 {
+            margin-left: var(--s-2);
+        }
+
+        .m-1 {
+            margin-left: var(--s-1);
+        }
+
+        .m0 {
+            margin-left: var(--s0);
+        }
+
+        .m1 {
+            margin-left: var(--s1);
+        }
+
+        .m2 {
+            margin-left: var(--s2);
+        }
+
+        .m3 {
+            margin-left: var(--s3);
+        }
+
+        .m4 {
+            margin-left: var(--s4);
+        }
+
+        .m5 {
+            margin-left: var(--s5);
         }
     </style>
     <h1>Welcome to my design page</h1>
@@ -52,6 +111,9 @@
                 <div class="boxed">
                     <p class="uppercase inline">This is using</p><code> .uppercase</code>
                 </div>
+                <div class="boxed">
+                    <code>This is &lt;/code &gt;</code>
+                </div>
             </div>
         </section>
 
@@ -66,11 +128,20 @@
 
         <section>
             <h2>Spacing</h2>
-
             <div class="stack">
                 <div>
+                    <p>Spacing applied to <code>margin-left</code></p>
+                    <div class="grid-half stack-small">
+                        {% for size in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5] %}
+                            <div class="box-background half-width">
+                                <p class="boxed inline m{{- size -}}"><code>--s{{- size -}}</code></p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
                     <code>.small-stack</code>
-                    <div class="stack-small">
+                    <div class="stack-small box-background">
                         <div class="boxed">Child</div>
                         <div class="boxed">Child</div>
                         <div class="boxed">Child</div>
@@ -79,10 +150,31 @@
 
                 <div>
                     <code>.stack</code>
-                    <div class="stack">
+                    <div class="stack box-background">
                         <div class="boxed">Child</div>
                         <div class="boxed">Child</div>
                         <div class="boxed">Child</div>
+                    </div>
+                </div>
+
+                <div class="stack-small">
+                    <div>
+                        <code>.horizontal .space-around</code>
+                        <div class="horizontal space-around box-background">
+                            <div class="boxed">Child</div>
+                            <div class="boxed">Child</div>
+                            <div class="boxed">Child</div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <code>.horizontal .space-evenly</code>
+                        <div class="horizontal space-evenly box-background">
+                            <div class="boxed">Child</div>
+                            <div class="boxed">Child</div>
+                            <div class="boxed">Child</div>
+                        </div>
                     </div>
                 </div>
             </div>

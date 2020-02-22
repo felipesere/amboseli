@@ -141,10 +141,6 @@ tr > :last-child {
     justify-content: space-around;
 }
 
-.space-between {
-    justify-content: space-between;
-}
-
 .space-evenly {
     justify-content: space-evenly;
 }
