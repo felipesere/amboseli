@@ -22,6 +22,7 @@
   },
   "scripts": {
     "clean": "rm -rf _site; rm -f assets/main.css",
+    "css:watch": "postcss css/main.css --dir assets --watch",
     "css": "postcss css/main.css --dir assets",
     "dev": "npm run css && eleventy --serve",
     "prod": "npm run css && eleventy"

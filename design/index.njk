@@ -1,0 +1,91 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: var(--s1);
+        }
+
+        .boxed {
+            border: 5px solid var(--gray-900);
+            padding: 5px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .inline {
+            display: inline;
+        }
+    </style>
+    <h1>Welcome to my design page</h1>
+    <div class="stack">
+        <section>
+            <h2>Text colors</h2>
+            <div class="grid">
+                {% for shade in [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] %}
+                    <code class="text-gray-{{ shade }} nowrap">
+                        .text-gray-{{ shade }}
+                    </code>
+                {% endfor %}
+                <code class="text-brand nowrap">.text-brand</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Text style</h2>
+            <div class="stack-small">
+                <div class="boxed">
+                    <p>This is normal text</p>
+                </div>
+                <div class="boxed">
+                    <p class="text-center">This is using<code> .text-center</code></p>
+                </div>
+
+                <div class="boxed">
+                    <p class="text-lighter">This is using<code> .text-lighter</code></p>
+                </div>
+
+                <div class="boxed">
+                    <p class="uppercase inline">This is using</p><code> .uppercase</code>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Text sizes</h2>
+            <div class="stack-small">
+                {% for size in ["-xs", "-s", "", "-m", "-l", "-xl", "-xxl"] %}
+                    <p class="text-size{{- size -}}">This text is <code>.text-size{{- size -}}</code></p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Spacing</h2>
+
+            <div class="stack">
+                <div>
+                    <code>.small-stack</code>
+                    <div class="stack-small">
+                        <div class="boxed">Child</div>
+                        <div class="boxed">Child</div>
+                        <div class="boxed">Child</div>
+                    </div>
+                </div>
+
+                <div>
+                    <code>.stack</code>
+                    <div class="stack">
+                        <div class="boxed">Child</div>
+                        <div class="boxed">Child</div>
+                        <div class="boxed">Child</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
