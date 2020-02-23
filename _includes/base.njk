@@ -33,27 +33,31 @@
           content: "\2611";
       }
   </style>
-  <body class="center">
+  <body>
     <input id="dark-mode" class="dark-mode-checkbox visually-hidden" type="checkbox">
     <div class="theme-container">
-        <label class="dark-mode-label" for="dark-mode">
-            Dark mode
-        </label>
+        <div class="main center">
+        <!-- add a another div here that takes on the styles from the body make sure everything stretches -->
 
-        <nav class="horizontal space-around text-gray-300 text-size">
-          <a href="/">Home</a>
-          <a href="/blogs">Blogs</a>
-          <a href="/about">About</a>
-          <a href="/design">Design</a>
-        </nav>
+            <label class="dark-mode-label" for="dark-mode">
+                Dark mode
+            </label>
 
-        <main>
-          {% block content %}{% endblock %}
-        </main>
+            <nav class="horizontal space-around text-gray-300 text-size">
+              <a href="/">Home</a>
+              <a href="/blogs">Blogs</a>
+              <a href="/about">About</a>
+              <a href="/design">Design</a>
+            </nav>
 
-        <footer class="center">
-          <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
-        </footer>
+            <main>
+              {% block content %}{% endblock %}
+            </main>
+
+            <footer>
+              <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
+            </footer>
+        </div>
     </div>
   </body>
 </html>
