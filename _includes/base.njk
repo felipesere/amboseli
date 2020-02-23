@@ -21,43 +21,53 @@
           white-space: nowrap; /* 1. */
       }
 
-      .dark-mode-checkbox:focus ~ .theme-container .dark-mode-label {
-          outline: 2px solid var(--brand);
-      }
-
       .dark-mode-label::before {
           content: "\2610";
       }
 
-      .dark-mode-checkbox:checked ~ .theme-container .dark-mode-label::before {
+      .dark-mode .dark-mode-label::before {
           content: "\2611";
       }
   </style>
+  <script>
+    function matchDarkMode(setting) {
+      if(setting) {
+          document.body.classList.add('dark-mode')
+      } else {
+          document.body.classList.remove('dark-mode')
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkbox = document.querySelector('#dark-mode');
+      checkbox.checked = localStorage.getItem('darkMode') === 'true';
+      matchDarkMode(checkbox.checked)
+
+      checkbox.addEventListener('change', function (event) {
+        const checked = event.currentTarget.checked
+        localStorage.setItem('darkMode', checked);
+        matchDarkMode(checked)
+      });
+    });
+  </script>
   <body>
-    <input id="dark-mode" class="dark-mode-checkbox visually-hidden" type="checkbox">
-    <div class="theme-container">
-        <div class="main center">
-        <!-- add a another div here that takes on the styles from the body make sure everything stretches -->
+     <div class="main center">
+         <label class="dark-mode-label" for="dark-mode">Dark mode</label>
+        <input id="dark-mode" class="visually-hidden" type="checkbox">
+        <nav class="horizontal space-between text-gray-300 text-size">
+            <a href="/">Home</a>
+            <a href="/blogs">Blogs</a>
+            <a href="/about">About</a>
+            <a href="/design">Design</a>
+        </nav>
 
-            <label class="dark-mode-label" for="dark-mode">
-                Dark mode
-            </label>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
 
-            <nav class="horizontal space-around text-gray-300 text-size">
-              <a href="/">Home</a>
-              <a href="/blogs">Blogs</a>
-              <a href="/about">About</a>
-              <a href="/design">Design</a>
-            </nav>
-
-            <main>
-              {% block content %}{% endblock %}
-            </main>
-
-            <footer>
-              <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
-            </footer>
-        </div>
-    </div>
+        <footer>
+           <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
+        </footer>
+     </div>
   </body>
 </html>

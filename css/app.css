@@ -28,15 +28,11 @@
     --gray-800: #282828;
     --gray-900: #171717;
 
-}
-
-.theme-container {
-    /* Make the light theme the default */
     --c-text: black;
     --c-background: white;
 }
 
-.dark-mode-checkbox:checked ~ .theme-container {
+.dark-mode {
     /* Override the default theme */
     --c-text: white;
     --c-background: black;
@@ -57,13 +53,8 @@
 /* Building blocks */
 
 html, body {
-    min-height: 100%;
-}
-
-.theme-container {
     color: var(--c-text);
     background-color: var(--c-background);
-    min-height: 100%;
 }
 
 .main {
@@ -87,7 +78,6 @@ main {
 nav {
     margin-top: var(--s0);
     margin-bottom: var(--s5);
-    flex-shrink: 0;
 }
 
 a {
@@ -112,6 +102,7 @@ footer {
 
 table {
     width: 100%;
+    max-width: 100%;
     border-spacing: 0 var(--s1);
 }
 
@@ -120,8 +111,13 @@ tr > :last-child {
 }
 
 @media only screen and (max-width: 500px) {
-    table, tbody, thead, th, tr, td {
+    table, tbody, thead, th, td {
         display: block;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
     }
 
     tr > :last-child {
@@ -163,6 +159,10 @@ tr > :last-child {
 
 .space-evenly {
     justify-content: space-evenly;
+}
+
+.space-between {
+    justify-content: space-between;
 }
 
 /* Atoms */
