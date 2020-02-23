@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -8,20 +7,53 @@
     <script async defer data-domain="felipesere.com" src="https://plausible.io/js/plausible.js"></script>
     <title>Felipe Seré</title>
   </head>
-  <body class="center">
-      <nav class="horizontal space-around text-gray-300 text-size">
-        <a href="/">Home</a>
-        <a href="/blogs">Blogs</a>
-        <a href="/about">About</a>
-        <a href="/design">Design</a>
-      </nav>
+  <style>
+      /* start here and move later */
+      .visually-hidden {
+          position: absolute;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+          width: 1px;
+          height: 1px;
+          margin: -1px;
+          padding: 0;
+          border: 0;
+          white-space: nowrap; /* 1. */
+      }
 
-      <main>
-        {% block content %}{% endblock %}
-      </main>
+      .dark-mode-checkbox:focus ~ .theme-container .dark-mode-label {
+          outline: 2px solid var(--brand);
+      }
 
-      <footer class="center">
-        <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
-      </footer>
+      .dark-mode-label::before {
+          content: "\2610";
+      }
+
+      .dark-mode-checkbox:checked ~ .theme-container .dark-mode-label::before {
+          content: "\2611";
+      }
+  </style>
+  <body>
+    <input id="dark-mode" class="dark-mode-checkbox visually-hidden" type="checkbox">
+    <div class="center theme-container">
+        <label class="dark-mode-label" for="dark-mode">
+            Dark mode
+        </label>
+
+        <nav class="horizontal space-around text-gray-300 text-size">
+          <a href="/">Home</a>
+          <a href="/blogs">Blogs</a>
+          <a href="/about">About</a>
+          <a href="/design">Design</a>
+        </nav>
+
+        <main>
+          {% block content %}{% endblock %}
+        </main>
+
+        <footer class="center">
+          <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
+        </footer>
+    </div>
   </body>
 </html>
