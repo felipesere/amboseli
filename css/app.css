@@ -16,6 +16,7 @@
 
     --brand: #009bf5;
 
+    --white: white;
     --gray-50: #f3f3f3;
     --gray-100: #dcdcdc;
     --gray-200: #bebebe;
@@ -38,17 +39,19 @@
 .dark-mode-checkbox:checked ~ .theme-container {
     /* Override the default theme */
     --c-text: white;
-    --gray-50: var(--gray-900);
-    --gray-100: var(--gray-800);
-    --gray-200: var(--gray-700);
-    --gray-300: var(--gray-600);
-    --gray-400: var(--gray-500);
-    --gray-500: var(--gray-400);
-    --gray-600: var(--gray-300);
-    --gray-700: var(--gray-200);
-    --gray-800: var(--gray-100);
-    --gray-900: var(--gray-50);
     --c-background: black;
+
+    --white: black;
+    --gray-50: #171717;
+    --gray-100: #282828;
+    --gray-200: #3d3d3d;
+    --gray-300: #565656;
+    --gray-400: #6f6f6f;
+    --gray-500: #8c8c8c;
+    --gray-600: #a4a4a4;
+    --gray-700: #bebebe;
+    --gray-800: #dcdcdc;
+    --gray-900: #f3f3f3;
 }
 
 /* Building blocks */
@@ -113,8 +116,8 @@ footer::before {
     top: -5px;
     left: 50%;
     margin-left: -5px;
-    background: #FFF;
-    box-shadow: #FFF 0 0 0 5px;
+    background: var(--c-background);
+    box-shadow: var(--c-background) 0 0 0 5px;
     border-radius: 3px;
 }
 
