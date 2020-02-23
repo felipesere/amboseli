@@ -125,6 +125,19 @@ tr > :last-child {
     }
 }
 
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+}
+
+
 /* basic structures */
 .center {
     box-sizing: content-box;
@@ -151,10 +164,6 @@ tr > :last-child {
 .horizontal {
     display: flex;
     flex-direction: row;
-}
-
-.space-around {
-    justify-content: space-around;
 }
 
 .space-evenly {
@@ -279,3 +288,12 @@ tr > :last-child {
 .blog blockquote p {
     display: inline;
 }
+
+.dark-mode-label::before {
+    content: "\2610";
+}
+
+.dark-mode .dark-mode-label::before {
+    content: "\2611";
+}
+
