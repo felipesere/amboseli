@@ -30,8 +30,16 @@
   </script>
   <body>
      <div class="main center">
-         <label class="dark-mode-label" for="dark-mode">Dark mode</label>
-        <input id="dark-mode" class="visually-hidden" type="checkbox">
+        <div class="horizontal" style="line-height:34px">
+          <label class="switch">
+              <input type="checkbox" id="dark-mode">
+              <div>
+                  <span></span>
+              </div>
+          </label>
+          <p class="m-2 text-gray-300 text-size-s">Dark mode</p>
+        </div>
+
         <nav class="horizontal space-between text-gray-300 text-size">
             <a href="/">Home</a>
             <a href="/blogs">Blogs</a>
