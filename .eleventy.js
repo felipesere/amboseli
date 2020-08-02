@@ -1,6 +1,9 @@
 const dayjs = require('dayjs')
 
 module.exports = function(eleventyConfig) {
+  /* Due to having compiled CSS, don't use git ignore when running the server */
+  eleventyConfig.setUseGitIgnore(false);
+
   eleventyConfig.addPassthroughCopy('assets')
   eleventyConfig.addPassthroughCopy('blogs/**/*.jpg')
 
