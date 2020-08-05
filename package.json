@@ -6,12 +6,12 @@
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^9.7.4",
     "cssnano": "^4.1.10",
-    "dayjs": "^1.8.32",
+    "dayjs": "^1.8.20",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-highlight": "^0.2.0",
-    "postcss-cli": "^7.1.1",
+    "postcss-cli": "^7.1.0",
     "postcss-import": "^12.0.1"
   },
   "license": "MIT",
