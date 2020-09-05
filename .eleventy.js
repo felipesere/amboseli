@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('assets')
   eleventyConfig.addPassthroughCopy('blogs/**/*.jpg')
+  eleventyConfig.addPassthroughCopy({'.well-known':'.well-known'})
 
   eleventyConfig.addCollection('blogs', function(collection) {
     return collection.getFilteredByGlob('blogs/*/*.md').filter(item => !item.data.draft);

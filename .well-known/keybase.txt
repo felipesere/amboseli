@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/felipesere
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://felipesere.com
+  * I am felipesere (https://keybase.io/felipesere) on keybase.
+  * I have a public key with fingerprint 60CA EA7F EFCB 79B8 274E  738B B12F 040F 934D 78D0
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101a068db57bd93ef0ed3a1f1dbadf60da3e003f0b966b9bc78446dd8f3eeab5f0f0a",
+      "fingerprint": "60caea7fefcb79b8274e738bb12f040f934d78d0",
+      "host": "keybase.io",
+      "key_id": "b12f040f934d78d0",
+      "kid": "01015786d4b97eadf64cbc3627cad02dc024c4e9f9f88a67f716e114e1e897b48f340a",
+      "uid": "4d1c9c804767e5e43da2f81a8dc23100",
+      "username": "felipesere"
+    },
+    "service": {
+      "hostname": "felipesere.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1599323399,
+  "expire_in": 157680000,
+  "prev": "031d5edae3850b8b6770b69f6d616307991a8422001ae595c4bdd519205fe178",
+  "seqno": 124,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNrAnicbVJ9TFVlGL8ECNEHXYZgXKVxmJ8DfM/3ORCDTaNCsKVwGWRezjnve65H
+uB/crzCmhTHKYQxzdMVh5hxoWGB8aNwhG+ZtgBGXsjmHfMhmNoWhxJaQROewWn/U
++8+z531/v9/ze573ufZcsC4i6OutIZHHc8sDQdf7Trl1pt1Xwiow0QYPYKkVWAla
+CagUIqfLVKJALBUDOMAFwHBQpFkR8iSSAYKkgMs4FAUoMwAKJAKAlIHIM4zIixLL
+URQDISeTCAkiLQMZCFgSJitWM3LYHYrVpcoyQBKQwMpIlkSWFzmCpRBLcqKIEzKg
+gMyTFGQ5CFTiPptTY6jmRMGJUhSbeqcmphV7/4P/1zfNcgykRJ5FmlNKEiWSIVhJ
+gICAEiAoiUK8zMscJzCszOIMwnEK4YjjWZFS7VMrvt0rchTEJV7iAMUyLKIRRUKB
+kDlc4KBEkDjQ6rqdyGEVLEhFy6hUsSM1R9jBJEyNHkVC2mi1Xv6DSZFsFpVvd9hc
+NslWqr7tc7nszlSN6zpg18DvINH0t4xJVKxQnaXK8CCHU7FZsVRcRUouRdPFaZ4n
+CZLk+SQMldsVBzIpGoJmGQ6oR6uDPNqASBzSCAqI5GggciLDskBkeJmBDM6QgOV5
+tTuKIID6/4jmaYkSIaRxngC0jHCWw7TGyqw2VZugVKOCWRV1Kmar4HJrfV/t2xOi
+C4rQrQp9StsyXcTTL/yzeznjkUtrDzpXxf94rqi6YubTF2fHPLXR/VV3D1/ND838
+3NS5um1rzemYuJlHxsov0py9CyeUigu1E9/HHlKW5r9xCdfdYc66t7OFRHPTeszx
+6xbv7zELD6fff7x+2pB6drNuQ54L9uqzDxn8RuZiRnLjqMHdGb6UfvvyFrprUcpK
+NHoK0xy5RZlWh+dchX3SLLjj9QOZxoClmL0dNdVYkPJkY/BrIcVZzBDH96RH9b9n
+5O0ROZMTLR31Uf3yJ+mDlbnlucdz7nz5yusb7hwYvXxt8xrf6dmf5ur3ThqX3/Vm
+3t9RtTTyc9dX4X0Dzye04HmOSzdGX/KEr3t1IOONqrgpf+PFuYnW6KxTueGrZ9J3
+n2cK2iwfzLeVvJzsfSJgYWXjXLfXOzjSnt1z+O4z2Oj5/Q0NN28yZ5rlupaPuLl2
+s298cuO2vCF6xp81WB29MHFyV2H8xPLOxSM1ZPdIwoe1xxRfRkGzK/ZW4S9Ja/Nj
+MvuPTR259/HOS2/2sTfOTu/Vr3tYljh45YwE9dxwQ00VVrh9+GTV3C1DoHrPcmvn
+g6D28tFtrbN1O4LiCh6ZfJO7vLpidMKmn7rnsRTtf7buh7yOPrPyXZO+fmzoQa/9
+ftumwJ+j/oSex37Lb4bh+Y7Y0IhvmyMXA5V/XDCkleBNa4JLtpvmujZ91jvmz08+
+ahXf6g74on1/Acb/xo0=
+=2On9
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/felipesere
+
+==================================================================
