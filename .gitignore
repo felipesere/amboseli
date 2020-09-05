@@ -6,3 +6,4 @@ public
 .cache/
 _site
 assets/main.css
+.netlify
