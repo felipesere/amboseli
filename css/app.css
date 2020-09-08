@@ -15,6 +15,7 @@
     --s5: calc(var(--s4) * var(--ratio));
 
     --brand: #009bf5;
+    --text-brand: #007ac2;
 
     --white: white;
     --gray-50: #f3f3f3;
@@ -177,7 +178,7 @@ tr > :last-child {
 /* Atoms */
 
 .text-brand {
-    color: var(--brand);
+    color: var(--text-brand);
 }
 
 .text-gray-50 {
