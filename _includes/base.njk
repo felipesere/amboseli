@@ -7,29 +7,29 @@
     <link rel="stylesheet" href="/assets/main.css">
     <script async defer data-domain="felipesere.com" src="https://stats.felipesere.com/js/plausible.js"></script>
     <title>Felipe Seré</title>
-  </head>
-  <script>
-    function matchDarkMode(setting) {
-      if(setting) {
+    <script>
+      function matchDarkMode(setting) {
+        if(setting) {
           document.body.classList.add('dark-mode')
-      } else {
+        } else {
           document.body.classList.remove('dark-mode')
+        }
       }
-    }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const checkbox = document.querySelector('#dark-mode');
-      checkbox.checked = localStorage.getItem('darkMode') === 'true';
-      matchDarkMode(checkbox.checked)
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkbox = document.querySelector('#dark-mode');
+        checkbox.checked = localStorage.getItem('darkMode') === 'true';
+        matchDarkMode(checkbox.checked)
 
-      checkbox.addEventListener('change', function (event) {
-        const checked = event.currentTarget.checked
-        localStorage.setItem('darkMode', checked);
-        matchDarkMode(checked)
+        checkbox.addEventListener('change', function (event) {
+          const checked = event.currentTarget.checked
+          localStorage.setItem('darkMode', checked);
+          matchDarkMode(checked)
+        });
       });
-    });
-  </script>
-  <body>
+    </script>
+  </head>
+  <body> 
      <div class="main center">
         <div class="horizontal" style="line-height:34px">
           <label class="switch">
