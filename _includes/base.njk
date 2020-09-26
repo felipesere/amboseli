@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" color-mode="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +8,34 @@
     <script async defer data-domain="felipesere.com" src="https://stats.felipesere.com/js/plausible.js"></script>
     <title>Felipe Seré</title>
     <script>
-      function matchDarkMode(setting) {
-        if(setting) {
-          document.body.classList.add('dark-mode')
-        } else {
-          document.body.classList.remove('dark-mode')
-        }
+      function toggleDarkMode() {
+        let mode = document.documentElement.getAttribute('color-mode');
+        let invertedMode = mode === "dark" ? "light" : "dark";
+        localStorage.setItem('color-mode', invertedMode);
+        document.documentElement.setAttribute('color-mode', invertedMode);
       }
 
       document.addEventListener('DOMContentLoaded', function () {
-        const checkbox = document.querySelector('#dark-mode');
-        checkbox.checked = localStorage.getItem('darkMode') === 'true';
-        matchDarkMode(checkbox.checked)
+        const mode = localStorage.getItem('color-mode') || "light";
+        document.documentElement.setAttribute('color-mode', mode)
 
-        checkbox.addEventListener('change', function (event) {
-          const checked = event.currentTarget.checked
-          localStorage.setItem('darkMode', checked);
-          matchDarkMode(checked)
-        });
+        for (const button of document.querySelectorAll('.dark-mode-toggle-btn')) {
+          button.addEventListener('click', toggleDarkMode)
+        }
       });
     </script>
   </head>
-  <body> 
+  <body>
      <div class="main center">
-        <div class="horizontal" style="line-height:34px">
-          <label class="switch">
-              <input type="checkbox" id="dark-mode">
-              <div>
-                  <span></span>
-              </div>
-          </label>
-          <p class="m-2 text-gray-300 text-size-s">Dark mode</p>
+        <div>
+          <button class="dark--hidden dark-mode-toggle-btn">
+            <span role="img" aria-label="Smiling moon">🌛</span>
+            <p class="text-size-s">Dark mode</p>
+          </button>
+          <button class="light--hidden dark-mode-toggle-btn">
+            <span role="img" aria-label="Sun">☀️</span>
+            <span class="text-size-s">Light mode</span>
+          </button>
         </div>
 
         <nav class="horizontal space-between text-gray-300 text-size">
@@ -53,7 +50,7 @@
         </main>
 
         <footer>
-           <p class="text-gray-200 text-center">Felipe Seré © 2020<p>
+           <p class="text-gray-200 text-center">Felipe Seré © 2020</p>
         </footer>
      </div>
   </body>
