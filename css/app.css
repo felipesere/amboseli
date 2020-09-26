@@ -298,7 +298,9 @@ tr > :last-child {
   cursor: pointer;
   color: var(--gray-600);
   margin: 0.5em;
-  padding: 0.5em;
+  /* the emoji on the left throws the balance off,
+   * so we need a bit more space to the right */
+  padding: 0.5em 1em 0.5em 0.5em;
 }
 
 .dark-mode-toggle-btn:hover {
