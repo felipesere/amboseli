@@ -15,6 +15,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksShortcode('humanDate', function(date) {
     return dayjs(date).format('MMMM D, YYYY')
   })
+  eleventyConfig.addNunjucksShortcode('machineDate', function(date) {
+    return dayjs(date).format('YYYY-MM-DD')
+  })
 
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
   let markdownIt = require('markdown-it')
