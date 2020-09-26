@@ -13,12 +13,13 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+
+  /* Consider doing alternatives for this one too */
+  --brand: #009bf5;
+  --text-brand: #007ac2;
 }
 
-:root[color-mode="light"] {
-    --brand: #009bf5;
-    --text-brand: #007ac2;
-
+body[color-mode="light"] {
     --white: white;
     --gray-50: #f3f3f3;
     --gray-100: #dcdcdc;
@@ -36,7 +37,7 @@
 }
 
 /* Override the default theme */
-:root[color-mode="dark"] {
+body[color-mode="dark"] {
     --c-text: white;
     --c-background: black;
 
@@ -299,8 +300,8 @@ tr > :last-child {
   background: var(--gray-50);
 }
 
-:root[color-mode="light"] .light--hidden,
-:root[color-mode="dark"] .dark--hidden {
+body[color-mode="light"] .light--hidden,
+body[color-mode="dark"] .dark--hidden {
   display: none;
 }
 
