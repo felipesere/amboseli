@@ -1,13 +1,13 @@
 {% extends "base.njk" %}
 {% block content %}
-    {% include "header.njk" %}
+{% include "header.njk" %}
 
-    <article class="stack text-center text-gray-800">
-        <h1 class="text-size-m"><em class="text-brand">Engineer.</em> Coach. Photographer</h1>
-        <div class="text-lighter">
-            {{  content | safe }}
-        </div>
+<article class="stack text-center text-gray-800">
+  <h1 class="text-size-m"><em class="text-brand">Engineer.</em> Coach. Photographer</h1>
+  <div class="text-lighter">
+    {{ content | safe }}
+  </div>
 
-        {% include "networking.njk" %}
-    </article>
+  {% include "networking.njk" %}
+</article>
 {% endblock %}
