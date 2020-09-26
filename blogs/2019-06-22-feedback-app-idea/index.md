@@ -3,6 +3,7 @@ title: Feedback app idea
 date: 2019-06-22 20:05:53
 original: 2017-03-03 22:05:53
 tags: [personal, idea]
+description: "Thoughts on what I think would make a valuable, person-centric application to gather feedback."
 ---
 
 *Update:* I fixed a bunch of typos (😱) and added an update about questions. Keep an eye out for more posts around this idea.

@@ -1,6 +1,7 @@
 ---
 layout: home.njk
 name: Felipe Seré
+description: Felipe's personal blog, where I write about programming and learn about web design.
 ---
 
 Hi there! :wave:
