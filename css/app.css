@@ -129,6 +129,7 @@ tr > :last-child {
   tr {
     display: flex;
     flex-direction: column;
+    margin-bottom: var(--s1);
   }
 
   tr > :last-child {
