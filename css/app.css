@@ -295,6 +295,13 @@ tr > :last-child {
   display: inline;
 }
 
+.blog p > code {
+  font-size: 0.9rem;
+  background-color: var(--gray-100);
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
 .dark-mode-toggle-btn {
   display: inline-flex;
   align-items: center;
