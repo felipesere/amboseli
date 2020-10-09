@@ -20,6 +20,9 @@
 }
 
 body[color-mode="light"] {
+  --c-text: black;
+  --c-background: white;
+
   --white: white;
   --gray-50: #f3f3f3;
   --gray-100: #dcdcdc;
@@ -31,9 +34,6 @@ body[color-mode="light"] {
   --gray-700: #3d3d3d;
   --gray-800: #282828;
   --gray-900: #171717;
-
-  --c-text: black;
-  --c-background: white;
 }
 
 /* Override the default theme */
@@ -55,21 +55,17 @@ body[color-mode="dark"] {
 }
 
 /* Building blocks */
-
 html,
 body {
   color: var(--c-text);
   background-color: var(--c-background);
+  font-family: Helvetica, Sans-Serif, serif;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-body {
-  font-family: Helvetica, Sans-Serif, serif;
 }
 
 main {
