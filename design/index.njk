@@ -73,19 +73,19 @@
     </style>
     <div class="stack">
         <section>
-            <h1>Welcome to my design page</h1>
-            <p>
-                This page shows off some of the design elements used on this page.
-                The "boxy" style is copied from <a href="https://twitter.com/heydonworks">Heydon Pickering</a> & <a href="https://twitter.com/hankchizljaw">Andy Bell</a> <a href="https://every-layout.dev">every-layout.dev</a>.
-                That is also where the <code>.stack</code>, <code>.center</code>, and some other classes come from.
-                I highly suggest to check it out.
-            </p>
+          <h1>Welcome to my design page</h1>
+          <p>
+          This page shows off some of the design elements used on this page.
+          The "boxy" style is copied from <a href="https://twitter.com/heydonworks">Heydon Pickering</a> & <a href="https://twitter.com/hankchizljaw">Andy Bell</a> <a href="https://every-layout.dev">every-layout.dev</a>.
+          That is also where the <code>.stack</code>, <code>.center</code>, and some other classes come from.
+          I highly suggest to check it out.
+          </p>
         </section>
         <section>
             <h2>Text colors</h2>
             <p>
                 Simple color palette that gets inverted for dark mode.
-                The <span class="text-brand">band color</span> stays across both color modes.
+                The <span class="text-brand">brand color</span> stays across both color modes.
             </p>
             <div class="grid">
                 {% for shade in [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] %}
@@ -120,16 +120,6 @@
                 <div class="boxed">
                     <code>This is &lt;/code &gt;</code>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Text sizes</h2>
-            <p>Various text sizes on a fluid scale based on <a href="https://utopia.fyi/">utopia.fyi</a></p>
-            <div class="stack-small">
-                {% for size in ["-xs", "-s", "", "-m", "-l", "-xl", "-xxl"] %}
-                    <p>This text is <code>.text-size{{- size -}}</code></p>
-                {% endfor %}
             </div>
         </section>
 
