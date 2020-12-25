@@ -4,15 +4,15 @@
   "version": "1.0.0",
   "author": "Felipe Seré <felipesere@gmail.com>",
   "dependencies": {
-    "@11ty/eleventy": "^0.11",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "autoprefixer": "^9",
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
+    "autoprefixer": "^10",
     "cssnano": "^4",
-    "dayjs": "^1.8.36",
-    "markdown-it-emoji": "^1.4.0",
+    "dayjs": "^1.9.7",
+    "markdown-it-emoji": "^2",
     "markdown-it-highlight": "^0.2.0",
-    "postcss": "^8",
-    "postcss-import": "^12.0.1"
+    "postcss": "^8.2.1",
+    "postcss-import": "^14"
   },
   "license": "MIT",
   "main": "n/a",
@@ -29,7 +29,7 @@
     "prod": "npm run css && eleventy"
   },
   "devDependencies": {
-    "postcss-cli": "^7.1.2",
+    "postcss-cli": "^8",
     "npm-run-all": "^4.1.5"
   }
 }
