@@ -1,0 +1,15 @@
+{% extends "base.njk" %}
+{% block content %}
+{{ content | safe }}
+
+<div class="gardenGrid">
+{%- for g in collections.garden | reverse -%}
+  <div class="gardenCell">
+    <h4><a href="{{ g.url }}">{{- g.data.title -}}</a></h4>
+    <div class="metadata">
+    <time datetime="{% machineDate g.data.date %}" class="text-gray-500">{% humanDate g.data.date %}</time>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.njk" %}
+{% block content %}
+<div class="stack garden">
+  <div>
+    <h1>{{ title }}</h1>
+    ... more data ...
+  </div>
+
+  <hr class="hairline" />
+
+  <div class="content stack-small text-gray-600 text-lighter">
+    {{ content | safe }}
+  </div>
+</div>
+{% endblock %}

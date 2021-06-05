@@ -12,6 +12,10 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob('blogs/*/*.md').filter(item => !item.data.draft);
   })
 
+  eleventyConfig.addCollection('garden', function(collection) {
+    return collection.getFilteredByGlob('garden/*.md').filter(item => !item.data.draft);
+  })
+
   eleventyConfig.addNunjucksShortcode('humanDate', function(date) {
     return dayjs(date).format('MMMM D, YYYY')
   })
