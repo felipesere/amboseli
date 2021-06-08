@@ -323,16 +323,17 @@ tr > :last-child {
   padding-right: 1rem;
 }
 
-.garden .something-to-be-named h1 {
+.garden .article-head h1 {
   margin-top: var(--s3);
   margin-bottom: var(--s2);
   font-size: 70px;
   font-family: Georgia;
   font-weight: 550;
   letter-spacing: 4px;
+  line-height: 4rem;
 }
 
-.garden .something-to-be-named p {
+.garden .article-head p {
   font-size: 18px;
 }
 
