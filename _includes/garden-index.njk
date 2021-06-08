@@ -10,13 +10,8 @@
       <p>{{- g.data.content | safe | truncate(75, true, "...") -}}</p>
       <div class="metadata">
         <time datetime="{% machineDate g.data.date %}" class="text-gray-500">{% humanDate g.data.date %}</time>
-        {% if g.data.growth == "seedling" %}
-          🌱
-        {% elif g.data.growth == "budding" %}
-          🌿
-        {% else %}
-          🪴
-        {% endif %}
+        {% set growth = g.data.growth %}
+        {% include "growth-emoji.njk" %} 
       </div>
     </div>
   {% endfor %}
