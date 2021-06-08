@@ -1,15 +1,25 @@
 {% extends "base.njk" %}
 {% block content %}
-{{ content | safe }}
-
-<div class="gardenGrid">
-{%- for g in collections.garden | reverse -%}
-  <div class="gardenCell">
-    <h4><a href="{{ g.url }}">{{- g.data.title -}}</a></h4>
-    <div class="metadata">
-    <time datetime="{% machineDate g.data.date %}" class="text-gray-500">{% humanDate g.data.date %}</time>
+<div class="stack-small">
+  {{ content | safe }}
+  
+  <div class="grid">
+  {%- for g in collections.garden | reverse -%}
+    <div class="cell">
+      <h3><a href="{{ g.url }}">{{- g.data.title -}}</a></h3>
+      <p>{{- g.data.content | safe | truncate(75, true, "...") -}}</p>
+      <div class="metadata">
+        <time datetime="{% machineDate g.data.date %}" class="text-gray-500">{% humanDate g.data.date %}</time>
+        {% if g.data.growth == "seedling" %}
+          🌱
+        {% elif g.data.growth == "budding" %}
+          🌿
+        {% else %}
+          🪴
+        {% endif %}
+      </div>
     </div>
+  {% endfor %}
   </div>
-{% endfor %}
+  {% endblock %}
 </div>
-{% endblock %}

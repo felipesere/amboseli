@@ -1,9 +1,20 @@
 {% extends "base.njk" %}
 {% block content %}
 <div class="stack garden">
-  <div>
+  <div class="something-to-be-named">
     <h1>{{ title }}</h1>
-    ... more data ...
+    <div class="horizontal">
+    <span class="growth-emoji">
+    {% if growth == "seedling" %}
+      🌱
+    {% elif growth == "budding" %}
+      🌿
+    {% else %}
+      🪴
+    {% endif %}
+    </span>
+    <p class="text-gray-300">{% humanDate date %}</p>
+    </div>
   </div>
 
   <hr class="hairline" />
