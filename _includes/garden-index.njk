@@ -7,7 +7,9 @@
   {%- for g in collections.garden | reverse -%}
     <div class="cell">
       <h3><a href="{{ g.url }}">{{- g.data.title -}}</a></h3>
-      <p>{{- g.data.content | safe | truncate(75, true, "...") -}}</p>
+      <div class="cell-content">
+      {{- g.data.content | safe | truncate(75, true, "...") -}}
+      </div>
       <div class="metadata">
         <time datetime="{% machineDate g.data.date %}" class="text-gray-500">{% humanDate g.data.date %}</time>
         {% set growth = g.data.growth %}
