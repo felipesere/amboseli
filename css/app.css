@@ -355,8 +355,8 @@ tr > :last-child {
 
 .cell {
   border-radius: 6px;
-  border: 1px solid rgba(52, 61, 68, 0.05);
-  box-shadow: rgb(52 61 68 / 10%) 0px 1px 2px;
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--gray-50) 0px 1px 2px;
   margin: 0em 0.8em 0.8em auto;
   padding: 0.8em 1em;
   height: 250px;
@@ -369,7 +369,7 @@ tr > :last-child {
 }
 
 .metadata {
-  border-top: 1px solid rgb(235, 236, 242);
+  border-top: 1px solid var(--gray-200);
   display: flex;
   flex-direction: row;
   font-size: 12px;
