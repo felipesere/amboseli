@@ -11,6 +11,7 @@
     "dayjs": "^1.10.5",
     "markdown-it-emoji": "^2.0.0",
     "markdown-it-highlight": "^0.2.0",
+    "node-html-parser": "^3.3.5",
     "postcss": "^8.2.0",
     "postcss-cli": "^8.2.0",
     "postcss-import": "^14.0.0"

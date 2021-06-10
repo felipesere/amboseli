@@ -8,7 +8,7 @@
     <div class="cell">
       <h3><a href="{{ g.url }}">{{- g.data.title -}}</a></h3>
       <div class="cell-content">
-      {{- g.data.content | safe | truncate(125, true, "...") -}}
+      {{- g.data.content | firstParagraph | safe -}}
       </div>
       <div class="metadata">
         <time datetime="{% machineDate g.data.date %}" class="text-gray-500">{% humanDate g.data.date %}</time>

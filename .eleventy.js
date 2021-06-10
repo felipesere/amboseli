@@ -1,4 +1,5 @@
 const dayjs = require('dayjs')
+const htmlParser = require('node-html-parser')
 
 module.exports = function(eleventyConfig) {
   /* Due to having compiled CSS, don't use git ignore when running the server */
@@ -19,9 +20,17 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksShortcode('humanDate', function(date) {
     return dayjs(date).format('MMMM D, YYYY')
   })
+
   eleventyConfig.addNunjucksShortcode('machineDate', function(date) {
     return dayjs(date).format('YYYY-MM-DD')
   })
+
+  eleventyConfig.addNunjucksFilter("firstParagraph", function(value) { 
+    const root = htmlParser.parse(value)
+    const firstParagraph = root.querySelector("p").toString()
+    return firstParagraph
+  })
+
 
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
   let markdownIt = require('markdown-it')

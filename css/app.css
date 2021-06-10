@@ -364,6 +364,12 @@ tr > :last-child {
 
 .cell .cell-content {
   flex: 1;
+}
+
+.cell-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
