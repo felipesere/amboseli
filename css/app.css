@@ -323,20 +323,14 @@ tr > :last-child {
   padding-right: 1rem;
 }
 
-.title {
+.garden .article-head h1 {
+  margin-top: var(--s3);
+  margin-bottom: var(--s2);
+  font-size: 70px;
   font-family: Georgia;
   font-weight: 550;
   letter-spacing: 4px;
   line-height: 4rem;
-}
-
-.large {
-  font-size: clamp(1.85rem, 5vw, 2.5rem);
-}
-
-.garden .article-head h1 {
-  margin-top: var(--s3);
-  margin-bottom: var(--s2);
 }
 
 .garden .article-head p {
