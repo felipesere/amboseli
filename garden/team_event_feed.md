@@ -35,3 +35,32 @@ The meaning of each message would be up to the team itself, but support both hum
 and a way to extract data via tools and scripts.
 
 
+## The format
+
+I think the format can be kept quite simple and flexible, preferably in JSON.
+
+```shell
+# You'd be running the following in your CLI
+tapa add -m "@felipe create a new account 12345 #aws"
+```
+
+and the following entry would be created:
+
+```json
+{
+  "human_message": "@felipe create a new account 12345 #aws",
+  "meta": {
+    "timestamp": "2021-08-27T21:34:39.251365Z",
+    "identities": [
+      "@felipe"
+    ],
+    "tags": [
+      "#aws"
+    ]
+  }
+}
+```
+
+`human_message` would be the literal text the user typed.
+`meta` would contain some extracted information such as `tags`, `identities` and the current `timestamp`.
+This should make filtering on `tags` and `identities` easy without having to parse it again.
