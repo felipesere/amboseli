@@ -1,5 +1,7 @@
 # Welcome to the new look for felipesere.com
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/381fb751-b0f8-4953-82cb-8a7038442e16/deploy-status)](https://app.netlify.com/sites/felipesere/deploys)
+
 Inspiration:
 * for the me page: https://github.com/christianmendoza/hugo-split-theme
 * for the blogs themeselves: https://github.com/nanxiaobei/hugo-paper/
