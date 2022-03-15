@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{{ resource.content | safe }}
+
+<table>
+  <tbody class="stack-small">
+    {%- for blog in section.pages -%}
+    <tr>
+      <td><a href="{{ blog.permalink }}">{{- blog.title -}}</a></td>
+      <td><time datetime="{{ blog.date | date(format="%+") }}" class="text-gray-500">{{ blog.date | date(format="%e %B %Y")}}</time></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="blog stack-small">
+  <div>
+    <h1>{{ resource.title }}</h1>
+    <p class="text-gray-300">{{ resource.date }}</p>
+  </div>
+
+  <div class="stack-small text-gray-800 text-lighter">
+    {{ resource.content | safe }}
+  </div>
+</div>
+{% endblock %}
