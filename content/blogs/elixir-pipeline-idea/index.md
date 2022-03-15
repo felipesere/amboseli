@@ -27,7 +27,7 @@ We are thinking of two places where we want to put data to rest, with different 
 
 The code I had in mind would roughly look something like this:
 
-```elixir
+```ex
 defmodule Partner1Job do
   def execute do
     pipeline = Pipeline.new(name: "Partner1 worker")
@@ -64,7 +64,7 @@ The two things I foresee having some variations, are entry points (Web, FTP, tim
 
 Let's look at what a running a HTTP request from Phoenix through the pipeline could look like:
 
-```elixir
+```ex
 defmodule DataApiController do
 
   def init(...) do

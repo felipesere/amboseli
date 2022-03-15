@@ -8,7 +8,7 @@ tags: [elixir, design]
 
 In the previous post I outlined the kind of pipline I wanted to achieve. Here is a sample from my unit tests:
 
-```elixir
+```ex
 test "can apply a transforamtion throught a module" do
   container =
     Pipeline.new()
@@ -30,7 +30,7 @@ Because you may not be able to see if from the sample above, each `source`, `sin
 
 Below we can the `Pipeline.Source` module and its `__using__(params)` macro:
 
-```elixir
+```ex
 defmodule Pipeline.Source do
   @callback init(any()) :: any()
   @callback fetch_data(any()) :: {:ok, any()} | {:error, any() }
@@ -56,7 +56,7 @@ Both functions take a `params` keyword list argument and the relationship betwee
 
 The lifecycle of this module is that the pipline will first call `init/1` with whatever parameters were giveen to the pipline. For example...
 
-```elixir
+```ex
 Pipeline.new()
 |> Pipeline.from(TestSource, retries: 12, back_off: :linear)
 ```
@@ -68,7 +68,7 @@ It almost feels like a stateful object (after all, we are holding on to _state_ 
 
 Here you can the see the bit of code that calls `init/1` and then holds on to the parameters for later use:
 
-```elixir
+```ex
 @spec from(Pipeline.t, module(), keyword()) :: Pipeline.t
 def from(pipeline, module, params \\ []) do
   %Pipeline{pipeline | source: initialize(module, params) }
@@ -86,7 +86,7 @@ What we store in the `%Pipeline{}` struct is precisely the tuple of _what module
 
 When we then decide to execute the source, we see that both elements are brought together and some metadata from the pipline itself is merged in too:
 
-```elixir
+```ex
 defp call_source(%Pipeline{source: {module, params}, container: container} = pipeline) do
   Logger.log(:info, fn -> "Reading data from source (#{inspect(module)})" end)
 
@@ -105,7 +105,7 @@ By cleanly separating configuration from execution, I got testability for free,
 Let's say my `RemoteHTTPSource` uses an HTTP library underneath. For my testing, it would be annoying if I had to spin up a remote server (or use [bypass](https://github.com/PSPDFKit-labs/bypass)) just to test how it reacts to different responses.
 If I lift the depdency into a parameter it can be swapped in tests, like so:
 
-```elixir
+```ex
 defmodule RemoteHTTPSource do
   use Pipeline.Source
 

@@ -24,7 +24,7 @@ Enter [rerun](https://github.com/alexch/rerun).
 Install it with
 
 ```bash
-   gem install rerun
+gem install rerun
 ```
 
 and then run
