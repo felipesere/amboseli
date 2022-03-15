@@ -1,6 +1,10 @@
 [build]
-  publish = "_site"
-  command = "npm run prod"
+  publish = "public"
+  command = "zola build"
+
+[build.environment]
+# Set the version name that you want to use and Netlify will automatically use it.
+ZOLA_VERSION = "0.15.3"
 
 [[redirects]]
     from = "/post/:title"
