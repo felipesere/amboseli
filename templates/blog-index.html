@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{{ resource.content | safe }}
-
+{{ section.content | safe }}
 <table>
   <tbody class="stack-small">
     {%- for blog in section.pages -%}
