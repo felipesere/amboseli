@@ -10,6 +10,7 @@ build_search_index = false
 [markdown]
 render_emoji = true
 highlight_code = true
+highlight_theme = "css"
 highlight_themes_css = [
   { theme = "base16-ocean-dark", filename = "css/syntax-theme-dark.css" },
   { theme = "base16-ocean-light", filename = "css/syntax-theme-light.css" },
