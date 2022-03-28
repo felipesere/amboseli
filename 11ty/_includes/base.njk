@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' stats.felipesere.com; connect-src stats.felipesere.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description }}">
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/main.css">
+  <script async defer data-domain="felipesere.com" src="https://stats.felipesere.com/js/plausible.js" integrity="sha256-CMynFB9WvpyTI0WuEiaFr0p1H3rVTgy/nEgLEsn8Qec="></script>
+  <title>Felipe Seré</title>
+  <script>
+    function toggleDarkMode() {
+      let mode = document.body.getAttribute('color-mode');
+      let invertedMode = mode === "dark" ? "light" : "dark";
+      localStorage.setItem('color-mode', invertedMode);
+      document.body.setAttribute('color-mode', invertedMode);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const mode = localStorage.getItem('color-mode') || "light";
+      document.body.setAttribute('color-mode', mode)
+
+      for (const button of document.querySelectorAll('.dark-mode-toggle-btn')) {
+        button.addEventListener('click', toggleDarkMode)
+      }
+    });
+  </script>
+</head>
+
+<body color-mode="light">
+  <div class="main center">
+    <aside>
+      <button type="button" class="dark--hidden dark-mode-toggle-btn">
+        <span role="img" aria-hidden="true">🌛</span>
+        Dark mode
+      </button>
+      <button type="button" class="light--hidden dark-mode-toggle-btn">
+        <span role="img" aria-hidden="true">☀️</span>
+        Light mode
+      </button>
+    </aside>
+
+    <nav class="horizontal space-between text-gray-300">
+      <a href="/">Home</a>
+      <a href="/blogs">Blogs</a>
+      <a href="/garden">Garden</a>
+      <a href="/about">About</a>
+      <a href="/design">Design</a>
+    </nav>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+      <p class="text-gray-500 text-center">Felipe Seré © 2021</p>
+    </footer>
+  </div>
+</body>
+
+</html>
