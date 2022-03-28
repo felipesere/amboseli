@@ -1,6 +1,6 @@
----
-layout: about.njk
----
++++
+template = "about-page.html"
++++
 
 _Hello!_
 

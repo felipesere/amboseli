@@ -1,13 +1,13 @@
-{% extends "base.njk" %}
+{% extends "base.html" %}
 {% block content %}
-{% include "header.njk" %}
+{% include "header.html" %}
 
 <article class="stack text-gray-800">
   <h1 class="text-center text-gray-900">
     <em class="text-brand">Engineer.</em> Coach. Photographer
   </h1>
   <div class="text-lighter stack-small">
-    {{ content | safe }}
+    {{ page.content | safe }}
   </div>
 </article>
 
