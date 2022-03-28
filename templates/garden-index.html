@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack-small">
+  {{ section.content | safe }}
+  
+  <div class="grid">
+  {%- for garden in section.pages | reverse -%}
+    <div class="cell">
+      <h3><a href="{{ garden.path }}">{{- garden.title -}}</a></h3>
+      <div class="cell-content">
+        {% if garden.summary -%}
+        {{ garden.summary | safe }}
+        {% else %}
+        {{ garden.content | striptags | truncate(length=100) | safe }}
+        {%- endif %}
+      </div>
+      <div class="metadata">
+        <time datetime="{{ garden.date | date(format="%+") }}" class="text-gray-500">{{ garden.date | date(format="%e %B %Y") }}</time>
+        {% set growth = garden.extra.growth %}
+        {% include "growth-emoji.html" %} 
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  {% endblock %}
+</div>

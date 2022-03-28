@@ -5,8 +5,6 @@ description = "Felipe's personal blog, where I write about programming and learn
 name = "Felipe Seré"
 +++
 
-> I am moving to Zola!
-
 Hi there! :wave:
 
 I'm a Senior Software Engineer working at [TrueLayer](https://truelayer.com/).

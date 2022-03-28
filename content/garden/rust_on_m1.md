@@ -1,11 +1,15 @@
----
-title: Rust on M1
-date: 2022-01-05 09:09:15
-tags: [rust]
-growth: seedling
----
++++
+title = "Rust on M1"
+date = "2022-01-05 09:09:15"
+tags = ["rust"]
+[extra]
+growth = "seedling"
++++
 
 Installing [fnm](https://github.com/Schniz/fnm) on my new work M1 failed due to not being able to link `liblzma.dylib`.
+
+<!-- more -->
+
 The error says that
 ```bash
 ... ignoring file /opt/homebrew/Cellar/xz/5.2.5/lib/liblzma.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64

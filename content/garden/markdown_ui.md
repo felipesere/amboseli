@@ -1,9 +1,10 @@
----
-title: Markdown as UI
-date: 2021-06-10 18:48:51
-tags: [ux]
-growth: seedling
----
++++
+title = "Markdown as UI"
+date = "2021-06-10 18:48:51"
+tags = ["ux"]
+[extra]
+growth = "seedling"
++++
 
 For a little script that I run every day as a form of "journal", 
 I've been experimenting with using Markdown as a file format and

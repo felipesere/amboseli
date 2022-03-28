@@ -1,9 +1,10 @@
----
-title: Team Event Stream
-date: 2021-08-27 17:49:51
-tags: []
-growth: seedling
----
++++
+title = "Team Event Stream"
+date = "2021-08-27 17:49:51"
+tags = []
+[extra]
+growth = "seedling"
++++
 
 There are loads of events happening during the lifetime of software engineering teams.
 Some are captured in tools like issue trackers (e.g feature requested/being built/released)

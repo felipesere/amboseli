@@ -1,7 +1,7 @@
----
-layout: garden-index.njk
-eleventyExcludeFromCollections: true
----
++++
+template = "garden-index.html"
+page_template = "garden-page.html"
++++
 
 # The Garden
 

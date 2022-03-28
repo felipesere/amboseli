@@ -1,9 +1,10 @@
----
-title: Terraform Entrypoints
-date: 2021-06-09 08:00:13
-tags: [terraform]
-growth: seedling
----
++++
+title = "Terraform Entrypoints"
+date = "2021-06-09 08:00:13"
+tags = ["terraform"]
+[extra]
+growth = "seedling"
++++
 
 When working with Terraform in a dedicated infrastructure repository, we often see
 `main.tf` and similar files scattered directly in the root.

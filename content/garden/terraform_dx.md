@@ -1,9 +1,10 @@
----
-title: Terraform Developer Experience
-date: 2021-06-08 18:10:13
-tags: [terraform]
-growth: seedling
----
++++
+title = "Terraform Developer Experience"
+date = "2021-06-08 18:10:13"
+tags = ["terraform"]
+[extra]
+growth = "seedling"
++++
 
 Recently we have been working more and more to increase the adoption
 of our shared Terraform modules across the client teams.
