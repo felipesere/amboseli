@@ -202,10 +202,6 @@ tr > :last-child {
   color: var(--gray-500);
 }
 
-.text-gray-800 {
-  color: var(--gray-800);
-}
-
 .text-gray-900 {
   color: var(--gray-900);
 }
