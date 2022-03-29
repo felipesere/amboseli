@@ -329,11 +329,6 @@ pre table {
 }
 
 /* garden namespacing */
-.garden {
-  font-size: 22px;
-  line-height: 1.8em;
-}
-
 .growth-emoji {
   padding-right: 1rem;
 }
@@ -341,7 +336,8 @@ pre table {
 .garden .article-head h1 {
   margin-top: var(--s3);
   margin-bottom: var(--s2);
-  font-size: 70px;
+  font-size: 42px; /* Fallback value */
+  font-size: clamp(42px, 4vw, 72px);
   font-family: Georgia;
   font-weight: 550;
   letter-spacing: 4px;
