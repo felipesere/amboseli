@@ -2,19 +2,13 @@
 
 {% block content %}
     <style nonce="PkGLWAKFk8Tbivx1YCwI">
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            grid-gap: var(--s1);
-        }
-
         .columns {
             column-width: 200px;
             column-gap: var(--s0);
         }
 
         .boxed {
-            border: var(--s-3) solid var(--gray-900);
+            border: var(--s-3) solid var(--gray-800);
             background-color: var(--c-background);
             padding: var(--s-3);
         }
@@ -92,7 +86,7 @@
                 The <span class="text-brand">brand color</span> stays across both color modes.
             </p>
             <div>
-                {% for shade in [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] %}
+                {% for shade in [50, 100, 200, 300, 500, 800, 900] %}
                     <code class="text-gray-{{ shade }}">
                         .text-gray-{{ shade }}
                     </code>
