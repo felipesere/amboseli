@@ -3,7 +3,7 @@ title = "Terraform Entrypoints"
 date = "2021-06-09 08:00:13"
 tags = ["terraform"]
 [extra]
-growth = "seedling"
+growth = "budding"
 +++
 
 When working with Terraform in a dedicated infrastructure repository, we often see
