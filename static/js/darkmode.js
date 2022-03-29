@@ -5,11 +5,9 @@ function toggleDarkMode() {
   document.body.setAttribute('color-mode', invertedMode);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const mode = localStorage.getItem('color-mode') || "light";
-  document.body.setAttribute('color-mode', mode)
+const mode = localStorage.getItem('color-mode') || "light";
+document.body.setAttribute('color-mode', mode)
 
-  for (const button of document.querySelectorAll('.dark-mode-toggle-btn')) {
-    button.addEventListener('click', toggleDarkMode)
-  }
-});
+for (const button of document.querySelectorAll('.dark-mode-toggle-btn')) {
+  button.addEventListener('click', toggleDarkMode)
+}
