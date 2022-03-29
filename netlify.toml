@@ -1,6 +1,9 @@
 [build]
-  publish = "_site"
-  command = "npm run prod"
+  publish = "public"
+  command = "zola build"
+
+[build.environment]
+ZOLA_VERSION = "0.15.3"
 
 [[redirects]]
     from = "/post/:title"

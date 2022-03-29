@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{{ section.content | safe }}
+<table>
+  <tbody class="stack-small">
+    {%- for blog in section.pages -%}
+    <tr>
+      <td><a href="{{ blog.path }}">{{- blog.title -}}</a></td>
+      <td><time datetime="{{ blog.date | date(format="%+") }}" class="text-gray-500">{{ blog.date | date(format="%e %B %Y")}}</time></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

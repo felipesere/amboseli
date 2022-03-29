@@ -1,9 +1,9 @@
 +++
-name = "Felipe Seré"
-description: "Felipe's personal blog, where I write about programming and learn about web design."
-+++
+description = "Felipe's personal blog, where I write about programming and learn about web design."
 
-> This is a branch preview!
+[extra]
+name = "Felipe Seré"
++++
 
 Hi there! :wave:
 

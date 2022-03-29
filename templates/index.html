@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<article class="stack text-center text-gray-800">
+  <h1>
+    <em class="text-brand">Engineer.</em> Coach. Photographer
+  </h1>
+  <div class="text-lighter">
+    {{ section.content | safe }}
+  </div>
+
+  {% include "networking.html" %}
+</article>
+
+{% endblock %}
