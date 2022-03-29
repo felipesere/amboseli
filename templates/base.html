@@ -15,23 +15,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <script async defer data-domain="felipesere.com" src="https://stats.felipesere.com/js/plausible.js" integrity="sha256-CMynFB9WvpyTI0WuEiaFr0p1H3rVTgy/nEgLEsn8Qec="></script>
   <title>Felipe Seré</title>
-  <script>
-    function toggleDarkMode() {
-      let mode = document.body.getAttribute('color-mode');
-      let invertedMode = mode === "dark" ? "light" : "dark";
-      localStorage.setItem('color-mode', invertedMode);
-      document.body.setAttribute('color-mode', invertedMode);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const mode = localStorage.getItem('color-mode') || "light";
-      document.body.setAttribute('color-mode', mode)
-
-      for (const button of document.querySelectorAll('.dark-mode-toggle-btn')) {
-        button.addEventListener('click', toggleDarkMode)
-      }
-    });
-  </script>
+  <script async defer src="/js/darkmode.js"></script>
 </head>
 
 <body color-mode="light">
