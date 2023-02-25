@@ -1,3 +1,30 @@
 :root {
   --primary: #00acc1;
 }
+
+.relative {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 200px;
+  height: auto;
+  opacity: 0.2;
+}
+
+.rotate-270 {
+  transform: rotate(270deg);
+}
+
+@media screen and (min-width: 780px) {
+  .top-right {
+    opacity: 1;
+  }
+}
+
+.no-margin {
+  margin-bottom: 0.5rem;
+}
