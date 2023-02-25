@@ -11,6 +11,6 @@ ZOLA_VERSION = "0.15.3"
 
 [[redirects]]
   from = "https://wedding.felipesere.com"
-  to = "https://felipeere.com/wedding"
+  to = "https://felipesere.com/wedding"
   status = 301
   force = true
