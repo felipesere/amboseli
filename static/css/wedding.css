@@ -3,7 +3,11 @@
 }
 
 details {
-  max-width: 640px;
+  max-width: 65ch;
+}
+
+p {
+  max-width: 65ch;
 }
 
 .relative {
