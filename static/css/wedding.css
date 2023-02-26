@@ -2,6 +2,10 @@
   --primary: #00acc1;
 }
 
+details {
+  max-width: 640px;
+}
+
 .relative {
   position: relative;
 }
