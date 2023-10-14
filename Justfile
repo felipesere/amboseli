@@ -4,6 +4,9 @@ build:
 serve:
   zola serve
 
+update-css:
+  npx lightningcss-cli --minify --bundle --targets '>= 0.25%' style/main.css -o static/css/main.css
+
 new-garden:
   #!/bin/bash
   title=$(gum input --placeholder "Title of the new entry")
