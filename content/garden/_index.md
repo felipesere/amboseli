@@ -1,6 +1,7 @@
 +++
 template = "garden-index.html"
 page_template = "garden-page.html"
+sort_by = "date"
 +++
 
 # The Garden

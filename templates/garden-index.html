@@ -4,7 +4,7 @@
   {{ section.content | safe }}
   
   <div class="grid">
-  {%- for garden in section.pages | reverse -%}
+  {%- for garden in section.pages -%}
     <div class="cell">
       <h3><a href="{{ garden.path }}">{{- garden.title -}}</a></h3>
       <div class="cell-content">
