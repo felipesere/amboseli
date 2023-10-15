@@ -36,3 +36,11 @@ An advanced version of this would automatically `/enqueue` PRs that come from `d
 
 An additional variant could be `/enqueue skip-ci` or something to cut down on the amount of CI that needs to run.
 
+{% mermaid() %}
+ flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+{% end %}
