@@ -6,6 +6,8 @@ serve:
 
 update-css:
   npx lightningcss-cli --minify --bundle --targets '>= 0.25%' style/main.css -o static/css/main.css
+  npx lightningcss-cli --minify --bundle --targets '>= 0.25%' style/syntax-theme-dark.css -o static/css/syntax-theme-dark.css
+  npx lightningcss-cli --minify --bundle --targets '>= 0.25%' style/syntax-theme-light.css -o static/css/syntax-theme-light.css
 
 new-garden:
   #!/bin/bash
