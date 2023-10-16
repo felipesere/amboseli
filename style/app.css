@@ -324,15 +324,6 @@ pre table {
   font-size: 18px;
 }
 
-.garden > .content > p:first-of-type:first-letter {
-  font-family: Georgia;
-  float: left;
-  font-size: 70px;
-  line-height: 60px;
-  padding-top: 12px;
-  padding-right: 8px;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
