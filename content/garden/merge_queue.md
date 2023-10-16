@@ -6,7 +6,7 @@ tags = [  ]
 growth = "seedling"
 +++
 
-# Merge Queue
+> 💡 Maybe a better name is something like `Auto Batching`
 
 At work we use both `dependabot` and `renovate` to get all sorts of automatic updates (Rust dependencies, Helm chart updates, Docker image updates) and they become tedious.
 Our normal procedure is that anything merged into our default branch `main` should get tagged and deployed.
@@ -49,6 +49,12 @@ Combined they don't work, but they mot change overlapping text and thus lead to 
 This should be caught by CI.
 But even obvious merge conflicts are hard to resolve.
 For some static files such as Rusts `Cargo.toml` and `Cargo.lock` there could be a way to define a strategy.
+
+> What happens when the `main` branch gets an update?
+
+> What happens when the update to `main` makes `queue` unmergeable (conflicts) or makes it fail CI?
+
+> What happens when an PR already merged into `queue` gets an update? Force push that changes ID?
 
 ## State machine of a given PR
 
