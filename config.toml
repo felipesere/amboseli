@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://felipesere.com"
 
-minify_html = false
+minify_html = true
 
 [markdown]
 render_emoji = true
