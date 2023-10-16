@@ -50,3 +50,22 @@ This should be caught by CI.
 But even obvious merge conflicts are hard to resolve.
 For some static files such as Rusts `Cargo.toml` and `Cargo.lock` there could be a way to define a strategy.
 
+## State machine of a given PR
+
+{% mermaid() %}
+---
+title: From new PR to merged into queue
+---
+stateDiagram-v2
+    state "PR Opened" as open
+    state "Enqueued" as enqueued
+    state "Rebased with latest queue" as rebased_with_queue
+    state "Merged back into queue branch" as merged
+    [*] --> open
+    open --> [*] : CI failed
+    open --> enqueued: CI passed
+    enqueued --> rebased_with_queue
+    rebased_with_queue --> [*]: CI failed
+    rebased_with_queue --> merged: Ci passed
+    merged --> [*]
+{% end %}
