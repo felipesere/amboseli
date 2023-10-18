@@ -54,7 +54,14 @@ For some static files such as Rusts `Cargo.toml` and `Cargo.lock` there could be
 
 > What happens when the `main` branch gets an update?
 
+It should be OK to just rebase the `batch` branch with latest main.
+If it fails due to a conflict a comment can be left and the batch "abandonned".
+If it can be cleanly rebased and all the CI checks are good, it should be good to merge.
+It does depend a little on the repository having setup branch protection, which is an individual choice.
+
 > What happens when the update to `main` makes `batch` unmergeable (conflicts) or makes it fail CI?
+As said, leave as is. Maybe add a comment explaining.
+According to the repo rules it should not be mergeable and a human can go ahead and fix it.
 
 > What happens when an PR already merged into `batch` gets an update? Force push that changes ID?
 
@@ -76,4 +83,44 @@ stateDiagram-v2
     rebased_with_batch --> [*]: CI failed
     rebased_with_batch --> merged: Ci passed
     merged --> [*]
+{% end %}
+
+
+
+## What a clean run could look like
+{% mermaid() %}
+---
+title: Clean run of auto-batch
+---
+gitGraph
+  commit
+  commit
+  branch r1
+  branch r2
+  branch r3
+  branch batch
+  checkout r1
+  commit id: "r1"
+  checkout r2
+  commit id: "r2"
+  checkout r3
+  commit id: "r3"
+  checkout batch
+  branch batch-and-r1
+  merge r1
+  checkout batch
+  merge batch-and-r1 id: "r1'"
+  branch batch-and-r2
+  checkout batch-and-r2
+  merge r2
+  checkout batch
+  merge batch-and-r2 id: "r2'"
+  branch batch-and-r3
+  checkout batch-and-r3
+  merge r3
+  checkout batch
+  merge batch-and-r3 id: "r3'"
+  checkout main
+  merge batch
+
 {% end %}
