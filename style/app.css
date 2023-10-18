@@ -362,32 +362,3 @@ pre table {
 }
 
 /* end of garden */
-
-.dark-mode-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border-radius: 50px;
-  border: 1px solid var(--gray-300);
-  cursor: pointer;
-  color: var(--gray-500);
-  margin: 0.5em;
-  /* the emoji on the left throws the balance off,
-   * so we need a bit more space to the right */
-  padding: 0.5em 1em 0.5em 0.5em;
-}
-
-.dark-mode-toggle-btn:hover {
-  background: var(--gray-50);
-}
-
-body[color-mode="light"] .light--hidden,
-body[color-mode="dark"] .dark--hidden {
-  display: none;
-}
-
-span[role="img"] {
-  margin-right: 4px;
-  margin-left: 2px;
-}
